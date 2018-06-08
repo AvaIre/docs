@@ -63,6 +63,7 @@ If your server doesn't have the Oracle repositories saved you can try using upda
 
 To install Gradle 4.8 and be able to build your .jar file you'll need to install SDKMAN! first with the following:
 
+    sudo apt install unzip
     curl -s "https://get.sdkman.io" | bash
     source "$HOME/.sdkman/bin/sdkman-init.sh"
 
