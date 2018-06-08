@@ -86,7 +86,7 @@ If the command is not found you can install git by running
 <a name="install-mysql"></a>
 ## Installing MySQL
 
-We need a Database for AvaIre to work from.
+We'll need to setup a database that Ava can use. Ava requires a database to store things like custom playlists, aliases, channel and server data, and a lot of other things, it currently only has support for MySQL databases, with SQLite and other types comming in the future.  
 First we need to download MySQL, doing the following:
 
     sudo apt-get install mysql-server
