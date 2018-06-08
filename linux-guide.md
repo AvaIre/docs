@@ -4,8 +4,10 @@
     - [Linux Server](#server)
     - [Software](#software)
 - [Installing Requirements](#install-requirements)
-    - [Java & Gradle](#install-java)
+    - [Java 9](#install-java)
+    - [Gradle - Build](#install-gradle)
     - [Git - Source Control](#install-git)
+- [MySQL](#install-mysql)
 - [Installing Ava](#install-ava)
 - [Configuration of Ava](#configuration)
 - [Running the bot](#running-the-bot)
@@ -49,12 +51,24 @@ Start by logging into your server via your SSH client.
 
 We'll be using Java 9 to run Ava, if you don't already have Java installed, you can install it with the following commands.
 
-    sudo apt install oracle-java9-installer gradle
+    sudo apt install oracle-java9-installer
 
 If your server doesn't have the Oracle repositories saved you can try using updating the repositories and re-attempting to install Java using the command below.
 
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt update
+
+<a name="install-gradle"></a>
+### Installing Gradle
+
+To install Gradle 4.8 and be able to build your .jar file you'll need to install SDKMAN! first with the following:
+
+    curl -s "https://get.sdkman.io" | bash
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+Then Gradle itself:
+
+    sdk install gradle 4.8
 
 <a name="install-git"></a>
 ### Installing Git (Optional)
@@ -63,11 +77,49 @@ Next we'll install Git to be able to download and update Ava, git will also be u
 
 Start off by checking if git is already installed, some services that offers Linux servers comes with Git pre-installed, you can check if git is installed by running:
 
-    git --version 
+    git --version
 
 If the command is not found you can install git by running
 
     sudo apt install git
+
+<a name="install-mysql"></a>
+## Installing MySQL
+
+We need a Database for AvaIre to work from.
+First we need to download MySQL, doing the following:
+
+    sudo apt-get install mysql-server
+
+Then, go through the basic setup process using:
+
+    mysql_secure_installation
+
+Now, log into your MySQL database as root by typing:  
+(It will ask you for your password what you've entered when you installed MySQL on your server.)
+
+    mysql -p
+
+It is time to actually create the database you will be using for your bot. To do this, first choose a good name for it, and type:
+
+    create database <dbname>;
+
+Now, create a username and a password for your new database. The password should be very secure. Type the following:
+
+    grant all privileges on <dbname>.* to '<username>'@'localhost' identified by "<password>";
+
+Where you replace:  
+  `<dbname>` with the name of the database you just created,  
+  `<username>` with the username you chose  
+  `<password>` with the password you chose for your user
+
+Then, type:
+
+    flush privileges;
+
+And finally:
+
+    exit;
 
 <a name="install-ava"></a>
 ## Installing Ava
@@ -82,7 +134,7 @@ You have now successfully cloned the AvaIre Git repository, next we'll need to b
 
     gradle build
 
-If the build finishes with no errors you should be good to go! You can find the generated binary file at `build/libs/AvaIre.jar`. 
+If the build finishes with no errors you should be good to go! You can find the generated binary file at `build/libs/AvaIre.jar`.
 
 <a name="configuration"></a>
 ## Configuration of Ava
@@ -90,11 +142,9 @@ If the build finishes with no errors you should be good to go! You can find the 
 Next we'll need to configure Ava so the bot can connect and communicate with users, to generate the `config.yml` file we'll just need to run Ava once, we can do this by running:
 
     java -jar AvaIre.jar
-    
 
-You can now open the new `config.yml` file in vim, next we'll need to setup a database the Ava can use, Ava requires a database to store things like custom playlists, aliases, channel and server data, and a lot of other things, Ava currently only has support for MySQL databases, with SQLite and other types comming in the future.
 
-Now that the database is in order you'll need to put your Discord Bot Application token in the `bot.token` property, you can find your bot token under your Discord Application dashboard, if you don't have a Discord bot application setup you can create one easily by following these steps.
+You can now open the new `config.yml` file in vim, where you'll need to put your Discord Bot Application token in the `bot.token` property. You can find your bot token under your Discord Application dashboard, if you don't have a Discord bot application setup you can create one easily by following these steps.
 
  1. Start by heading to [discordapp.com/developers/applications](https://discordapp.com/developers/applications/me), once you're there you can create a new application, you can name it whatever you want and give it a fancy picture and description if you want to, once you're done click **Create App**.
  2. Your application should now have been created, next click on the **Create a Bot User** button, this will convert the application to a bot user application.
@@ -103,6 +153,7 @@ Now that the database is in order you'll need to put your Discord Bot Applicatio
 > {tip} If you want other people to be able to invite the bot you must check the **Public Bot** options under your **App Bot User** application settings, if you don't do that you will be the only one that can invite the bot to servers.
 
 On your bot application dashboard you'll also be able to find your bot client id, we'll need that later to invite the bot so keep onto it.
+Now that you're done with that, it's time to fill out the database information, optionally lavalink access, and the client ID's of your bot administrators.
 
 If you want a more in-detail guide and walkover for the [configuration](/docs/{{version}}/configuration) file you can checkout the [Configuration](/docs/{{version}}/configuration) page, all the settings and options are covered in more detail on that page with guides on how to setup each option.
 
@@ -139,7 +190,7 @@ On the behalf of the AvaIre team, we hope you enjoy your bot!
 
 > System commands can only be seen and run by bot administrators, ie, people who have their user ID in the bot admins field in the config of the bot.
 
-All system commands uses a semicolon(;) as their prefix by default. 
+All system commands uses a semicolon(;) as their prefix by default.
 
 | Command           | Short Description      |
 | ----------------- |:---------------------- |
@@ -191,7 +242,7 @@ This requires [Watchdog](https://github.com/avaire/watchdog) to work, without it
 <a name="commands-blacklist"></a>
 ### Global Blacklist
 
-Add, Remove, and list users and servers on the blacklist. Users and servers on the blacklist will be ignored by Ava, regardless of their permissions, or roles on any server, 
+Add, Remove, and list users and servers on the blacklist. Users and servers on the blacklist will be ignored by Ava, regardless of their permissions, or roles on any server,
 
 #### Usage
 
@@ -204,7 +255,7 @@ Add, Remove, and list users and servers on the blacklist. Users and servers on t
 
 Sets the Guild Type of the server the command was ran in, if no arguments was given the current Guild Type will be displayed instead.
 
-> Ava has an internal ranking system for guilds/servers, different ranks can give servers different limits for commands like [playlists](/docs/{{version}}/commands#PlaylistCommand) and [aliases](/docs/{{version}}/commands#AliasCommand), 
+> Ava has an internal ranking system for guilds/servers, different ranks can give servers different limits for commands like [playlists](/docs/{{version}}/commands#PlaylistCommand) and [aliases](/docs/{{version}}/commands#AliasCommand),
 
 #### Usage
 
