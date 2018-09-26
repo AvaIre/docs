@@ -57,7 +57,7 @@ The **Manage Server** permission is required to run this command.
 
     !ai - Toggles the AI ON or OFF for the current channel.
 
-<a name="AliasCommand"></a>
+<a name="ListAliasesCommand"></a>
 ### Alias
 
 Creates and maps a custom aliases for a pre-existing command. If an alias that already exists is given with no additional command the alias will be unbound.
@@ -440,7 +440,7 @@ The **Manage Server** permission is required to run this command.
     !slowmode <off> - Disables slowmode for the current channel.
     !slowmode <limit> <decay> - Enables slowmode with the given settings.
 
-<a name="SoftbanCommand"></a>
+<a name="SoftBanCommand"></a>
 ### Softban
 
 Bans the mentioned user from the server with the provided reason. Any messages the user might've sent won't be deleted, if you want to force delete any old messages the user has sent see the [ban command](#ban).

@@ -50,17 +50,17 @@ Below you'll find a list of all **128** commands that Ava has, along with a shor
 | [!togglelevel](/docs/{{version}}/commands#LevelCommand)  | Toggles the level system on or off for the current server  |
 | [!levelalerts [channel]](/docs/{{version}}/commands#LevelAlertsCommand)  | Toggles the level alerts system on or off for the current server  |
 | [!llr [page]](/docs/{{version}}/commands#ListLevelRolesCommand)  | List all the level roles, 10 per-page  |
-| [!lsar [page]](/docs/{{version}}/commands#ListClaimableRoleCommand)  | List all the self-assignable roles, 10 per-page  |
+| [!lsar [page]](/docs/{{version}}/commands#ListSelfAssignableRolesCommand)  | List all the self-assignable roles, 10 per-page  |
 | [!nsfw](/docs/{{version}}/commands#NSFWCommand)  | Displays the NSFW status of the current channel  |
 | [!modlog \[channel\]](/docs/{{version}}/commands#ModlogCommand)  | Displays the modlog status and toggles it on/off  |
 | [!modloghistory <user\>](/docs/{{version}}/commands#ModlogHistoryCommand)  | Displays the modlog history for the user  |
 | [!purge <amount\> [user]](/docs/{{version}}/commands#PurgeCommand)  | Purge old messages from the current channel  |
 | [!reason <case id\> <reason\>](/docs/{{version}}/commands#ModlogReasonCommand)  | Changes the reason for the given modlog case id  |
 | [!rlr <role/level\>](/docs/{{version}}/commands#RemoveLevelRoleCommand)  | Removes the level role from the level table roles list  |
-| [!rsar <role\>](/docs/{{version}}/commands#RemoveClaimableRoleCommand)  | Removes the role from the self-assignable roles list  |
+| [!rsar <role\>](/docs/{{version}}/commands#RemoveSelfAssignableRoleCommand)  | Removes the role from the self-assignable roles list  |
 | [!slowmode [limit] [decay]](/docs/{{version}}/commands#SlowmodeCommand)  | Toggles slowmode on or off for the current channel  |
 | [!softban <user\> [reason]](/docs/{{version}}/commands#SoftBanCommand)  | Bans the tagged user with the given reason  |
-| [!togglecategory <category\> <channel\>](/docs/{{version}}/commands#ToggleModuleCommand)  |  Toggles the given category on or off for the current channel or the whole server  |
+| [!togglecategory <category\> <channel\>](/docs/{{version}}/commands#ToggleCategoryCommand)  |  Toggles the given category on or off for the current channel or the whole server  |
 | [!voicekick <user\>](/docs/{{version}}/commands#VoiceKickCommand)  | Kicks the mentioned user from the voice channel  |
 | [!warn <user\> [reason]](/docs/{{version}}/commands#WarnCommand)  | Warns the user with the given message  |
 | [!welcome](/docs/{{version}}/commands#WelcomeCommand)  | Toggles the welcome module on or off for the current channel  |
