@@ -23,7 +23,7 @@ Below you'll find a list of all **128** commands that Ava has, along with a shor
 | [!help [category]](/docs/{{version}}/commands#HelpCommand)  | Lists all the commands in the given category  |
 | [!help [command]](/docs/{{version}}/commands#HelpCommand)  | Displays information about the provided command  |
 
-> You can display all the commands in a category by just typing the first letters of the category, so displaying all the commands in the `administration` category can be done by just typing `.help ad`
+> You can display all the commands in a category by just typing the first letters of the category, so displaying all the commands in the `administration` category can be done by just typing `!help ad`
 
 <a name="administration"></a>
 ## Administration
