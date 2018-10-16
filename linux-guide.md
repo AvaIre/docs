@@ -139,7 +139,8 @@ Next, we'll need to get the jar file to run Ava, you can get a stable version fr
 
 You'd want to figure out where you want the bot to be downloaded. When you've found the location of your choice, clone the Ava repository into the folder by using the following command.
 
-    git clone https://github.com/avaire/avaire.git .
+    git clone https://github.com/avaire/avaire.git
+    cd avaire
 
 You have now successfully cloned the AvaIre Git repository, next we'll need to build the jar file from the source code, we can do this by utilizing gradle which we just installed.
 

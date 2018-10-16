@@ -86,7 +86,8 @@ You'd want to figure out where you want the bot to be downloaded. Something simp
 
 When you've found the location of your choice, hit `Shift+Right click` and select **Git Bash here**. This will open the Git Bash console. Type the following command into Git Bash:
 
-    git clone https://github.com/avaire/avaire.git .
+    git clone https://github.com/avaire/avaire.git
+    cd avaire
 
 Let it clone the Git repository. When it's done, you should have the following output.
 
