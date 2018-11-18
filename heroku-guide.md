@@ -23,7 +23,7 @@
 <a name="hosting-from-source-prerequisites"></a>
 ### Prerequisites
 
-> {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the config.yml file/environment variables.
+> {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the `config.yml` file/environment variables.
 > 
 > Also it's required that you have a Heroku account. It's however not required to have a credit card linked to it, but it's recommended so you have enough hours to keep AvaIre working throughout the month.
 
@@ -46,16 +46,13 @@ Click on the pen to edit the value of a config variable.
 
 | Property     | Value      | Config Vars |
 | :------------| :----------| :---------- |
-| Host | k3xio06abqa902qt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
+| Host | k3xio06abq.cbetxkdy.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
 | Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
 | Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
 | Port | 3306 | Not Needed! |
 | Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
 
-So, for example:
-`AVA_DATABASE_HOSTNAME` `HOSTNAME`
-will be changed too:
-`AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt` on the settings page.
+<br>So, for example: `AVA_DATABASE_HOSTNAME` `HOSTNAME` will be changed too: `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt` on the settings page.
 
 4. Now you've successful configured AvaIre on Heroku. You can see her logs by click on: `More` on the top right, followed by clicking on `View logs`.
 If you want to turn off AvaIre, click on `Resources`, followed by clicking on the pen, clicking on the button, and lastly click on `confirm`.
@@ -131,7 +128,7 @@ If you changed some files in your fork, it's possible that you have a conflict i
 <a name="hosting-from-a-jar-prerequisites"></a>
 ### Prerequisites
 
-> {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the config.yml file/environment variables.
+> {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the `config.yml` file/environment variables.
 
 > Also it's required that you have a Heroku account It's however not required to have a credit card linked to it, but it's recommended so you have enough hours to keep AvaIre working throughout the month.
 
@@ -173,10 +170,8 @@ git push heroku master
 Whenever you change some of the files, you only have to repeat the above part.
 
 You can start AvaIre by doing: `heroku ps:scale worker=1`
-
-And stop her by doing: `heroku ps:scale worker=0`
-
-To tail the logs through the terminal you can type in: `heroku logs --tail`
+<br>And stop her by doing: `heroku ps:scale worker=0`
+<br>To tail the logs through the terminal you can type in: `heroku logs --tail`
 
 <a name="hosting-from-a-jar-watchdog"></a>
 ### Watchdog
@@ -207,10 +202,8 @@ git push heroku master
 Whenever you change some of the files, you only have to repeat the above part.
 
 You can start Watchdog by doing: `heroku ps:scale worker=1`
-
-And stop Watchdog by doing: `heroku ps:scale worker=0`
-
-To tail the logs through the terminal you can type in: `heroku logs --tail`
+<br>And stop Watchdog by doing: `heroku ps:scale worker=0`
+<br>To tail the logs through the terminal you can type in: `heroku logs --tail`
 
 <a name="trouble-shooting"></a>
 ## Troubleshooting
@@ -218,4 +211,4 @@ To tail the logs through the terminal you can type in: `heroku logs --tail`
  * You can find your logs by typing: heroku logs --tail. It's recommended to start logging before pushing/start your app.
  * You can run into problems if you didn't install all the requirements, double check your configs or check if skipped a command.
 
-Furthermore, there are a few futures that aren't working, you can find the list in [this issue](https://github.com/avaire/avaire/issues/56).
+<br>Furthermore, there are a few futures that aren't working, you can find the list in [this issue](https://github.com/avaire/avaire/issues/56).
