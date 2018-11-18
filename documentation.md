@@ -3,6 +3,7 @@
 - Self Hosting
     - [Windows Guide](/docs/{{version}}/windows-guide)
     - [Linux Guide](/docs/{{version}}/linux-guide)
+    - [Heroku Guide](/docs/{{version}}/heroku-guide)
     - [Configuration](/docs/{{version}}/configuration)
 - Commands
     - [Command List](/docs/{{version}}/command-list)
