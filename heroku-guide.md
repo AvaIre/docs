@@ -193,7 +193,7 @@ If, you changed some files in your fork, it's possible that you have a conflict 
 <a name="hosting-from-a-jar-avaire"></a>
 ### AvaIre
 
-First, download the [AvaIre.jar](), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/avaire/master/Procfile).
+First, download the [AvaIre.jar](https://avairebot.com/nightly-build.jar), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/avaire/master/Procfile).
 Put these all in a folder, then open within this folder git bash/commandprompt. Do the following to create a heroku application, set the buildpacks, etc.
 ```
 git init
@@ -233,7 +233,7 @@ To tail the logs trough the terminal you can type in:
 <a name="hosting-from-a-jar-watchdog"></a>
 ### Watchdog
 
-First, download the [Watchdog.jar](), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/watchdog/master/Procfile).
+First, download the [Watchdog.jar](https://github.com/avaire/watchdog/releases), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/watchdog/master/Procfile).
 Put these all in a folder, then open within this folder git bash/commandprompt. Do the following to create a heroku application, set the buildpacks, etc.
 ```
 git init
