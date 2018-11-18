@@ -145,9 +145,9 @@ If you changed some files in your fork, it's possible that you have a conflict i
 
 <a name="hosting-from-a-jar-avaire"></a>
 ### AvaIre
+1. First, download the [AvaIre.jar](https://avairebot.com/nightly-build.jar), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/avaire/master/Procfile).
+Put these all in a folder, then open within this folder git bash/commandprompt. Do the following to create a heroku application, set the buildpacks, etc.
 
-1. First, download the [AvaIre.jar](), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/avaire/master/Procfile).
-Put these all in a folder, then open within this folder git bash/command prompt. Do the following to create a Heroku application, set the buildpacks, etc.
 ```
 git init
 heroku apps:create NAMEHEROKUAPP --region eu
@@ -181,8 +181,9 @@ To tail the logs through the terminal you can type in: `heroku logs --tail`
 <a name="hosting-from-a-jar-watchdog"></a>
 ### Watchdog
 
-1. First, download the [Watchdog.jar](), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/watchdog/master/Procfile).
-Put these all in a folder, then open within this folder git bash/command prompt. Do the following to create a Heroku application, set the buildpacks, etc.
+1. First, download the [Watchdog.jar](https://github.com/avaire/watchdog/releases), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/watchdog/master/Procfile).
+Put these all in a folder, then open within this folder git bash/commandprompt. Do the following to create a heroku application, set the buildpacks, etc.
+
 ```
 git init
 heroku apps:create NAMEHEROKUAPP --region eu
