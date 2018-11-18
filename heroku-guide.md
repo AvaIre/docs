@@ -24,17 +24,17 @@
 ### Prerequisites
 
 > {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the config.yml file/enviroment variables.
->
-> {tip} Also it's required that you have a Heroku account. 
 > 
->It's however not required to have a creditcard linked to it, but it's recommanded so you have enough hours to keep AvaIre working troughout the month.
+> Also it's required that you have a Heroku account. 
+> 
+> It's however not required to have a creditcard linked to it, but it's recommanded so you have enough hours to keep AvaIre working troughout the month.
 
 <a name="hosting-from-source-software"></a>
-#### Software
+### Software
  * No software is actully needed. Everything is done trough the browser.
 
 <a name="hosting-from-source-avaire"></a>
-#### AvaIre
+### AvaIre
 When, using AvaIre from source, you are able to use the deploy button, and still have full control over the source. Allowing you to make your own changes.
 
 However, updating is slightly more complicated, as you need to make sure to get the changes to Heroku. There is a solution to this where we get back to in a bit.
@@ -57,7 +57,7 @@ Click on the pen to edit the value of a config variable.
 | Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
 | Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
 | Port | 3306 | Not Needed! |
-| Database	 | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
+| Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
 
 So, for example:
 
@@ -74,7 +74,7 @@ Now you've successful configured AvaIre on Heroku. You can see her logs by click
 If you want to turn off AvaIre, click on `Resources`, followed by clicking on the pen, clicking on the button, and lastly click on `confirm`.
 
 <a name="hosting-from-source-avaire-deploy"></a>
-##### Deploy methode
+### Deploy methode
 > {tip} This part assumes you have a GitHub account, aswell as a _working_ AvaIre hosted on Heroku.
 
 To keep AvaIre up-to-date, after following the above methode. Go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on fork.
@@ -99,11 +99,11 @@ You only have to merge the pull by going to your fork from time to time. Click o
 In less then a minute, Heroku will grabs that commit, merge it with it's own code, and re-deploy.
 
 <a name="hosting-from-source-avaire-deploy-note"></a>
-###### Small note
+### Small note
 If, you changed some files in your fork, it's possible that you have a conflict in your pull sometimes. You have to manually fix this yourself by following the tips/FAQ GitHub gives you on that pull.
 
 <a name="hosting-from-source-watchdog"></a>
-#### Watchdog
+### Watchdog
 When, using Watchdog from source, you are able to use the deploy button, and still have full control over the source of Watchdog. Allowing you to make your own changes. You are however not able to change the source of AvaIre.
 
 However, updating is slightly more complicated, as you need to make sure to get the changes to Heroku. There is a solution to this where we get back to in a bit.
@@ -125,7 +125,7 @@ Click on the pen to edit the value of a config variable.
 | Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
 | Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
 | Port | 3306 | Not Needed! |
-| Database	 | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
+| Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
 
 So, for example:
 
@@ -142,7 +142,7 @@ Now you've successful configured Watchdog on Heroku. You can see her logs by cli
 If you want to turn off Watchdog, click on `Resources`, followed by clicking on the `pen`, clicking on the button, and lastly click on `confirm`.
 
 <a name="hosting-from-source-watchdog-deploy"></a>
-##### Deploy methode
+### Deploy methode
 > {tip} This part assumes you have a GitHub account, aswell as a _working_ AvaIre hosted on Heroku.
 
 To keep Watchdog up-to-date, after following the above methode. Go to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on `fork`.
@@ -167,7 +167,7 @@ You only have to merge the pull by going to your fork from time to time. Click o
 In less then a minute, Heroku will grabs that commit, merge it with it's own code, and re-deploy.
 
 <a name="hosting-from-source-watchdog-deploy-note"></a>
-###### Small note
+### Small note
 If, you changed some files in your fork, it's possible that you have a conflict in your pull sometimes. You have to manually fix this yourself by following the tips/FAQ GitHub gives you on that pull.
 
 <a name="hosting-from-a-jar"></a>
@@ -177,10 +177,13 @@ If, you changed some files in your fork, it's possible that you have a conflict 
 ### Prerequisites
 
 > {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the config.yml file/enviroment variables.
-> {tip} Also it's required that you have a Heroku account. It's however not required to have a creditcard linked to it, but it's recommanded so you have enough hours to keep AvaIre working troughout the month.
+>
+> Also it's required that you have a Heroku account.
+> 
+> It's however not required to have a creditcard linked to it, but it's recommanded so you have enough hours to keep AvaIre working troughout the month.
 
 <a name="hosting-from-a-jar-software"></a>
-#### Software
+### Software
 
  * [Git](https://git-scm.com/downloads)
  * [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
@@ -188,7 +191,7 @@ If, you changed some files in your fork, it's possible that you have a conflict 
 > {tip} Make sure to [set a username in git](https://help.github.com/articles/setting-your-username-in-git/), aswell as to login [into the Heroku CLI tool](https://devcenter.heroku.com/articles/heroku-cli#getting-started).
 
 <a name="hosting-from-a-jar-avaire"></a>
-#### AvaIre
+### AvaIre
 
 First, download the [AvaIre.jar](), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/avaire/master/Procfile).
 Put these all in a folder, then open within this folder git bash/commandprompt. Do the following to create a heroku application, set the buildpacks, etc.
@@ -228,7 +231,7 @@ To tail the logs trough the terminal you can type in:
 `heroku logs --tail`
 
 <a name="hosting-from-a-jar-watchdog"></a>
-#### Watchdog
+### Watchdog
 
 First, download the [Watchdog.jar](), the [config.yml](https://raw.githubusercontent.com/avaire/avaire/master/src/main/resources/config.yml) and the [Procfile](https://raw.githubusercontent.com/avaire/watchdog/master/Procfile).
 Put these all in a folder, then open within this folder git bash/commandprompt. Do the following to create a heroku application, set the buildpacks, etc.
