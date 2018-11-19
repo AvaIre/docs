@@ -200,7 +200,6 @@ git init
 heroku apps:create NAMEHEROKUAPP --region eu
 heroku addons:create jawsdb:kitefin
 heroku buildpacks:set heroku/jvm
-heroku config:set GRADLE_TASK=build
 ```
 Replace NAMEHEROKUAPP with a name you like, lowercase only. Optionally you change the region to `us` if that's closer to your servers.
 
@@ -240,7 +239,6 @@ git init
 heroku apps:create NAMEHEROKUAPP --region eu
 heroku addons:create jawsdb:kitefin
 heroku buildpacks:set heroku/jvm
-heroku config:set GRADLE_TASK=build
 ```
 Replace NAMEHEROKUAPP with a name you like, lowercase only. Optionally you change the region to `us` if that's closer to your servers.
 
