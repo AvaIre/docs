@@ -63,7 +63,7 @@ So, for example:
 
 `AVA_DATABASE_HOSTNAME` `HOSTNAME`
 
-will be changed too:
+will be changed to:
 
 `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt`
 
@@ -131,7 +131,7 @@ So, for example:
 
 `AVA_DATABASE_HOSTNAME` `HOSTNAME`
 
-will be changed too:
+will be changed to:
 
 `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt`
 
