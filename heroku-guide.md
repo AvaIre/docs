@@ -36,13 +36,10 @@
 <a name="hosting-from-source-avaire"></a>
 ### AvaIre
 When, using AvaIre from source, you are able to use the deploy button, and still have full control over the source. Allowing you to make your own changes.
-
 However, updating is slightly more complicated, as you need to make sure to get the changes to Heroku. There is a solution to this where we get back to in a bit.
 
 Navigate to [AvaIre's repo](https://github.com/avaire/avaire) and click on the deploy button.
-Fill in the config environment variables.
-
-The environment variables: `AVA_DATABASE_DATABASE`, `AVA_DATABASE_HOSTNAME`, `AVA_DATABASE_USERNAME` and `AVA_DATABASE_PASSWORD` will be changed later.
+Fill in the config environment variables. The environment variables: `AVA_DATABASE_DATABASE`, `AVA_DATABASE_HOSTNAME`, `AVA_DATABASE_USERNAME` and `AVA_DATABASE_PASSWORD` will be changed later.
 
 After your done filling in the environment variables, you can click on deploy. After your AvaIre is deployed on Heroku, click on Manage App.
 
@@ -53,25 +50,16 @@ Click on the pen to edit the value of a config variable.
 
 | Property     | Value      | Config Vars |
 | :------------| :----------| :---------- |
-| Host | k3xio06abqa902qt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
+| Host | k3xio06abq.cbetxkdy.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
 | Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
 | Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
 | Port | 3306 | Not Needed! |
 | Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
 
-So, for example:
+<br>
+So, for example `AVA_DATABASE_HOSTNAME`  `HOSTNAME` will be changed to: `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt` on the settings page.
 
-`AVA_DATABASE_HOSTNAME` `HOSTNAME`
-
-will be changed to:
-
-`AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt`
-
-On the settings page.
-
-Now you've successfully configured AvaIre on Heroku. You can see her logs by click on: `More` on the top right, followed by clicking on `View logs`.
-
-If you want to turn off AvaIre, click on `Resources`, followed by clicking on the pen, clicking on the toggle, and clicking on `confirm`.
+Now you've successfully configured AvaIre on Heroku. You can see her logs by click on: `More` on the top right, followed by clicking on `View logs`. If you want to turn off AvaIre, click on `Resources`, followed by clicking on the pen, clicking on the toggle, and clicking on `confirm`.
 
 <a name="hosting-from-source-avaire-deploy"></a>
 #### Deploy method
@@ -112,30 +100,21 @@ As Watchdog downloads AvaIre.jar after it detects it's missing. This method will
 Navigate to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on `the deploy button`.
 Fill in the config environment variables, the environment variables like: `AVA_DATABASE_DATABASE`, `AVA_DATABASE_HOSTNAME`, `AVA_DATABASE_USERNAME` and `AVA_DATABASE_PASSWORD` are later going to be changed.
 
-After your done filling in the environment variables, you can click on `deploy`. After you Watchdog is deployed on Heroku, click on `Manage App`.
-
-Now click on: `JawsDB MySQL Kitefin Shared`. And copy the following values, to the corresponding environment variables.
+After your done filling in the environment variables, you can click on `deploy`. After you Watchdog is deployed on Heroku, click on `Manage App`. Now click on: `JawsDB MySQL Kitefin Shared`. And copy the following values, to the corresponding environment variables.
 
 You can find the variables again, by clicking on settings, followed by clicking on Reveal Config Vars. 
 Click on the pen to edit the value of a config variable.
 
 | Property     | Value      | Config Vars |
 | :------------| :----------| :---------- |
-| Host | k3xio06abqa902qt.cbetxkdyhwsb.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
+| Host |    k3xio06abq.cbetxkdy.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
 | Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
 | Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
 | Port | 3306 | Not Needed! |
 | Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
 
-So, for example:
-
-`AVA_DATABASE_HOSTNAME` `HOSTNAME`
-
-will be changed to:
-
-`AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt`
-
-On the settings page.
+<br>
+So, for example: `AVA_DATABASE_HOSTNAME` `HOSTNAME` will be changed to: `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt` on the settings page.
 
 Now you've successfully configured Watchdog on Heroku. You can see her logs by click on: `More` on the top right, followed by clicking on `View logs`.
 
