@@ -40,7 +40,7 @@ Navigate to [AvaIre's repo](https://github.com/avaire/avaire) and click on the *
 
 After your done filling in the environment variables, you can click on deploy. After your AvaIre is deployed on Heroku, click on Manage App.
 
-Now you've successfully configured AvaIre on Heroku. You can see her logs by click on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
+Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
 <a name="hosting-from-source-avaire-deploy"></a>
 #### Deploy method
@@ -58,14 +58,12 @@ Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and
 
 Click on **Create Link** and give your link a nice name.
 
-For the Upstream fill in: **avaire/avaire**, and choose the master branch.
+For the Upstream fill in: `avaire/avaire`, and choose the master branch.
 
 Choose One fork, and fill in your username with the forked repo. For example: Macley-Kun/avaire, with the branch master.
 
 Click on Save. You can click on Resync to manually start synching the upstream repo, with your fork. Any commits that are merged into the upstream, will come as a pull request from backstrokebot to your fork.
-You only have to merge the pull by going to your fork from time to time. Click on **Merge pull request**, followed by clicking on **Confirm merge**.
-
-In less then a minute, Heroku will pick up the changes and re-deploy.
+If you would like to update to the latest version, you only have to merge the pull request by going to your fork from time to time, click on **Merge pull request**, followed by clicking on **Confirm merge**, in less then a minute, Heroku will pick up the changes and re-deploy.
 
 <a name="hosting-from-source-avaire-deploy-note"></a>
 #### Small note
@@ -79,11 +77,11 @@ However, updating is slightly more complicated, as you need to make sure to get 
 As Watchdog downloads AvaIre.jar after it detects it's missing. This method will always give you the latest versions, without any hassle. Watchdog itself however still would lack updating itself.
 
 Navigate to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on the **deploy to Heroku** button.
-After your done filling in the environment variables, you can click on **deploy**. After you Watchdog is deployed on Heroku, click on **Manage App**.
+After you're done filling in the environment variables, you can click on **deploy**. After your Watchdog instance is deployed on Heroku, click on **Manage App**.
 
 Now you've successfully configured Watchdog on Heroku. You can see her logs by click on: **More** on the top right, followed by clicking on **View logs**.
 
-If you want to turn off Watchdog, click on **Resources**, followed by clicking on the **pen**, clicking on the button, and lastly click on **confirm**.
+If you want to turn off Watchdog, click on **Resources**, followed by clicking on the **pen**, then clicking on the button, and lastly click on **confirm**.
 
 <a name="hosting-from-source-watchdog-deploy"></a>
 #### Deploy method
@@ -101,14 +99,12 @@ Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and
 
 Click on **Create Link** and give your link a nice name.
 
-For the Upstream fill in: **avaire/watchdog**, and choose the master branch.
+For the Upstream fill in: `avaire/watchdog`, and choose the master branch.
 
 Choose One fork, and fill in your username with the forked repo. For example: Macley-Kun/watchdog, with the branch master.
 
 Click on Save. You can click on Resync to manually start synching the upstream repo, with your fork. Any commits that are merged into the upstream, will come as a pull request from backstrokebot to your fork.
-You only have to merge the pull by going to your fork from time to time. Click on **Merge pull request**, followed by clicking on **Confirm merge**.
-
-In less then a minute, Heroku will pick up the changes and re-deploy.
+If you would like to update to the latest version, you only have to merge the pull request by going to your fork from time to time, click on **Merge pull request**, followed by clicking on **Confirm merge**, in less then a minute, Heroku will pick up the changes and re-deploy.
 
 <a name="hosting-from-source-watchdog-deploy-note"></a>
 #### Small note
