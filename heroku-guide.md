@@ -23,10 +23,8 @@
 <a name="hosting-from-source-prerequisites"></a>
 ### Prerequisites
 
-> {tip} This guide assumes you already have a basic understanding of how Heroku works, and how to fill in the config.yml file/environment variables.
-> 
-> Also it's required that you have a Heroku account. 
-> 
+> {tip} This guide assumes you already have a basic understanding of how Heroku works, how to fill in the config.yml file/environment variables and that you have a Heroku account.
+>
 > It's however not required to have a credit card linked to it, but it's recommended so you have enough hours to keep AvaIre working throughout the month.
 
 <a name="hosting-from-source-software"></a>
@@ -38,53 +36,34 @@
 When, using AvaIre from source, you are able to use the deploy button, and still have full control over the source. Allowing you to make your own changes.
 However, updating is slightly more complicated, as you need to make sure to get the changes to Heroku. There is a solution to this where we get back to in a bit.
 
-Navigate to [AvaIre's repo](https://github.com/avaire/avaire) and click on the deploy button.
-Fill in the config environment variables. The environment variables: `AVA_DATABASE_DATABASE`, `AVA_DATABASE_HOSTNAME`, `AVA_DATABASE_USERNAME` and `AVA_DATABASE_PASSWORD` will be changed later.
+Navigate to [AvaIre's repo](https://github.com/avaire/avaire) and click on the **deploy to Heroku** button.
 
 After your done filling in the environment variables, you can click on deploy. After your AvaIre is deployed on Heroku, click on Manage App.
 
-Now click on: JawsDB MySQL Kitefin Shared. And copy the following values, to the corresponding environment variables.
-
-You can find the variables again, by clicking on settings, followed by clicking on Reveal Config Vars. 
-Click on the pen to edit the value of a config variable.
-
-| Property     | Value      | Config Vars |
-| :------------| :----------| :---------- |
-| Host | k3xio06abq.cbetxkdy.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
-| Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
-| Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
-| Port | 3306 | Not Needed! |
-| Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
-
-<br>
-So, for example `AVA_DATABASE_HOSTNAME`  `HOSTNAME` will be changed to: `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt` on the settings page.
-
-Now you've successfully configured AvaIre on Heroku. You can see her logs by click on: `More` on the top right, followed by clicking on `View logs`. If you want to turn off AvaIre, click on `Resources`, followed by clicking on the pen, clicking on the toggle, and clicking on `confirm`.
+Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
 <a name="hosting-from-source-avaire-deploy"></a>
 #### Deploy method
 > {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku.
 
-To keep AvaIre up-to-date, after following the above method. Go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on fork.
+To keep AvaIre up-to-date, after following the above method, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**.
 
-Now go back to Heroku and click on `Deploy`. Click on `GitHub Connect to GitHub`, and login if necessary. Click on `Search` and connect the repo that you just forked.
+Now go back to Heroku and click on **deploy** followed by clicking on **Connect to GitHub**, and login if necessary. Click on **Search** and connect the repo that you just forked.
 
-Make sure the right branch is chosen (master in this case). You can click on `Enable Automatic Deploys`.
+Make sure the right branch is chosen (master in this case). You can click on **Enable Automatic Deploys**.
 
-To make sure everything is still working, click on `Deploy Branch` to start deploying from your own fork.
+To make sure everything is still working, click on **Deploy Branch**, to start deploying from your own fork.
 
-Once deployment is successful, go to https://backstroke.co/ and login with GitHub.
+Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and login with GitHub.
 
-Click on `Create Link` and give your link a nice name.
+Click on **Create Link** and give your link a nice name.
 
 For the Upstream fill in: `avaire/avaire`, and choose the master branch.
 
-Choose `One fork`, and fill in your username with the forked repo. For example: Macley-Kun/avaire, with the branch master.
+Choose One fork, and fill in your username with the forked repo. For example: Macley-Kun/avaire, with the branch master.
 
 Click on Save. You can click on Resync to manually start synching the upstream repo, with your fork. Any commits that are merged into the upstream, will come as a pull request from backstrokebot to your fork.
-You only have to manually merge the pull by going to your fork from time to time. Click on Merge pull request, followed by clicking on `Confirm merge`.
-
-In less then a minute, Heroku will pick up the changes and re-deploy.
+If you would like to update to the latest version, you only have to merge the pull request by going to your fork from time to time, click on **Merge pull request**, followed by clicking on **Confirm merge**, in less then a minute, Heroku will pick up the changes and re-deploy.
 
 <a name="hosting-from-source-avaire-deploy-note"></a>
 #### Small note
@@ -97,53 +76,35 @@ When using Watchdog from source, you are able to use the deploy button, and stil
 However, updating is slightly more complicated, as you need to make sure to get the changes to Heroku. There is a solution to this where we get back to in a bit.
 As Watchdog downloads AvaIre.jar after it detects it's missing. This method will always give you the latest versions, without any hassle. Watchdog itself however still would lack updating itself.
 
-Navigate to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on `the deploy button`.
-Fill in the config environment variables, the environment variables like: `AVA_DATABASE_DATABASE`, `AVA_DATABASE_HOSTNAME`, `AVA_DATABASE_USERNAME` and `AVA_DATABASE_PASSWORD` are later going to be changed.
+Navigate to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on the **deploy to Heroku** button.
+After you're done filling in the environment variables, you can click on **deploy**. After your Watchdog instance is deployed on Heroku, click on **Manage App**.
 
-After your done filling in the environment variables, you can click on `deploy`. After you Watchdog is deployed on Heroku, click on `Manage App`. Now click on: `JawsDB MySQL Kitefin Shared`. And copy the following values, to the corresponding environment variables.
+Now you've successfully configured Watchdog on Heroku. You can see her logs by click on: **More** on the top right, followed by clicking on **View logs**.
 
-You can find the variables again, by clicking on settings, followed by clicking on Reveal Config Vars. 
-Click on the pen to edit the value of a config variable.
-
-| Property     | Value      | Config Vars |
-| :------------| :----------| :---------- |
-| Host |    k3xio06abq.cbetxkdy.us-east-1.rds.amazonaws.com | AVA_DATABASE_HOSTNAME |
-| Username | ddodhx8vm1ykdkcg  | AVA_DATABASE_USERNAME |
-| Password | f8iu1aol63w91qsa  | AVA_DATABASE_PASSWORD |
-| Port | 3306 | Not Needed! |
-| Database   | irxi1s355bm3o0vt | AVA_DATABASE_DATABASE |
-
-<br>
-So, for example: `AVA_DATABASE_HOSTNAME` `HOSTNAME` will be changed to: `AVA_DATABASE_HOSTNAME` `irxi1s355bm3o0vt` on the settings page.
-
-Now you've successfully configured Watchdog on Heroku. You can see her logs by click on: `More` on the top right, followed by clicking on `View logs`.
-
-If you want to turn off Watchdog, click on `Resources`, followed by clicking on the `pen`, clicking on the button, and lastly click on `confirm`.
+If you want to turn off Watchdog, click on **Resources**, followed by clicking on the **pen**, then clicking on the button, and lastly click on **confirm**.
 
 <a name="hosting-from-source-watchdog-deploy"></a>
 #### Deploy method
 > {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku.
 
-To keep Watchdog up-to-date, after following the above method, go to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on `Fork`.
+To keep Watchdog up-to-date, after following the above method, go to [Watchdog's main repo](https://github.com/avaire/watchdog) and click on **Fork**.
 
-Now go back to Heroku and click on `Deploy`. Click on `GitHub Connect to GitHub`, and login if necessary. Click on `Search` and connect the repo that you just forked.
+Now go back to Heroku and click on **deploy** followed by clicking on **Connect to GitHub**, and login if necessary. Click on **Search** and connect the repo that you just forked.
 
-Make sure the right branch is chosen (master in this case). You can click on `Enable Automatic Deploys`.
+Make sure the right branch is chosen (master in this case). You can click on **Enable Automatic Deploys**.
 
-To make sure everything is still working, click on `Deploy Branch`, to start deploying from your own fork.
+To make sure everything is still working, click on **Deploy Branch**, to start deploying from your own fork.
 
-Once deployment is successful, go to https://backstroke.co/ and login with GitHub.
+Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and login with GitHub.
 
-Click on `Create Link` and give your link a nice name.
+Click on **Create Link** and give your link a nice name.
 
 For the Upstream fill in: `avaire/watchdog`, and choose the master branch.
 
 Choose One fork, and fill in your username with the forked repo. For example: Macley-Kun/watchdog, with the branch master.
 
 Click on Save. You can click on Resync to manually start synching the upstream repo, with your fork. Any commits that are merged into the upstream, will come as a pull request from backstrokebot to your fork.
-You only have to merge the pull by going to your fork from time to time. Click on `Merge pull request`, followed by clicking on `Confirm merge`.
-
-In less then a minute, Heroku will pick up the changes and re-deploy.
+If you would like to update to the latest version, you only have to merge the pull request by going to your fork from time to time, click on **Merge pull request**, followed by clicking on **Confirm merge**, in less then a minute, Heroku will pick up the changes and re-deploy.
 
 <a name="hosting-from-source-watchdog-deploy-note"></a>
 #### Small note
