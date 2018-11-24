@@ -46,1433 +46,2473 @@ Displaying a given command's information can be done by using `help` followed by
 <a name="administration"></a>
 ## Administration
 
-<a name="AiCommand"></a>
-### AI
-
-Toggles the AI module on or off for the current channel. If the module is enabled, users can tag the bot followed by a message or question and the bot will try and use its AI to process the message. By default AI messages will be enabled for all channels.
-
-The **Manage Server** permission is required to run this command.
-
-#### Usage
-
-    !ai - Toggles the AI ON or OFF for the current channel.
-
-<a name="ListAliasesCommand"></a>
-### Alias
-
-Creates and maps a custom aliases for a pre-existing command. If an alias that already exists is given with no additional command the alias will be unbound.
-
-The **Manage Server** permission is required to run this command.
-
-#### Usage
-
-    !alias <alias> - Deletes the alias if it exists.
-    !alias <alias> <command> - Creates an alias for the given command.
-
-#### Aliases
-
-    !cmdmap
-
-<a name="AliasesCommand"></a>
-### Aliases
-
-Lists all the existing command aliases and what they're bound to.
-
-The **Manage Server** permission is required to run this command.
-
-#### Usage
-
-    !aliases [page]
-
-#### Aliases
-
-    !aliaslist
-
 <a name="AddLevelRoleCommand"></a>
-### Add Level Role
+### Add Level Role Command
 
 Adds a role to the leveling up table, roles on the table will be given to users once they level up and meet the requirements for the role.
 
- - [List Level Roles](#ListLevelRolesCommand)
- - [Remove Level Role](#RemoveLevelRoleCommand)
-
-The **Server Administrator** permission is required to run this command.
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [List Level Roles Command](#ListLevelRolesCommand)
+- [Remove Level Roles Command](#RemoveLevelRoleCommand)
 
 #### Usage
 
-    !alr <level requirement> <role> - Adds to role to users when they level up and meet the level requirement.
+	!alr <level requirement> <role>
+	-  Adds to role to users when they level up and meet the level requirement.
+
+#### Example
+
+	!alr 5 Regular
+	-  Adds the Regular role to the level up table, users who are level 5 and up will get the role when they level up.
 
 <a name="AddSelfAssignableRoleCommand"></a>
-### Add Self Assignable Role
+### Add Self Assignable Role Command
 
-Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use [!iam](#IAmCommand) or unclaimed with [!iamnot](#IAmNotCommand).
+Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
 
- - [List Self Assignable Roles](#ListSelfAssignableRolesCommand)
- - [Remove Self Assignable Role](#RemoveSelfAssignableRoleCommand)
-
-The **Server Administrator** permission is required to run this command.
+- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
 
 #### Usage
 
-    !asar <role> - Adds the mentioned role to the self-assignable roles list.
+	!asar <role>
+	-  Adds the mentioned role to the self
+
+#### Example
+
+	!asar DJ
+
+<a name="AiCommand"></a>
+### AI Command
+
+Toggles the AI(Artificial Intelligence) on/off for the current channel.
+
+
+#### Usage
+
+	!ai
+	-  Toggles the AI on/off for the current channel.
+
+
+<a name="AliasCommand"></a>
+### Alias Command
+
+Creates and maps a custom alias for a pre-existing command. Provide no alias to remove an existing alias.
+
+- [Aliases Command](#ListAliasesCommand)
+
+#### Usage
+
+	!alias <alias>
+	-  Deletes the alias if it exists.
+	!alias <alias> <command>
+	-  Creates an alias for the given command.
+
+#### Example
+
+	!alias !ava !repeat **Website:** https://avairebot.com/
 
 <a name="AutoAssignRoleCommand"></a>
-### Auto Assign Role
+### Autorole Command
 
-Automatically assigns a specified role to every user who joins the server, if no arguments is given the current auto assignable role will be given, if a name is given the role will be set as the auto assignable role, and if disabled is given the feature will be turned off.
+Automatically assigns a specified role to every user who joins the server.
 
-The **Server Administrator** permission is required to run this command.
-
-#### Usage
-
-    !autorole - Displays the current auto assignable role if one is set.
-    !autorole <role> - The role that should be auto assignable.
-    !autorole disable - Disables the auto assignable role.
-
-#### Aliases
-
-    !aar
-
-<a name="UserAvatarCommand"></a>
-### Avatar
-
-Get the profile picture of someone on the server by name, id, or mentions.
 
 #### Usage
 
-    !avatar <user | user id> - Gets the avatar of the given user.
+	!autorole
+	-  Displays the current auto assignable role if one is set.
+	!autorole <role>
+	-  The role that should be auto assignable.
+	!autorole disable
+	-  Disables the auto assignable role.
+
+#### Example
+
+	!autorole @Member
 
 <a name="BanCommand"></a>
-### Ban
+### Ban Command
 
-Bans the mentioned user from the server with the provided reason, all messages the user has sent in the last 7 days will also be deleted in the process.
+Bans the mentioned user from the server with the provided reason, all messages the user has sent in the last 7 days will also be deleted in the process, this action will be reported to any channel that has modloging enabled.
 
-The **Ban Members** permission is required to run this command.
-
-> This action will be reported to any channel that has [modlogging](#modlog) enabled on the server.
+- [Soft Ban Command](#SoftBanCommand)
+- [Unban Command](#UnbanCommand)
 
 #### Usage
 
-    !ban <user> [reason]
+	!ban <user> [reason]
+	-  Bans the mentioned user with the given reason.
+	!ban <user id> [reason]
+	-  Bans the user with given ID and for the given reason.
+
+#### Example
+
+	!ban @Senither Spam and acting like a twat
 
 <a name="CategoriesCommand"></a>
-### Categories
+### Categories Command
 
-Shows status of all command categories in the current or mentioned channel, both for globally and per-channel. You can tag a channel if you want to see the command category status for the given channel.
+Shows status of all command categories in the current or mentioned channel, both for globally and per-channel.
+
+- [Toggle Category Command](#ToggleCategoryCommand)
+- [Change Prefix Command](#ChangePrefixCommand)
 
 #### Usage
 
-    !categories [channel] - Displays the status of the command categories in the mentioned channel, or the current channel if no channel was mentioned.
+	!categories [channel]
+	-  Displays the status of the command categories in the mentioned channel, or the current channel if no channel was mentioned.
 
-#### Aliases
+#### Example
 
-    !cats
+	!categories #general
 
 <a name="ChangePrefixCommand"></a>
-### Change Prefix
+### Change Prefix Command
 
-Sets the prefix that should be used for all commands in a given category, if no prefix is provided the category prefix will be reset back to the default instead.
+Sets the prefix that should be used for all commands in a given category, if no prefix is provided the category prefix will be reset back to the default instead, each category in AvaIre can have a different prefix, or you can choose to change them all at the same time.
 
-> {tip} Command prefixes cannot contain spaces.
-
-The following categories can be affected by this command.
-
- - [Administration](#administration)
- - [Fun](#fun)
- - [Help](#help)
- - [Music](#music)
- - [Search](#search)
- - [Utility](#utility)
-
-The **Server Administrator** permission is required to run this command.
-
-> {tip} It is not required to type out the full name of the category, just typing a few characters will get the category that starts with the given characters.<br>For example changing the prefix all the commands in the `Administration` category can be done by doing `!changeprefix a [prefix]` for short.
+- [Categories Command](#CategoriesCommand)
+- [Toggle Category Command](#ToggleCategoryCommand)
 
 #### Usage
 
-    !changeprefix <category> - Resets the category prefix back to its default prefix.
-    !changeprefix <category> [prefix] - Sets the category prefix to the given prefix.
+	!changeprefix <category>
+	-  Resets the category prefix back to its default prefix.
+	!changeprefix <category> [prefix]
+	-  Sets the category prefix to the given prefix.
 
-#### Aliases
+#### Example
 
-    !prefix
-
-<a name="DJLevelCommand"></a>
-### DJ Level
-
-Change the DJ level requirement for the server, this changes what music commands people can use with or without the DJ Discord role.
-
-#### Usage
-
-    !djlevel - Displays the current DJ Level for the server.
-    !djlevel types - Displays all the types and some info about them.
-    !djlevel <type> - Change the DJ Level to the given type.
+	!changeprefix fun
+	-  Resets the prefix back to default for the `fun` commands.
+	!changeprefix admin /
+	-  Sets the prefix to `/` for all admin commands.
+	!changeprefix all a!
+	-  Sets the prefix for all the categories to `a!`.
 
 <a name="GoodbyeCommand"></a>
-### Goodbye
+### Goodbye Command
 
-Toggles the goodbye module on or off for the current channel. When the goodbye module is enabled, a message will be sent in the channel every time someone leaves the server.
+Toggles the goodbye messages on or off for the current channel.
 
-The **Manage Server** permission is required to run this command.
+- [Goodbye Message Command](#GoodbyeMessageCommand)
+- [Welcome Command](#WelcomeCommand)
+- [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
-    !goodbye
+	!goodbye
+	-  Toggles the goodbye messages on/off for the current channel
 
-#### Aliases
-
-    !bye
 
 <a name="GoodbyeMessageCommand"></a>
-### Goodbye Message
+### Goodbye Message Command
 
-Sets the message that should be sent when a user leaves the server, this command can only be used if the goodbye module is enabled for the current channel. You can customize how the goodbye message looks using [placeholders](/docs/{{version}}/placeholders).
+Sets the message that should be sent when a user leaves the server, this command can only be used if the goodbye module is enabled for the current channel.
+The goodbye message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
+https://avairebot.com/docs/placeholders
 
-The **Manage Server** permission is required to run this command.
+- [Goodbye Command](#GoodbyeCommand)
+- [Welcome Command](#WelcomeCommand)
+- [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
-    !goodbyemessage - Resets the goodbye back to the default message.
-    !goodbyemessage <message> - Sets the goodbye message to the given message.
-    !goodbyemessage <user> - If a valid username, nickname or user was mentioned, an example message will be sent for the given user.
+	!goodbyemessage
+	-  Resets the goodbye back to the default message.
+	!goodbyemessage <message>
+	-  Sets the goodbye message to the given message.
+	!goodbyemessage embed
+	-  Disables embed messages.
+	!goodbyemessage embed <color>
+	-  Enables embed messages with the given color.
+	!goodbyemessage <user>
+	-  If a valid username, nickname or user was mentioned, an example message will be sent for the given user.
 
-#### Aliases
+#### Example
 
-    !byemsg
+	!goodbyemessage Goodbye %user%!
+	-  Sets the message to "Goodbye @user".
+	!goodbyemessage embed #ff0000
+	-  Enables embed messages and sets it to red.
+	!goodbyemessage @Senither
+	-  Tests the goodbye message using the mentioned user.
 
 <a name="IAmCommand"></a>
-### I Am
+### I Am Command
 
 Gives you the role with the given name if it is in the self-assignable list of roles.
 
+- [I Am Not Command](#IAmNotCommand)
+
 #### Usage
 
-    !iam <role>
+	!iam <role>
+
+#### Example
+
+	!iam DJ
 
 <a name="IAmNotCommand"></a>
-### I Am Not
+### I Am Not Command
 
 Removes the role with the given name from you if it is in the self-assignable list of roles.
 
+- [I Am Command](#IAmCommand)
+
 #### Usage
 
-    !iamnot <role>
+	!iamnot <role>
 
-#### Aliases
+#### Example
 
-    !iamn
+	!iamnot DJ
 
 <a name="KickCommand"></a>
-### Kick
+### Kick Command
 
 Kicks the mentioned user from the server with the provided reason, this action will be reported to any channel that has modloging enabled.
 
-The **Kick Members** permission is required to run this command.
-
-> This action will be reported to any channel that has [modlogging](#modlog) enabled on the server.
+- [Voice Kick Command](#VoiceKickCommand)
 
 #### Usage
 
-    !kick <user> [reason] - Kicks the mentioned user with the given reason.
+	!kick <user> [reason]
+	-  Kicks the mentioned user with the given reason.
+
+#### Example
+
+	!kick @Senither Spamming things
 
 <a name="LanguageCommand"></a>
-### Language
+### Language Command
 
 Show a list of available languages or set a language that should be used for the server.
 
-The **Server Administrator** permission is required to run this command.
 
 #### Usage
 
-    !language [page] - Displays a list of languages, 10 languages per page.
-    !language [code] - Sets the language to the given language code.
+	!language [page]
+	-  Displays a list of languages, 10 languages per page.
+	!language [code]
+	-  Sets the language to the given language code.
+
+#### Example
+
+	!language 2
+	-  Displays the languages on page 2
+	!language english
+	-  Changes the language of the bot to English
 
 <a name="LevelAlertsCommand"></a>
-### Level Alerts
+### Level Alerts Command
 
-Toggles the Leveling alerts system on or off for the current server or channel. When the level alerts are enabled the bot will send a message each time a user levels up, letting them know they leveled up and what level they are now.
+Toggles the Leveling alerts system on or off for the current server or channel.
+This command requires the `Levels & Experience` feature to be enabled for the server!
 
-The **Manage Server** permission is required to run this command.
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Level Modifier Command](#LevelModifierCommand)
+- [Toggle Level Command](#LevelCommand)
+- [Rank Command](#RankCommand)
 
 #### Usage
 
-    !levelalerts - Toggles the level alerts feature on/off
-    !levelalerts <channel> - Toggles the level alerts feature on for the given channel
+	!levelalerts
+	-  Toggles the level alerts feature on/off
+	!levelalerts <channel>
+	-  Toggles the level alerts feature on for the given channel
 
-#### Aliases
+#### Example
 
-    !lvlalert
+	!levelalerts
+	!levelalerts #general
+
+<a name="LevelCommand"></a>
+### Toggle Level Command
+
+Toggles the Leveling system on or off for the current server.
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Level Modifier Command](#LevelModifierCommand)
+- [Level Alerts Command](#LevelAlertsCommand)
+- [Rank Command](#RankCommand)
+
+#### Usage
+
+	!togglelevel
+	-  Toggles the level feature on/off
+
+
+<a name="LevelHierarchyCommand"></a>
+### Level Hierarchy Command
+
+Level Hierarchy determines if level roles give to users should be removed once they level up and get the next role, or if they should keep all of their roles, when the level hierarchy is enabled and a user levels up to get the next role, all other level roles they have will be removed, if they level up to a level without a level role, nothing will happen to them, the feature can be toggled on and off using this command.
+
+- [Add Level Role Command](#AddLevelRoleCommand)
+- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+- [List Level Roles Command](#ListLevelRolesCommand)
+- [Level Modifier Command](#LevelModifierCommand)
+- [Level Alerts Command](#LevelAlertsCommand)
+- [Toggle Level Command](#LevelCommand)
+
+#### Usage
+
+	!levelhierarchy
+	-  Displays the current level hierarchy status.
+	!levelhierarchy <on/off>
+	-  Toggles the feature on or off.
+
+#### Example
+
+	!levelhierarchy on
+	-  Toggles the feature on.
+
+<a name="LevelModifierCommand"></a>
+### Level Modifier Command
+
+The level modifier allows a server to set a custom level and experience modifier, allowing a server to fine tune the amount of XP required to level up by either making it harder or easier than default.
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Level Alerts Command](#LevelAlertsCommand)
+- [Toggle Level Command](#LevelCommand)
+- [Rank Command](#RankCommand)
+
+#### Usage
+
+	!levelmodifier <percentage>
+	-  Sets the level modifier to the given percentage.
+	!levelmodifier reset
+	-  Resets the level modifier back to the default value.
+
+#### Example
+
+	!levelmodifier 500%
+	-  Sets the modifier to 500%
+	!levelmodifier 0.01%
+	-  Sets the modifier to 0.01%
+	!levelmodifier reset
+	-  Resets the modifier back to default.
+
+<a name="ListAliasesCommand"></a>
+### Aliases Command
+
+Lists all the existing command aliases.
+
+- [Alias Command](#AliasCommand)
+
+#### Usage
+
+	!aliases
+	-  Lists all the aliases for the server.
+
 
 <a name="ListLevelRolesCommand"></a>
-### List Level Roles
+### List Level Roles Command
 
 List all the leveling roles and the level require to get them.
 
- - [Add Level Role](#AddLevelRoleCommand)
- - [Remove Level Role](#RemoveLevelRoleCommand)
+- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Add Level Role Command](#AddLevelRoleCommand)
 
 #### Usage
 
-    !llr - Lists all the roles you can get for leveling up.
+	!llr
+	-  Lists all the roles you can get for leveling up.
+
 
 <a name="ListSelfAssignableRolesCommand"></a>
-### List Self Assignable Roles
+### List Self Assignable Roles Command
 
 List all the self-assignable roles, 10 per-page.
 
- - [Add Self Assignable Role](#AddSelfAssignableRoleCommand)
- - [Remove Self Assignable Role](#RemoveSelfAssignableRoleCommand)
+- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
 
 #### Usage
 
-    !lsar
+	!lsar
+	-  List all the self
 
-<a name="NSFWCommand"></a>
-### NSFW
-
-Displays the NSFW status of the current channel, additionally on/off can be passed to the command to change the channels NSFW status.
-
-The **Manage Channels** permission is required to run this command.
-
-#### Usage
-
-    !nsfw - Displays the NSFW status of the current channel.
-    !nsfw <on | off> - Changes the NSFW status of the current channel.
-    !nsfw <channel> - Displays the mentioned channels NSFW status
-    !nsfw <channel> <on | off> - Changes the NSFW status of the mentioned channel.
 
 <a name="ModlogCommand"></a>
-### Modlog
+### Modlog Command
 
 Displays the modlogging status for the server if no arguments is given, you can also mention a text channel to enable modlogging and set it to the mentioned channel.
 
-The **Manage Server** permission is required to run this command.
+- [Modlog History Command](#ModlogHistoryCommand)
+- [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
-    !modlog - Displays the current state of the modlog module for the server.
-    !modlog <channel> - Enabled modlogging and sets it to the mentioned channel.
-    !modlog disable - Disables the modlogging module for the server.
+	!modlog
+	-  Displays the current state of the modlog module for the server.
+	!modlog <channel>
+	-  Enabled modlogging and sets it to the mentioned channel.
+	!modlog disable
+	-  Disables the modlogging module for the server.
+
+#### Example
+
+	!modlog
+	-  
+	!modlog #modlog
+	-  Enables modlogging and sets it to the modlog channel.
+	!modlog disable
+	-  Disables modlogging for the server.
 
 <a name="ModlogHistoryCommand"></a>
-### Modlog History
+### Modlog History Command
 
 Displays the modlog history for the mentioned user, this will display all past warnings, bans, soft bans, kicks, and voice kicks.
 
-The **Manage Server** permission is required to run this command.
+- [Modlog Command](#ModlogCommand)
+- [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
-    !modloghistory <user> - Displays the modlog history for the mentioned user.
+	!modloghistory <user>
+	-  Displays the modlog history for the mentioned user.
 
-#### Aliases
+#### Example
 
-    !history
+	!modloghistory @Senither
+	-  Displays all the bad things Senither has done.
 
-<a name="PurgeCommand"></a>
-### Purge
+<a name="ModlogPardonCommand"></a>
+### Pardon Command
 
-Deletes up to 100 chat messages in any channel, you can mention a user if you only want to delete messages by the mentioned user. Due to a restriction in the Discord API, the purge command will only work on messages sent in the last 14 days.
+Pardons the given modlog case ID, removing it from the users modlog history log and locking the message so it can't be edited.
+Server admins can pardon any modlog cases, while everyone else can only pardon modlog cases they themselves are the cause for.
 
-The **Manage Messages** permission is required to run this command.
+**Note:** This command does not revert the action for the modlog case, so if the user was banned, they will not be unbanned using this command.
 
-> {tip} Tagging a user will only delete any messages they have sent in the last `<amount>` of messages, for example `!purge 100 @JohnDoe#2854` will delete any messages the JohnDoe user has sent within the last 100 messages.
+- [Modlog History Command](#ModlogHistoryCommand)
+- [Warn Command](#WarnCommand)
+- [Soft Ban Command](#SoftBanCommand)
+- [Ban Command](#BanCommand)
+- [Unban Command](#UnbanCommand)
+- [Kick Command](#KickCommand)
+- [Voice Kick Command](#VoiceKickCommand)
 
 #### Usage
 
-    !purge - Deletes the last 5 messages.
-    !purge [number] - Deletes the given number of messages.
-    !purge [number] [user] - Deletes the given number of messages for the mentioned users.
+	!pardon <modlog id> [reason]
+	-  Pardons the given modlog case ID with the given reason.
 
-#### Aliases
+#### Example
 
-    !clear
+	!pardon 9 Whoops, was a mistake
 
 <a name="ModlogReasonCommand"></a>
-### Modlog Reason
+### Modlog Reason Command
 
-Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the !modlog command.
+Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command.
 You can only set modlog reasons for old modlog cases if you were the moderator for the case.
 
-> {tip} You can only set modlog reasons for old modlog cases if you were the moderator for the case.
+- [Modlog Command](#ModlogCommand)
+- [Modlog History Command](#ModlogHistoryCommand)
 
 #### Usage
 
-    !reason <case id> <reason> - Sets the reason for the given ID
+	!reason <case id> <reason>
+	-  Sets the reason for the given ID
+
+#### Example
+
+	!reason 9 Advertising stuff in #general
+	-  Sets the 9th modlog case to "Advertising stuff in #general"
+
+<a name="NSFWCommand"></a>
+### NSFW Command
+
+Displays the NSFW status of the current channel, additionally on/off can be passed to the command to change the channels NSFW status.
+
+
+#### Usage
+
+	!nsfw
+	-  Displays the NSFW status of the current channel.
+	!nsfw <on | off>
+	-  Changes the NSFW status of the current channel.
+	!nsfw <channel>
+	-  Displays the mentioned channels NSFW status
+	!nsfw <channel> <on | off>
+	-  Changes the NSFW status of the mentioned channel.
+
+#### Example
+
+	!nsfw
+	!nsfw on
+	!nsfw #nsfw
+	- stuff`
+	!nsfw #general off
+
+<a name="PurgeCommand"></a>
+### Purge Command
+
+Deletes up to 100 chat messages in any channel, you can mention a user if you only want to delete messages by the mentioned user.
+
+
+#### Usage
+
+	!purge
+	-  Deletes the last 5 messages.
+	!purge [number]
+	-  Deletes the given number of messages.
+	!purge [number] [user]
+	-  Deletes the given number of messages for the mentioned users.
+
+#### Example
+
+	!purge 56
+	!purge 30 @Senither
 
 <a name="RemoveLevelRoleCommand"></a>
-### Remove Level Role
+### Remove Level Roles Command
 
 Remove a role from the leveling up role table.
 
- - [Add Level Role](#AddLevelRoleCommand)
- - [List Level Role](#ListLevelRolesCommand)
-
-The **Server Administrator** permission is required to run this command.
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [List Level Roles Command](#ListLevelRolesCommand)
+- [Add Level Role Command](#AddLevelRoleCommand)
 
 #### Usage
 
-    !rlr <role / level> - Removes the role from the leveling up role table.
+	!rlr <role>
+	-  Removes the role from the leveling up role table.
+	!rlr <level>
+	-  Removes the role that is assigned to the given level from the role table.
+
+#### Example
+
+	!rlr Member
+	!rlr 10
 
 <a name="RemoveSelfAssignableRoleCommand"></a>
-### Remove Self Assignable Role
+### Remove Self Assignable Role Command
 
-Removes the role from the self-assignable/claimable roles list, any role on the list can be claimed by users when they use [.iam](#IAmCommand) or unclaimed with [.iamnot](#IAmNotCommand).
+Removes a role from the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
 
- - [Add Self Assignable Role](#AddSelfAssignableRoleCommand)
- - [List Self Assignable Role](#ListSelfAssignableRolesCommand)
-
-The **Server Administrator** permission is required to run this command.
+- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
 
 #### Usage
 
-    !rsar <role> - Removes the mentioned role from the self-assignable roles list.
+	!rsar <role>
+	-  Removes the mentioned role from the self
+
+#### Example
+
+	!rsar DJ
 
 <a name="SlowmodeCommand"></a>
-### Slowmode
+### Slowmode Command
 
-Disables the slowmode module or enables it with the given settings, users with the **Manage Messages** permission are exempt from slowmode limits. The slowmode module can be disabled by running the command with no arguments; if the `limit` and `decay` arguments are given the module will be enabled with the given settings.
+Disables the slowmode or enables it with the given limit, users with the **Manage Messages**  or **Manage Channels** permissions are exempt from slowmode limits.
 
-The **Manage Server** permission is required to run this command.
+- [Purge Command](#PurgeCommand)
 
 #### Usage
 
-    !slowmode <off> - Disables slowmode for the current channel.
-    !slowmode <limit> <decay> - Enables slowmode with the given settings.
+	!slowmode [channel] <off>
+	-  Disables slowmode for the current channel.
+	!slowmode [channel] <seconds>
+	-  Enables slowmode, allowing one message per user every given second.
+
+#### Example
+
+	!slowmode off
+	-  Disables slowmode.
+	!slowmode #general off
+	-  Disables slowmode in the general channel.
+	!slowmode 5
+	-  Enables slowmode, allowing one message every five seconds.
+	!slowmode #slow
+	- chat 30` 
 
 <a name="SoftBanCommand"></a>
-### Softban
+### Soft Ban Command
 
-Bans the mentioned user from the server with the provided reason. Any messages the user might've sent won't be deleted, if you want to force delete any old messages the user has sent see the [ban command](#ban).
+Bans the mentioned user from the server with the provided reason without removing any of the messages they have sent, this action will be reported to any channel that has modloging enabled.
 
-The **Ban Members** permission is required to run this command.
-
-> This action will be reported to any channel that has [modlogging](#modlog) enabled on the server.
+- [Unban Command](#UnbanCommand)
+- [Ban Command](#BanCommand)
 
 #### Usage
 
-    !softban <user> [reason] - Bans the mentioned user with the given reason.
+	!softban <user> [reason]
+	-  Bans the mentioned user with the given reason.
+	!softban <user id> [reason]
+	-  Bans the user with given ID and for the given reason.
 
-#### Aliases
+#### Example
 
-    !sban
+	!softban @Senither Being a potato
 
 <a name="ToggleCategoryCommand"></a>
-### Toggle Category
+### Toggle Category Command
 
-Toggles the given command category on or off for the given channel, optionally for the whole server. When a command category is disabled no one can run any commands in the command module, you can disable commands on a per-channel basis by tagging the channel you want to affect.
+This command allows you to toggle command categories on/off for the current channel or the whole server in one go, this is useful if you like some features in the bot but not others.
 
-The **Server Administrator** permission is required to run this command.
-
-> {tip} If you want to affect the whole server, you can completely omit the channel argument and just pass [on|off].
-
-#### Usage
-
-    !togglecategory <category> <global> [status] - Changes the command category status for the whole server.
-    !togglecategory <category> <channel> [status] - Changes the command category status for the mentioned channel.
-
-#### Aliases
-
-    !tcategory
-    !tcat
-
-<a name="LevelCommand"></a>
-### Toggle Level
-
-Toggles the leveling system on or off for the current server. When the leveling system is enabled users will slowly accumulate XP from being active in the chat and using commands, every minute the user is active they will receive 10-15 XP.
-
-The **Manage Server** permission is required to run this command.
+- [Categories Command](#CategoriesCommand)
+- [Change Prefix Command](#ChangePrefixCommand)
 
 #### Usage
 
-    !togglelevel - Toggles the level feature on/off
+	!togglecategory <category> <channel/global> [status]
+	-  Changes the command category status for the mentioned channel or globally if specified.
 
-#### Aliases
+#### Example
 
-    !tlvl
+	!togglecategory fun global off
+	-  Disables all the fun on the server D:
+	!togglecategory util #general off
+	-  Disables all the utility commands in the general channel.
+
+<a name="UnbanCommand"></a>
+### Unban Command
+
+Unbans the user with the given ID from the server if they are banned, if a modlog channel is setup, the unban will be logged to the channel as well.
+
+- [Soft Ban Command](#SoftBanCommand)
+- [Ban Command](#BanCommand)
+
+#### Usage
+
+	!unban <user id> [reason]
+	-  Unbans the user with given ID and for the given reason.
+
+#### Example
+
+	!unban 88739639380172800 Wasn't actually a twat
 
 <a name="VoiceKickCommand"></a>
-### Voice Kick
+### Voice Kick Command
 
-Kicks the mentioned user from the voice channel they're currently connected to, 
+Kicks the mentioned user from the voice channel they're currently connected to, this action will be reported to any channel that has modloging enabled.
 
-The **Kick Members** permission is required to run this command.
-
-> This action will be reported to any channel that has [modlogging](#modlog) enabled on the server.
+- [Kick Command](#KickCommand)
 
 #### Usage
 
-    !voicekick <user> [reason] - Kicks the mentioned user with the given reason.
+	!voicekick <user> [reason]
+	-  Kicks the mentioned user with the given reason.
 
-#### Aliases
+#### Example
 
-    !vkick
+	!voicekick @Senither Yelling at people
 
 <a name="WarnCommand"></a>
-### Warn
+### Warn Command
 
 Warns a given user with a message, this action will be reported to any channel that has modloging enabled.
 
-The **Manage Messages** permission is required to run this command.
+- [Modlog History Command](#ModlogHistoryCommand)
+- [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
-    !warn <user> [reason] - Warns the mentioned user with the given reason.
+	!warn <user> [reason]
+	-  Warns the mentioned user with the given reason.
+
+#### Example
+
+	!warn @Senither Being a potato
+	-  Warns Senither for being a potato.
 
 <a name="WelcomeCommand"></a>
-### Welcome
+### Welcome Command
 
-Toggles the welcome module on or off for the current channel. When the welcome module is enabled, a message will be sent in the channel every time someone joins the server.
+Toggles the welcome messages on or off for the current channel.
 
-The **Manage Server** permission is required to run this command.
+- [Goodbye Command](#GoodbyeCommand)
+- [Goodbye Message Command](#GoodbyeMessageCommand)
+- [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
-    !welcome
+	!welcome
+	-  Toggles the welcome messages on/off for the current channel
 
-#### Aliases
-
-    !wel
 
 <a name="WelcomeMessageCommand"></a>
-### Welcome Message
+### Welcome Message Command
 
-Sets the welcome message to the given message. If no arguments are passed the welcome message will be set back to the default welcome message. You can customize how the welcome message looks using [placeholders](/docs/{{version}}/placeholders).
+Sets the message that should be sent when a user joins the server, this command can only be used if the welcome module is enabled for the current channel.
+The welcome message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
+https://avairebot.com/docs/placeholders
 
-The **Manage Server** permission is required to run this command.
+- [Goodbye Command](#GoodbyeCommand)
+- [Goodbye Message Command](#GoodbyeMessageCommand)
+- [Welcome Command](#WelcomeCommand)
 
 #### Usage
 
-    !welcomemessage - Resets the welcome back to the default message.
-    !welcomemessage <message> - Sets the welcome message to the given message.
-    !welcomemessage <user> - If a valid username, nickname or user was mentioned, an example message will be sent for the given user.
+	!welcomemessage
+	-  Resets the welcome message back to the default message.
+	!welcomemessage <message>
+	-  Sets the welcome message to the given message.
+	!welcomemessage embed
+	-  Disables embed messages.
+	!welcomemessage embed <color>
+	-  Enables embed messages with the given color.
+	!welcomemessage <user>
+	-  If a valid username, nickname or user was mentioned, an example message will be sent for the given user.
 
-#### Aliases
+#### Example
 
-    !welmsg
+	!welcomemessage Welcome %user%!
+	-  Sets the message to "Welcome @user".
+	!welcomemessage embed #ff0000
+	-  Enables embed messages and sets it to red.
+	!welcomemessage @Senither
+	-  Tests the welcome message using the mentioned user.
+
+
+<a name="administration"></a>
+## Administration
+
+<a name="AddLevelRoleCommand"></a>
+### Add Level Role Command
+
+Adds a role to the leveling up table, roles on the table will be given to users once they level up and meet the requirements for the role.
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [List Level Roles Command](#ListLevelRolesCommand)
+- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+
+#### Usage
+
+	!alr <level requirement> <role>
+	-  Adds to role to users when they level up and meet the level requirement.
+
+#### Example
+
+	!alr 5 Regular
+	-  Adds the Regular role to the level up table, users who are level 5 and up will get the role when they level up.
+
+<a name="AddSelfAssignableRoleCommand"></a>
+### Add Self Assignable Role Command
+
+Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
+
+- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
+
+#### Usage
+
+	!asar <role>
+	-  Adds the mentioned role to the self
+
+#### Example
+
+	!asar DJ
+
+<a name="AiCommand"></a>
+### AI Command
+
+Toggles the AI(Artificial Intelligence) on/off for the current channel.
+
+
+#### Usage
+
+	!ai
+	-  Toggles the AI on/off for the current channel.
+
+
+<a name="AliasCommand"></a>
+### Alias Command
+
+Creates and maps a custom alias for a pre-existing command. Provide no alias to remove an existing alias.
+
+- [Aliases Command](#ListAliasesCommand)
+
+#### Usage
+
+	!alias <alias>
+	-  Deletes the alias if it exists.
+	!alias <alias> <command>
+	-  Creates an alias for the given command.
+
+#### Example
+
+	!alias !ava !repeat **Website:** https://avairebot.com/
+
+<a name="AutoAssignRoleCommand"></a>
+### Autorole Command
+
+Automatically assigns a specified role to every user who joins the server.
+
+
+#### Usage
+
+	!autorole
+	-  Displays the current auto assignable role if one is set.
+	!autorole <role>
+	-  The role that should be auto assignable.
+	!autorole disable
+	-  Disables the auto assignable role.
+
+#### Example
+
+	!autorole @Member
+
+<a name="BanCommand"></a>
+### Ban Command
+
+Bans the mentioned user from the server with the provided reason, all messages the user has sent in the last 7 days will also be deleted in the process, this action will be reported to any channel that has modloging enabled.
+
+- [Soft Ban Command](#SoftBanCommand)
+- [Unban Command](#UnbanCommand)
+
+#### Usage
+
+	!ban <user> [reason]
+	-  Bans the mentioned user with the given reason.
+	!ban <user id> [reason]
+	-  Bans the user with given ID and for the given reason.
+
+#### Example
+
+	!ban @Senither Spam and acting like a twat
+
+<a name="CategoriesCommand"></a>
+### Categories Command
+
+Shows status of all command categories in the current or mentioned channel, both for globally and per-channel.
+
+- [Toggle Category Command](#ToggleCategoryCommand)
+- [Change Prefix Command](#ChangePrefixCommand)
+
+#### Usage
+
+	!categories [channel]
+	-  Displays the status of the command categories in the mentioned channel, or the current channel if no channel was mentioned.
+
+#### Example
+
+	!categories #general
+
+<a name="ChangePrefixCommand"></a>
+### Change Prefix Command
+
+Sets the prefix that should be used for all commands in a given category, if no prefix is provided the category prefix will be reset back to the default instead, each category in AvaIre can have a different prefix, or you can choose to change them all at the same time.
+
+- [Categories Command](#CategoriesCommand)
+- [Toggle Category Command](#ToggleCategoryCommand)
+
+#### Usage
+
+	!changeprefix <category>
+	-  Resets the category prefix back to its default prefix.
+	!changeprefix <category> [prefix]
+	-  Sets the category prefix to the given prefix.
+
+#### Example
+
+	!changeprefix fun
+	-  Resets the prefix back to default for the `fun` commands.
+	!changeprefix admin /
+	-  Sets the prefix to `/` for all admin commands.
+	!changeprefix all a!
+	-  Sets the prefix for all the categories to `a!`.
+
+<a name="GoodbyeCommand"></a>
+### Goodbye Command
+
+Toggles the goodbye messages on or off for the current channel.
+
+- [Goodbye Message Command](#GoodbyeMessageCommand)
+- [Welcome Command](#WelcomeCommand)
+- [Welcome Message Command](#WelcomeMessageCommand)
+
+#### Usage
+
+	!goodbye
+	-  Toggles the goodbye messages on/off for the current channel
+
+
+<a name="GoodbyeMessageCommand"></a>
+### Goodbye Message Command
+
+Sets the message that should be sent when a user leaves the server, this command can only be used if the goodbye module is enabled for the current channel.
+The goodbye message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
+https://avairebot.com/docs/placeholders
+
+- [Goodbye Command](#GoodbyeCommand)
+- [Welcome Command](#WelcomeCommand)
+- [Welcome Message Command](#WelcomeMessageCommand)
+
+#### Usage
+
+	!goodbyemessage
+	-  Resets the goodbye back to the default message.
+	!goodbyemessage <message>
+	-  Sets the goodbye message to the given message.
+	!goodbyemessage embed
+	-  Disables embed messages.
+	!goodbyemessage embed <color>
+	-  Enables embed messages with the given color.
+	!goodbyemessage <user>
+	-  If a valid username, nickname or user was mentioned, an example message will be sent for the given user.
+
+#### Example
+
+	!goodbyemessage Goodbye %user%!
+	-  Sets the message to "Goodbye @user".
+	!goodbyemessage embed #ff0000
+	-  Enables embed messages and sets it to red.
+	!goodbyemessage @Senither
+	-  Tests the goodbye message using the mentioned user.
+
+<a name="IAmCommand"></a>
+### I Am Command
+
+Gives you the role with the given name if it is in the self-assignable list of roles.
+
+- [I Am Not Command](#IAmNotCommand)
+
+#### Usage
+
+	!iam <role>
+
+#### Example
+
+	!iam DJ
+
+<a name="IAmNotCommand"></a>
+### I Am Not Command
+
+Removes the role with the given name from you if it is in the self-assignable list of roles.
+
+- [I Am Command](#IAmCommand)
+
+#### Usage
+
+	!iamnot <role>
+
+#### Example
+
+	!iamnot DJ
+
+<a name="KickCommand"></a>
+### Kick Command
+
+Kicks the mentioned user from the server with the provided reason, this action will be reported to any channel that has modloging enabled.
+
+- [Voice Kick Command](#VoiceKickCommand)
+
+#### Usage
+
+	!kick <user> [reason]
+	-  Kicks the mentioned user with the given reason.
+
+#### Example
+
+	!kick @Senither Spamming things
+
+<a name="LanguageCommand"></a>
+### Language Command
+
+Show a list of available languages or set a language that should be used for the server.
+
+
+#### Usage
+
+	!language [page]
+	-  Displays a list of languages, 10 languages per page.
+	!language [code]
+	-  Sets the language to the given language code.
+
+#### Example
+
+	!language 2
+	-  Displays the languages on page 2
+	!language english
+	-  Changes the language of the bot to English
+
+<a name="LevelAlertsCommand"></a>
+### Level Alerts Command
+
+Toggles the Leveling alerts system on or off for the current server or channel.
+This command requires the `Levels & Experience` feature to be enabled for the server!
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Level Modifier Command](#LevelModifierCommand)
+- [Toggle Level Command](#LevelCommand)
+- [Rank Command](#RankCommand)
+
+#### Usage
+
+	!levelalerts
+	-  Toggles the level alerts feature on/off
+	!levelalerts <channel>
+	-  Toggles the level alerts feature on for the given channel
+
+#### Example
+
+	!levelalerts
+	!levelalerts #general
+
+<a name="LevelCommand"></a>
+### Toggle Level Command
+
+Toggles the Leveling system on or off for the current server.
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Level Modifier Command](#LevelModifierCommand)
+- [Level Alerts Command](#LevelAlertsCommand)
+- [Rank Command](#RankCommand)
+
+#### Usage
+
+	!togglelevel
+	-  Toggles the level feature on/off
+
+
+<a name="LevelHierarchyCommand"></a>
+### Level Hierarchy Command
+
+Level Hierarchy determines if level roles give to users should be removed once they level up and get the next role, or if they should keep all of their roles, when the level hierarchy is enabled and a user levels up to get the next role, all other level roles they have will be removed, if they level up to a level without a level role, nothing will happen to them, the feature can be toggled on and off using this command.
+
+- [Add Level Role Command](#AddLevelRoleCommand)
+- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+- [List Level Roles Command](#ListLevelRolesCommand)
+- [Level Modifier Command](#LevelModifierCommand)
+- [Level Alerts Command](#LevelAlertsCommand)
+- [Toggle Level Command](#LevelCommand)
+
+#### Usage
+
+	!levelhierarchy
+	-  Displays the current level hierarchy status.
+	!levelhierarchy <on/off>
+	-  Toggles the feature on or off.
+
+#### Example
+
+	!levelhierarchy on
+	-  Toggles the feature on.
+
+<a name="LevelModifierCommand"></a>
+### Level Modifier Command
+
+The level modifier allows a server to set a custom level and experience modifier, allowing a server to fine tune the amount of XP required to level up by either making it harder or easier than default.
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Level Alerts Command](#LevelAlertsCommand)
+- [Toggle Level Command](#LevelCommand)
+- [Rank Command](#RankCommand)
+
+#### Usage
+
+	!levelmodifier <percentage>
+	-  Sets the level modifier to the given percentage.
+	!levelmodifier reset
+	-  Resets the level modifier back to the default value.
+
+#### Example
+
+	!levelmodifier 500%
+	-  Sets the modifier to 500%
+	!levelmodifier 0.01%
+	-  Sets the modifier to 0.01%
+	!levelmodifier reset
+	-  Resets the modifier back to default.
+
+<a name="ListAliasesCommand"></a>
+### Aliases Command
+
+Lists all the existing command aliases.
+
+- [Alias Command](#AliasCommand)
+
+#### Usage
+
+	!aliases
+	-  Lists all the aliases for the server.
+
+
+<a name="ListLevelRolesCommand"></a>
+### List Level Roles Command
+
+List all the leveling roles and the level require to get them.
+
+- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [Add Level Role Command](#AddLevelRoleCommand)
+
+#### Usage
+
+	!llr
+	-  Lists all the roles you can get for leveling up.
+
+
+<a name="ListSelfAssignableRolesCommand"></a>
+### List Self Assignable Roles Command
+
+List all the self-assignable roles, 10 per-page.
+
+- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
+
+#### Usage
+
+	!lsar
+	-  List all the self
+
+
+<a name="ModlogCommand"></a>
+### Modlog Command
+
+Displays the modlogging status for the server if no arguments is given, you can also mention a text channel to enable modlogging and set it to the mentioned channel.
+
+- [Modlog History Command](#ModlogHistoryCommand)
+- [Modlog Reason Command](#ModlogReasonCommand)
+
+#### Usage
+
+	!modlog
+	-  Displays the current state of the modlog module for the server.
+	!modlog <channel>
+	-  Enabled modlogging and sets it to the mentioned channel.
+	!modlog disable
+	-  Disables the modlogging module for the server.
+
+#### Example
+
+	!modlog
+	-  
+	!modlog #modlog
+	-  Enables modlogging and sets it to the modlog channel.
+	!modlog disable
+	-  Disables modlogging for the server.
+
+<a name="ModlogHistoryCommand"></a>
+### Modlog History Command
+
+Displays the modlog history for the mentioned user, this will display all past warnings, bans, soft bans, kicks, and voice kicks.
+
+- [Modlog Command](#ModlogCommand)
+- [Modlog Reason Command](#ModlogReasonCommand)
+
+#### Usage
+
+	!modloghistory <user>
+	-  Displays the modlog history for the mentioned user.
+
+#### Example
+
+	!modloghistory @Senither
+	-  Displays all the bad things Senither has done.
+
+<a name="ModlogPardonCommand"></a>
+### Pardon Command
+
+Pardons the given modlog case ID, removing it from the users modlog history log and locking the message so it can't be edited.
+Server admins can pardon any modlog cases, while everyone else can only pardon modlog cases they themselves are the cause for.
+
+**Note:** This command does not revert the action for the modlog case, so if the user was banned, they will not be unbanned using this command.
+
+- [Modlog History Command](#ModlogHistoryCommand)
+- [Warn Command](#WarnCommand)
+- [Soft Ban Command](#SoftBanCommand)
+- [Ban Command](#BanCommand)
+- [Unban Command](#UnbanCommand)
+- [Kick Command](#KickCommand)
+- [Voice Kick Command](#VoiceKickCommand)
+
+#### Usage
+
+	!pardon <modlog id> [reason]
+	-  Pardons the given modlog case ID with the given reason.
+
+#### Example
+
+	!pardon 9 Whoops, was a mistake
+
+<a name="ModlogReasonCommand"></a>
+### Modlog Reason Command
+
+Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command.
+You can only set modlog reasons for old modlog cases if you were the moderator for the case.
+
+- [Modlog Command](#ModlogCommand)
+- [Modlog History Command](#ModlogHistoryCommand)
+
+#### Usage
+
+	!reason <case id> <reason>
+	-  Sets the reason for the given ID
+
+#### Example
+
+	!reason 9 Advertising stuff in #general
+	-  Sets the 9th modlog case to "Advertising stuff in #general"
+
+<a name="NSFWCommand"></a>
+### NSFW Command
+
+Displays the NSFW status of the current channel, additionally on/off can be passed to the command to change the channels NSFW status.
+
+
+#### Usage
+
+	!nsfw
+	-  Displays the NSFW status of the current channel.
+	!nsfw <on | off>
+	-  Changes the NSFW status of the current channel.
+	!nsfw <channel>
+	-  Displays the mentioned channels NSFW status
+	!nsfw <channel> <on | off>
+	-  Changes the NSFW status of the mentioned channel.
+
+#### Example
+
+	!nsfw
+	!nsfw on
+	!nsfw #nsfw
+	- stuff`
+	!nsfw #general off
+
+<a name="PurgeCommand"></a>
+### Purge Command
+
+Deletes up to 100 chat messages in any channel, you can mention a user if you only want to delete messages by the mentioned user.
+
+
+#### Usage
+
+	!purge
+	-  Deletes the last 5 messages.
+	!purge [number]
+	-  Deletes the given number of messages.
+	!purge [number] [user]
+	-  Deletes the given number of messages for the mentioned users.
+
+#### Example
+
+	!purge 56
+	!purge 30 @Senither
+
+<a name="RemoveLevelRoleCommand"></a>
+### Remove Level Roles Command
+
+Remove a role from the leveling up role table.
+
+- [Level Hierarchy Command](#LevelHierarchyCommand)
+- [List Level Roles Command](#ListLevelRolesCommand)
+- [Add Level Role Command](#AddLevelRoleCommand)
+
+#### Usage
+
+	!rlr <role>
+	-  Removes the role from the leveling up role table.
+	!rlr <level>
+	-  Removes the role that is assigned to the given level from the role table.
+
+#### Example
+
+	!rlr Member
+	!rlr 10
+
+<a name="RemoveSelfAssignableRoleCommand"></a>
+### Remove Self Assignable Role Command
+
+Removes a role from the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
+
+- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+
+#### Usage
+
+	!rsar <role>
+	-  Removes the mentioned role from the self
+
+#### Example
+
+	!rsar DJ
+
+<a name="SlowmodeCommand"></a>
+### Slowmode Command
+
+Disables the slowmode or enables it with the given limit, users with the **Manage Messages**  or **Manage Channels** permissions are exempt from slowmode limits.
+
+- [Purge Command](#PurgeCommand)
+
+#### Usage
+
+	!slowmode [channel] <off>
+	-  Disables slowmode for the current channel.
+	!slowmode [channel] <seconds>
+	-  Enables slowmode, allowing one message per user every given second.
+
+#### Example
+
+	!slowmode off
+	-  Disables slowmode.
+	!slowmode #general off
+	-  Disables slowmode in the general channel.
+	!slowmode 5
+	-  Enables slowmode, allowing one message every five seconds.
+	!slowmode #slow
+	- chat 30` 
+
+<a name="SoftBanCommand"></a>
+### Soft Ban Command
+
+Bans the mentioned user from the server with the provided reason without removing any of the messages they have sent, this action will be reported to any channel that has modloging enabled.
+
+- [Unban Command](#UnbanCommand)
+- [Ban Command](#BanCommand)
+
+#### Usage
+
+	!softban <user> [reason]
+	-  Bans the mentioned user with the given reason.
+	!softban <user id> [reason]
+	-  Bans the user with given ID and for the given reason.
+
+#### Example
+
+	!softban @Senither Being a potato
+
+<a name="ToggleCategoryCommand"></a>
+### Toggle Category Command
+
+This command allows you to toggle command categories on/off for the current channel or the whole server in one go, this is useful if you like some features in the bot but not others.
+
+- [Categories Command](#CategoriesCommand)
+- [Change Prefix Command](#ChangePrefixCommand)
+
+#### Usage
+
+	!togglecategory <category> <channel/global> [status]
+	-  Changes the command category status for the mentioned channel or globally if specified.
+
+#### Example
+
+	!togglecategory fun global off
+	-  Disables all the fun on the server D:
+	!togglecategory util #general off
+	-  Disables all the utility commands in the general channel.
+
+<a name="UnbanCommand"></a>
+### Unban Command
+
+Unbans the user with the given ID from the server if they are banned, if a modlog channel is setup, the unban will be logged to the channel as well.
+
+- [Soft Ban Command](#SoftBanCommand)
+- [Ban Command](#BanCommand)
+
+#### Usage
+
+	!unban <user id> [reason]
+	-  Unbans the user with given ID and for the given reason.
+
+#### Example
+
+	!unban 88739639380172800 Wasn't actually a twat
+
+<a name="VoiceKickCommand"></a>
+### Voice Kick Command
+
+Kicks the mentioned user from the voice channel they're currently connected to, this action will be reported to any channel that has modloging enabled.
+
+- [Kick Command](#KickCommand)
+
+#### Usage
+
+	!voicekick <user> [reason]
+	-  Kicks the mentioned user with the given reason.
+
+#### Example
+
+	!voicekick @Senither Yelling at people
+
+<a name="WarnCommand"></a>
+### Warn Command
+
+Warns a given user with a message, this action will be reported to any channel that has modloging enabled.
+
+- [Modlog History Command](#ModlogHistoryCommand)
+- [Modlog Reason Command](#ModlogReasonCommand)
+
+#### Usage
+
+	!warn <user> [reason]
+	-  Warns the mentioned user with the given reason.
+
+#### Example
+
+	!warn @Senither Being a potato
+	-  Warns Senither for being a potato.
+
+<a name="WelcomeCommand"></a>
+### Welcome Command
+
+Toggles the welcome messages on or off for the current channel.
+
+- [Goodbye Command](#GoodbyeCommand)
+- [Goodbye Message Command](#GoodbyeMessageCommand)
+- [Welcome Message Command](#WelcomeMessageCommand)
+
+#### Usage
+
+	!welcome
+	-  Toggles the welcome messages on/off for the current channel
+
+
+<a name="WelcomeMessageCommand"></a>
+### Welcome Message Command
+
+Sets the message that should be sent when a user joins the server, this command can only be used if the welcome module is enabled for the current channel.
+The welcome message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
+https://avairebot.com/docs/placeholders
+
+- [Goodbye Command](#GoodbyeCommand)
+- [Goodbye Message Command](#GoodbyeMessageCommand)
+- [Welcome Command](#WelcomeCommand)
+
+#### Usage
+
+	!welcomemessage
+	-  Resets the welcome message back to the default message.
+	!welcomemessage <message>
+	-  Sets the welcome message to the given message.
+	!welcomemessage embed
+	-  Disables embed messages.
+	!welcomemessage embed <color>
+	-  Enables embed messages with the given color.
+	!welcomemessage <user>
+	-  If a valid username, nickname or user was mentioned, an example message will be sent for the given user.
+
+#### Example
+
+	!welcomemessage Welcome %user%!
+	-  Sets the message to "Welcome @user".
+	!welcomemessage embed #ff0000
+	-  Enables embed messages and sets it to red.
+	!welcomemessage @Senither
+	-  Tests the welcome message using the mentioned user.
+
 
 <a name="fun"></a>
-## Fun Commands
+## Fun
+
+<a name="ChuckNorrisCommand"></a>
+### Chuck Norris Command
+
+I will get a random 100% true, real facts about Chuck Norris for you using the "Internet Chuck Norris Database".
+
+
+#### Usage
+
+	!chucknorris [name]
+	-  Gets a random fact for you, if a name is given "Chuck Norris" will be replaced with the given name.
+
+#### Example
+
+	!chucknorris @Senither
+
+<a name="CoinflipCommand"></a>
+### Coinflip Command
+
+Flips a coin heads or tails.
+
+
+#### Usage
+
+	!coinflip
+	-  Flips a coin for either heads or tails.
+
+
+<a name="DiceCommand"></a>
+### Dice Command
+
+Rolls a dice or multiple dice with the given number of sides.
+
+
+#### Usage
+
+	!dice <dice followed by a D and the sides>
+	-  Rolls some dice randomly
+
+#### Example
+
+	!dice 4D8 2D4
 
 <a name="EightBallCommand"></a>
-### 8 Ball
+### Eight Ball Command
 
 Ask 8Ball a question and get a random response back.
 
-#### Usage
-
-    !8ball [message]
-
-<a name="ChuckNorrisCommand"></a>
-### Chuck Norris
-
-Gets a random 100% true, real fact about Chuck Norris using the "Internet Chuck Norris Database".
 
 #### Usage
 
-    !chucknorris - Gets a random fact for you about "Chuck Norris".
-    !chucknorris [name] - Gets a random fact for you, and changes the name "Chuck Norris" with the given name.
+	!8ball <question>
 
-#### Aliases
+#### Example
 
-    !chuck
-    !norris
-
-<a name="CoinflipCommand"></a>
-### Coin Flip
-
-Flips a coin for heads or tails.
-
-#### Usage
-
-    !coinflip
-
-#### Aliases
-
-    !coin
-
-<a name="DiceCommand"></a>
-### Dice
-
-Rolls a set of dice with the given number of sides, for example using `4d8` will roll four eight sided dice.
-
-#### Usage
-
-    !dice <dice followed by a D and the sides> - Rolls some dice randomly.
+	!8ball will i have a good day today?
 
 <a name="FlipTextCommand"></a>
-### Flip Message
+### Flip Text Command
 
 Flips the given message upside down.
 
+
 #### Usage
 
-    !flip <message> - Flips the given message.
+	!flip <message>
+	-  Flips the given message.
+
+#### Example
+
+	!flip This is some random message
 
 <a name="LennyCommand"></a>
-### Lenny
+### Lenny command
 
 ( ͡° ͜ʖ ͡°)
 
-#### Usage
-
-    !lenny
-
-<a name="MemeCommand"></a>
-### Meme
-
-Creates a meme of the given type. Passing list as an argument sends a full list of memes that can be generated via the bot. You can also tag a user to use that user's avatar as a meme instead.
 
 #### Usage
 
-    !meme list - Lists all the available meme types.
-    !meme <meme> <top text> <bottom text> - Generates the meme with the given text.
-    !meme <user> <top text> <bottom text> - Generates a meme with the mentioned users avatar and the given text.
+	!lenny
+	-  ( ͡° ͜ʖ ͡°)
 
 #### Example
 
-    !meme buzz "Memes" "Memes everywhere"
-    !meme @Senither "Creates a Meme command for AvaIre" "Almost no one uses it"
+	( ͡° ͜ʖ ͡°)
+
+<a name="MemeCommand"></a>
+### Meme Command
+
+Generates memes with your given text, you can tag users to use their avatar as a meme, or just give the meme name you wanna use.
+
+
+#### Usage
+
+	!meme list
+	-  Lists all the available meme types.
+	!meme <meme> <top text> <bottom text>
+	-  Generates the meme with the given text.
+	!meme <user> <top text> <bottom text>
+	-  Generates a meme with the tagged users avatar and the given text.
+
+#### Example
+
+	!meme buzz "Memes" "Memes everywhere"
+	!meme @Senither "Creates a Meme command for AvaIre" "Almost no one uses it"
 
 <a name="RandomCatCommand"></a>
-### Random Cat
+### Random Cat Command
 
-Gets a random cat image from the internet.
+I will scour the internet to find a random cat picture for you.
+
+- [Random Dog Command](#RandomDogCommand)
 
 #### Usage
 
-    !randomcat
+	!randomcat
+	-  Gets a random picture of a cat and sends it in the channel.
 
-#### Aliases
-
-    !cat
 
 <a name="RandomDogCommand"></a>
-### Random Dog
+### Random Dog Command
 
-Gets a random dog image from the internet.
+I will scour the internet to find a random dog picture for you.
+
+- [Random Cat Command](#RandomCatCommand)
 
 #### Usage
 
-    !randomdog
+	!randomdog
+	-  Gets a random picture of a dog and sends it in the channel.
 
-#### Aliases
-
-    !dog
 
 <a name="RepeatCommand"></a>
-### Repeat Message
+### Repeat Command
 
-Makes Ava repeat whatever you say.
+I will repeat anything you say.
+
 
 #### Usage
 
-    !repeat <message> - Repeats the given message
+	!repeat <message>
+	-  Repeats the given message
 
-#### Aliases
+#### Example
 
-    !echo
+	!repeat I am a BOT
 
 <a name="ReverseCommand"></a>
-### Reverse Message
+### Reverse Command
 
 Reverses the message given.
 
-#### Usage
-
-    !reverse <message> - Reverses the given message.
-
-<a name="RipCommand"></a>
-### RIP
-
-Pay your respects.
 
 #### Usage
 
-    !rip
-
-<a name="RollCommand"></a>
-### Roll
-
-Roll a random number between 1 and 100, or within the given parameters.
-
-#### Usage
-
-    !roll [min] [max]
-
-<a name="SayCommand"></a>
-### Say
-
-Makes Ava say whatever you want. If Ava has permissions to delete messages, the original message will be deleted and Ava's message will replace it.
-
-#### Usage
-
-    !say [message]
-
-<a name="interaction"></a>
-## Interaction Commands
-
-Interaction commands are commands that will send a random gif matching the type of interaction command used.
-
-All interaction commands requires a user to be mentioned in the command as the only argument, either by tagging the user, using the users ID, nickname or username, because all the interaction commands follows the same format, all the commands have been bundled up in a table for easier overview.
+	!reverse <message>
+	-  Reverses the given message.
 
 #### Example
 
-If the command were to be used on a user called JohnDoe#1234 with a nickname of Johnny, all the following examples would be a valid use of a interaction command.
+	!reverse This is some random message
 
-    !command @JhonDoe
-    !command JhonDoe
-    !command JhonDoe#1234
-    !command Johnny
-    !command 123321123321123321 <- This is Johns user ID
+<a name="RipCommand"></a>
+### RIP Command
 
-<a name="interaction-commands"></a>
-### Commands
+Pay your respects
 
-| Command           |  Description      |
-| ----------------- |:---------------------- |
-| !bite  | Bites the mentioned user.  |
-| !cuddle  | Cuddles with the mentioned user.  |
-| !divorce  | Divorces the mentioned user.  |
-| !eats  | Eats some food with the mentioned user.  |
-| !hello  | Waves hello to the mentioned user.  |
-| !highfive  | Highfives the mentioned user.  |
-| !hug  | Hugs the mentioned user.  |
-| !kill  | Kills the mentioned user.  |
-| !kiss  | Kisses the mentioned user.  |
-| !pan  | Hits the mentioned user with a pan.  |
-| !pat  | Pats the mentioned users head.  |
-| !poke  | Pokes the mentioned user.  |
-| !pouts  | Pouts at the mentioned user.  |
-| !punch  | Punches the mentioned user.  |
-| !senpai  | Sends a **notice me** image to the mentioned user.  |
-| !shrugs  | Shrugs at the mentioned user.  |
-| !slap  | Slaps the mentioned user.  |
-| !tickle  | Tickles the mentioned user.  |
-| !triggered  | Sends a **triggered** image to the mentioned user.  |
-
-<a name="music"></a>
-## Music Commands
-
-<a name="ClearQueueCommand"></a>
-### Clear Queue
-
-Clears the music queue of all pending songs, removing all pending songs.
-
-The **DJ** role is required to run this command.
 
 #### Usage
 
-    !clearqueue - Clears the music queue
+	!rip
+	-  Pay your respects
 
-#### Aliases
 
-    !flushqueue
-    !cqueue
+<a name="RollCommand"></a>
+### Roll Command
+
+Roll a random number between 1 and 100, or within the given parameters.
+
+
+#### Usage
+
+	!roll
+	!roll [max]
+	!roll [min] [max]
+
+#### Example
+
+	!roll 3 6
+
+<a name="SayCommand"></a>
+### Say Command
+
+I will say whatever you tell me to.
+
+
+#### Usage
+
+	!say <message>
+	-  Makes the bot say the given message
+
+#### Example
+
+	!say I am a BOT
+
+<a name="UndertaleTextBoxCommand"></a>
+### Undertale TextBox Command
+
+Create your own Undertale text boxes with any character and text you want, you can also specify a image through a URL that should be used as the avatar instead.!
+Generator owned by [Demirramon](https://demirramon.com/). Undertale owned by Toby Fox. All rights reserved.
+
+
+#### Usage
+
+	!undertale list [page]
+	-  Lists some undertale characters the generator supports.
+	!undertale <url> <message>
+	-  Generates the image using the given image url and message.
+	!undertale <character> <message>
+	-  Generates the image using the provided undertale character as the avatar, and the provided message.
+
+#### Example
+
+	!undertale Toriel Greetings, my child
+	!undertale https://i.imgur.com/ZupgGkI.jpg Want to play?
+
+
+<a name="music"></a>
+## Music
+
+<a name="ClearQueueCommand"></a>
+### Clear Music Queue Command
+
+Clears the music queue of all pending songs
+
+
+#### Usage
+
+	!clearqueue
+	-  Clears the music queue
+
+
+<a name="DJLevelCommand"></a>
+### DJ Level Command
+
+Change the DJ level requirement for the server, this changes what music commands people can use with or without the `DJ` Discord role.
+
+
+#### Usage
+
+	!djlevel
+	-  Displays the current DJ Level for the server.
+	!djlevel types
+	-  Displays all the types and some info about them.
+	!djlevel <type>
+	-  Change the DJ Level to the given type.
+
+#### Example
+
+	!djlevel types
+	-  Displays all the types and info about them.
+	!djlevel normal
+	-  Changes the DJ Level to "normal".
+
+<a name="MoveHereCommand"></a>
+### Move Music Here Command
+
+Moves the bot to your current voice channel.
+
+
+#### Usage
+
+	!movehere
+	-  Moves the bot to your voice channel
+
+
+<a name="MusicChannelCommand"></a>
+### Music Channel Command
+
+The music channel command can be used to define a text and voice channel that music should be linked to, if a text channel is set through the command, music commands will only work in the given channel, if a voice channel is set Ava will auto join the voice channel on the first music request.
+
+
+#### Usage
+
+	!musicchannel
+	-  Displays the current music channels.
+	!musicchannel <voice|text>
+	-  Disables the music text or voice channel.
+	!musicchannel <voice|text> <channel>
+	-  Sets the music text or voice channel.
+
+#### Example
+
+	!musicchannel text
+	-  Disables the music text channel if one was set.
+	!musicchannel voice music
+	-  Sets the voice music channel to the `music` channel.
+
+<a name="MusicMessagesCommand"></a>
+### Music Messages Command
+
+Toggles music messages on and off, when music messages are off, the "Now Playing" messages will no longer be sent, and messages that before would stay, will now be automatically be deleted after awhile. 
+
+
+#### Usage
+
+	!musicmessages
+	-  Displays the current music message status.
+	!musicmessages [on|off]
+	-  Toggles the music messages on/off.
+
+#### Example
+
+	!musicmessages off
+	-  Turns off music messages.
+
+<a name="PauseCommand"></a>
+### Pause Music Command
+
+Pauses the music currently playing
+
+- [Resume Music Command](#ResumeCommand)
+
+#### Usage
+
+	!pause
+	-  Pauses the music
+
+
+<a name="PlayCommand"></a>
+### Play Music Command
+
+Plays the provided song for you, if just the song title is given the bot will search YouTube for your song and give you some suggestions, you can also use YouTube, SoundCloud, TwitchTV, Bandcamp, and Vimeo link, or raw sound file, mp3, flac, wav, webm, mp4, ogg, aac, m3u and pls formats.
+
+- [SoundCloud Command](#SoundcloudCommand)
+
+#### Usage
+
+	!play <song>
+	-  Plays the given song
+
+#### Example
+
+	!play A cool song
+	-  Finds songs with the name "A cool song".
+	!play https://www.youtube.com/watch?v=dQw4w9WgXcQ
+	-  Plays the song off a link
+
+<a name="PlaylistCommand"></a>
+### Playlist Command
+
+Music playlist command, allows music DJs to create, delete, and load playlists to the music queue, as well as adding and removing songs from any of the playlists.
+
+
+#### Usage
+
+	!playlist
+	-  Lists existing playlists.
+	!playlist [name] add [song link]
+	-  Adds a song to a playlist.
+	!playlist [name] create
+	-  Creates a new playlist.
+	!playlist [name] delete
+	-  Deletes an existing playlist.
+	!playlist [name] play
+	-  Plays a playlist.
+	!playlist [name] removesong [id]
+	-  Removes a song from a playlist.
+	!playlist [name] renameto [new name]
+	-  Renames a existing playlist.
+	!playlist [name] movesong [id] [new id]
+	-  Move a song to a different position.
+	!playlist [name] [page number]
+	-  Shows the songs in a playlist.
+
+#### Example
+
+	!playlist test create
+	-  Creates a playlist called `test`.
+	!playlist test add Some song
+	-  Adds `Some song` to the `test` playlist.
+	!playlist test move 2 1
+	-  Moves the 2nd song to the first place.
+	!playlist test remove 2
+	-  Removes the 2nd song from the `test`playlist.
+	!playlist test rename Music
+	-  Renames the `test` playlist to `Music`.
+	!playlist music 2
+	-  Shows the 2nd page of the `Music` playlist.
+	!playlist music play
+	-  Plays all the songs in the `Music` playlist.
+	!playlist music delete
+	-  Deletes the `Music` playlist.
+
+<a name="RemoveSongFromQueueCommand"></a>
+### Remove Song From Queue
+
+Removes a song or multiple songs from the music queue.
+
+
+#### Usage
+
+	!removesong <song id> Removes the song with the given ID from the queue.
+	!removesong <start song id>
+	-  <end song id>` Removes the songs with the given range of IDs, inclusive, from the queue
+
+#### Example
+
+	!removesong 3 Removes song 3 from the queue
+	!removesong 3
+	- 6` Removes songs 3
+
+<a name="RepeatMusicQueueCommand"></a>
+### Repeat Music Command
+
+Repeats all the songs in the music queue.
+
+
+#### Usage
+
+	!repeatsongs
+	-  Toggles queue looping on or off.
+
+
+<a name="ResumeCommand"></a>
+### Resume Music Command
+
+Resumes the music in the queue, starting the music back up if it was paused
+
+- [Pause Music Command](#PauseCommand)
+
+#### Usage
+
+	!resume
+	-  Resumes the music
+
+
+<a name="SeekCommand"></a>
+### Seek Command
+
+Jumps to the given time code in the track that is currently playing.
+
+
+#### Usage
+
+	!seek <time>
+	-  Jumps to the given time code.
+
+#### Example
+
+	!seek 2:24
+	-  Jumps to 2 minutes 24 seconds of the song.
 
 <a name="SetDefaultVolumeCommand"></a>
 ### Set Default Volume Command
 
 Sets the default volume that the music should play at when Ava first joins a voice channel.
+**Note:** This does not change the volume of music already playing, to change that, use the `b!volume` command instead.
 
-> Note: This does not change the volume of music already playing, to change that, use the [!volume](#VolumeCommand) command instead.
-
-The **DJ** role is required to run this command.
 
 #### Usage
 
-    !default-volume [volume]
-
-#### Aliases
-
-    !set-volume
-
-<a name="MoveHereCommand"></a>
-### Move Here
-
-Moves the bot into the same voice channel you're in. This command can be used to move the bot to a different voice channel while it's playing music without having the permissions to move other users. 
-
-The **DJ** role is required to run this command.
-
-#### Usage
-
-    !movehere
-
-#### Aliases
-
-    !moveh
-
-<a name="MusicChannelCommand"></a>
-### Music Channel
-
-The music channel command can be used to define a text and voice channel that music should be linked to, if a text channel is set through the command, music commands will only work in the given channel, if a voice channel is set Ava will auto join the voice channel on the first music request.
-
-The **Administrator** permission is required to run this command.
-
-#### Usage
-
-    !musicchannel - Displays the current music channels.
-    !musicchannel <voice|text> - Disables the music text or voice channel.
-    !musicchannel <voice|text> <channel> - Sets the music text or voice channel.
-
-#### Aliases
-
-    !mchannel
-
-<a name="MusicMessagesCommand"></a>
-### Music Channel
-
-Toggles music messages on and off, when music messages are off, the "Now Playing" messages will no longer be sent, and messages that before would stay, will now be automatically be deleted after awhile. 
-
-The **Administrator** permission is required to run this command.
-
-#### Usage
-
-    !musicmessages - Displays the current music message status.
-    !musicmessages [on|off] - Toggles the music messages on/off.
-
-#### Aliases
-
-    !musicmessage
-
-<a name="PauseCommand"></a>
-### Pause
-
-Pauses the song that is currently playing.
-
-The **DJ** role is required to run this command.
-
-#### Usage
-
-    !pause
-
-<a name="PlayCommand"></a>
-### Play
-
-Plays the provided song for you, if just the song title is given the bot will search YouTube for your song and give you some suggestions, you can also use YouTube, SoundCloud, TwitchTV, Bandcamp, and Vimeo link, or raw sound file, mp3, flac, wav, webm, mp4, ogg, aac, m3u and pls formats.
-
-#### Usage
-
-    !play <song> - Plays the given song
-
-#### Aliases
-
-    !request
-
-#### Tag Example
-
-    @AvaIre play <name of song>
-    @AvaIre can you find me some chill music?
-
-<a name="PlaylistCommand"></a>
-### Playlist
-
-Allows music DJs to create, list, update, and delete music playlists. This command has a bunch of sub-commands that are used to manage the playlists; to make it a bit easier, here are all the sub-commands.
-
- - [Add song to Playlist](#playlist-add)
- - [Create new Playlist](#playlist-create)
- - [Delete existing Playlist](#playlist-delete)
- - [Remove a song from an existing Playlist](#playlist-remove)
- - [Load Playlist into the Music queue](#playlist-load)
- - [List Songs in the Playlist](#playlist-list)
- - [Rename Playlist](#playlist-rename)
-
-The **DJ** role is required to run this command.
-
-#### Usage
-
-    !playlist [name] [arguments]
-
-#### Aliases
-
-    !list
-    !pl
-
-<a name="playlist-add"></a>
-### Playlist - Add a song to a playlist
-
-Adds a song to the a existing playlist, if you don't already have playlist you can [create a new playlist](#playlist-create).
-
-#### Usage
-
-    !playlist <name> add <song url>
-
-#### Aliases
-
-    !playlist <name> a <song url>
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="playlist-create"></a>
-### Playlist - Create new playlist
-
-Creates a new playlist for the server with the given name. When the playlist has been created you can start [adding songs to it](#playlist-add), if you butchered the name you can [rename the playlist](#playlist-rename) without deleting all the songs in it.
-
-#### Usage
-
-    !playlist <name> create
-
-#### Aliases
-
-    !playlist <name> c
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="playlist-delete"></a>
-### Playlist - Delete a playlist
-
-Deletes a playlist and all the songs in it. **Keep in mind that deleting the playlist is a permanent action and can not be undone!** There is **NO** confirmation if you are sure that you want to delete it; the playlist will just be deleted if you use the command.
-
-> {tip} If the playlist is loaded into the music queue when the playlist is deleted, the music will still continue to play all the way through.
-
-#### Usage
-
-    !playlist <name> delete
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="playlist-remove"></a>
-### Playlist - Remove a song from an existing playlist 
-
-Removes the song with the given ID for the current playlist if it's in queue.
-
-#### Usage
-
-    !playlist <name> removesong <ID>
-
-#### Aliases
-
-    !playlist <name> remove <ID>
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="playlist-load"></a>
-### Playlist - Load a playlist into the queue
-
-Loads the playlist into the music queue. If the bot is not already playing music this command will also connect the bot to the same voice channel you are in and initialize music playback. If the playlist is empty you can [add some songs](#playlist-add).
-
-#### Usage
-
-    !playlist <name> load
-
-#### Aliases
-
-    !playlist <name> play
-    !playlist <name> l
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="playlist-list"></a>
-### Playlist - List songs in the playlist
-
-Lists the songs in the playlist with the given name. The response will be paginated to only show ten songs at a time; you can jump to different pages by passing a page number for the playlist as an additional argument. If you don't have any songs in the playlist you can [add songs](#playlist-add).
-
-#### Usage
-
-    !playlist <name> [page number]
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="playlist-rename"></a>
-### Playlist - Rename a playlist
-
-Rename an existing playlist. The string passed to the command will be used as the new name.
-
-#### Usage
-
-    !playlist <name> renameto <new name>
-
-#### Aliases
-
-    !playlist <name> rename <new name>
-    !playlist <name> r <new name>
-
-**You can replace the `!playlist` command with any of [playlist command aliases](#playlist).**
-
-<a name="RemoveSongFromQueueCommand"></a>
-### Remove Song from Queue
-
-Removes the song with the given ID from the queue, you can get the song ID in the queue by using the [!](!queue) command.
-
-#### Usage
-
-    !removesong <song id> Removes the song with the given ID from the queue.
-
-#### Aliases
-
-    !songremove
-
-<a name="RepeatMusicQueueCommand"></a>
-### Repeat Music Queue
-
-Toggles music looping on or off, the [queue](#queue) command be used to get the music looping status.
-
-The **DJ** role is required to run this command.
-
-#### Usage
-
-    !repeatsongs
-
-#### Aliases
-
-    !repeatqueue
-    !loop
-
-<a name="ResumeCommand"></a>
-### Resume
-
-Resumes the music in the queue, starting the music back up if it was paused.
-
-The **DJ** role is required to run this command.
-
-#### Usage
-
-    !resume
-
-<a name="SeekCommand"></a>
-### Seek
-
-Jumps to the given time in the song currently playing.
-
-The **DJ** role is required to run this command.
-
-#### Usage
-
-    !seek <time> - Jumps to the given time.
-
-#### Aliases
-
-    !goto
+	!default-volume
+	-  Displays the current default volume
+	!default-volume <volume>
+	-  Changes the default volume to the given volume.
+
+#### Example
+
+	!default-volume 75
+	-  Sets the default volume to 75
 
 <a name="ShuffleCommand"></a>
-### Shuffle
+### Shuffle Command
 
 Shuffles the music queue, mixing the songs up in random order.
 
-The **DJ** role is required to run this command.
 
 #### Usage
 
-    !shuffle
+	!shuffle
+	-  Shuffles all the songs currently in the queue.
+
 
 <a name="SkipCommand"></a>
-### Skip
+### Skip Music Command
 
 Skips to the next song in the music queue.
 
-The **DJ** role is required to run this command.
+- [Vote Skip Command](#VoteSkipCommand)
 
 #### Usage
 
-    !skip
+	!skip
+	-  Skips to the next song in the queue
+
 
 <a name="SongCommand"></a>
-### Song Command
+### Music Song Command
 
-Returns the song that is playing right now and some attached information. This includes who requested it, how much of the song is left and the volume the song is playing at plus the rest of the songs currently in queue. 
+Returns the song that is playing right now and some attached information. This includes who requested it, how much of the song is left and the volume the song is playing at plus the rest of the songs currently in queue.
+
 
 #### Usage
 
-    !song - Shows info about the song currently playing and the queue.
-    !song [page] - Shows the songs in the given page in the queue.
+	!song
+	-  Shows info about the song currently playing and the queue.
+	!song [page]
+	-  Shows the songs in the given page in the queue.
 
-#### Aliases
-
-    !songs
-    !queue
 
 <a name="SoundcloudCommand"></a>
-### Soundcloud
+### SoundCloud Command
 
 Plays the provided song for you, if just the song title is given the bot will search SoundCloud for your song and give you some suggestions, you can also use YouTube, SoundCloud, TwitchTV, Bandcamp, and Vimeo link, or raw sound file, mp3, flac, wav, webm, mp4, ogg, aac, m3u and pls formats.
 
+- [Play Music Command](#PlayCommand)
+
 #### Usage
 
-    !soundcloud <song> - Plays the given song
+	!soundcloud <song>
+	-  Plays the given song
 
-#### Aliases
+#### Example
 
-    !sc
-
-#### Tag Example
-
-    @AvaIre sc <name of song>
+	!soundcloud A cool song
+	-  Finds songs with the name "A cool song".
+	!soundcloud https://soundcloud.com/yellowclaw/yellow
+	- claw
 
 <a name="StopCommand"></a>
-### Stop
+### Stop Command
 
 Stops the song currently playing, clears the music queue and disconnects from the voice channel the music was playing in.
 
-The **DJ** role is required to run this command.
 
 #### Usage
 
-    !stop
+	!stop
+	-  Stops the music if anything is playing.
+
+
+<a name="VoiceFixCommand"></a>
+### Voice Fix Command
+
+Music will sometimes stop working when Discord forgets to notify bots about voice state changes, this commands tries to make fixing that a bit easier to do by forcing a voice update state for the bot through changing the server region, the command will pick a server region at random, swap the servers region to that, and then 2½ seconds later swap right back, this should fix music 99% of the time.
+
+ If you're still experiencing voice issues you can try making the bot leave the voice channel by using a command like `b!stop`, and then running this command again.
+
+ Still having issues even after all that?
+You can join the [support server](https://discord.gg/gt2FWER) to get help from the AvaIre support team directly.
+
+
+#### Usage
+
+	!voicefix
+	-  Finds a random server region, swaps to it and then swaps back again.
+
 
 <a name="VolumeCommand"></a>
-### Volume
+### Music Volume Command
 
-Changes the volume of the music, by default the music will be playing at 50% volume.
+Changes the volume of the music, by default the music will be playing at 100% volume.
 
-The **DJ** role is required to run this command.
 
 #### Usage
 
-    !volume - Shows the current music volume without changing it.
-    !volume <volume> - Sets the music volume to the given number.
+	!volume
+	-  Shows the current music volume without changing it
+	!volume <volume>
+	-  Sets the music volume to the given number
 
-#### Aliases
+#### Example
 
-    !vol
+	!volume 80
 
 <a name="VoteSkipCommand"></a>
-### Vote Skip
+### Vote Skip Command
 
 Use this command to vote on the song currently playing to be skipped, if the vote wins with a majority vote the song will be skipped.
 
+- [Skip Music Command](#SkipCommand)
+
 #### Usage
 
-    !voteskip
+	!voteskip
+	-  Vote to skip the current song.
 
-#### Aliases
 
-    !vskip
 
 <a name="search"></a>
-## Search Commands
+## Search
 
 <a name="DuckDuckGoCommand"></a>
-### Search
+### DuckDuckGo Command
 
-Searches DuckDuckGo.com with the given query and returns the first six results, if the command is used in a channel with NSFW disabled, all NSFW search results will be removed from the results.
+Searches [DuckDuckGo.com](https://duckduckgo.com/) with the given query and returns the first six results, if the command is used in a channel with NSFW disabled, all NSFW search results will be removed from the results.
+
 
 #### Usage
 
-    !duckduckgo <query>
+	!duckduckgo <query>
+	-  Searchs DuckDuckGo for your query.
 
-#### Aliases
+#### Example
 
-    !ddg
-    !g
+	!duckduckgo AvaIre Bot
 
 <a name="GfycatCommand"></a>
-### Gfycat
+### Gfycat Command
 
-Gets a random gif from [gfycat.com](https://gfycat.com/) with the given query.
+Returns a random gif for you from gfycat.com with the given query.
+
 
 #### Usage
 
-    !gfycat <query>
+	!gfycat <query>
+	-  Finds a random image with the given query
 
-#### Aliases
+#### Example
 
-    !gif
+	!gfycat cats
 
 <a name="UrbanDictionaryCommand"></a>
-### Urban Dictionary
+### Urban Dictionary Command
 
-Get the definition of a word or sentence from [urbandictionary.com](http://www.urbandictionary.com/).
+Get the definition of a word or sentence from [urbandictionary.com](https://www.urbandictionary.com/).
+
 
 #### Usage
 
-    !urbandictionary [word or sentence]
+	!urbandictionary <word or sentence>
+	-  Gets the definition from Urban Dictionary
 
-#### Aliases
+#### Example
 
-    !urban
+	!urbandictionary potato
 
 <a name="XKCDCommand"></a>
-### XKCD
+### XKCD Command
 
-Gets the latest [xkcd](https://xkcd.com/) comic, or the comic with the given ID.
+Gets the latest XKCD comic, or the comic with the given id.
+
 
 #### Usage
 
-    !xkcd [comic ID]
+	!xkcd
+	-  Gets the latest comic
+	!xkcd <id>
+	-  Gets the comic with the given id.
+	!xkcd random
+	-  Gets a random comic.
+
+#### Example
+
+	!xkcd 530
+	-  Gets the comic with an ID of `530`.
+	!xkcd random
+	-  Gets a random comic.
+
 
 <a name="utility"></a>
-## Utility Commands
+## Utility
 
 <a name="CalculateCommand"></a>
-### Calculate
+### Calculate Command
 
 Calculates the given math equations and returns the result for you.
 
+
 #### Usage
 
-    !calculate <equation> - Calculates the result of the given math equation.
+	!calculate <equation>
+	-  Calculates the result of the given math equation.
 
-#### Aliases
+#### Example
 
-    !calc
+	!calculate (
+	- 50 + sqrt(50 ^ 2 
 
 <a name="ChannelIdCommand"></a>
-### Channel ID
+### Channel ID Command
 
 Shows the ID of the channel the command was ran in, or the channel tagged in the command.
 
+- [Channel Info Command](#ChannelInfoCommand)
+
 #### Usage
 
-    !channelid [channel]
+	!channelid [channel]
+	-  Gets the ID of the current channel, or the mentioned channel.
 
-#### Aliases
+#### Example
 
-    !cid
+	!channelid #general
+	!channelid
 
 <a name="ChannelInfoCommand"></a>
-### Channel Info
+### Channel Info Command
 
 Shows information about the channel the command was run in, or the mentioned channel.
 
+- [Channel ID Command](#ChannelIdCommand)
+
 #### Usage
 
-    !channelinfo [channel]
+	!channelinfo [channel]
+	-  Gets information about the mentioned channel, or if no channel was mention, get information about the current channel.
 
-#### Aliases
+#### Example
 
-    !cinfo
+	!channelinfo #general
+	!channelinfo
 
 <a name="ExpandUrlCommand"></a>
-### Expand URL
+### Expand Command
 
 Expands the url to the full form, resolving all the redirects and showing what urls the link goes through if it redirects anywhere.
 
+
 #### Usage
 
-    !expand <url> - Expands the provided url.
+	!expand <url>
+	-  Expands the provided url.
 
-#### Aliases
+#### Example
 
-    !resolve
-    !e
+	!expand https://avairebot.com/support
 
 <a name="FeedbackCommand"></a>
-### Feedback
+### Feedback Command
 
 Send feedback about Ava back to the developers and the staff team, any message passed to the command will be sent in the [#feedback](https://discord.gg/gt2FWER) channel on the [AvaIre Central](https://discord.gg/gt2FWER) server.
 
+
 #### Usage
 
-    !feedback <message>
+	!feedback <message>
+	-  Sends feedback to the devs.
+
+#### Example
+
+	!feedback The thing about the stuff is doing stuff that doesn't make sense for the thing.
 
 <a name="GlobalLeaderboardCommand"></a>
-### Global Leaderboard
+### Global Leaderboard Command
 
-Shows the top 100 users globally, combining their rank, level, and xp between all servers the users are on. The response is paginated to show 10 users per page.
+Shows the top 100 users globally, combining their rank, level, and xp between all servers the users are on.
 
-#### Usage
-
-    !gleaderboard [page]
-
-#### Aliases
-
-    !gtop
-
-<a name="InviteCommand"></a>
-### Invite
-
-Returns a link that can be used to invite the bot to other servers.
+- [Rank Command](#RankCommand)
+- [Leaderboard Command](#LeaderboardCommand)
 
 #### Usage
 
-    !invite - Gives you an invite link that can be used to invite AvaIre to servers.
+	!gleaderboard
+	-  Displays the top 100 players on the XP leaderboard globally.
 
-#### Aliases
+#### Example
 
-    !join
+	!gleaderboard 2
 
 <a name="IPInfoCommand"></a>
-### IP Info
+### IP Info Command
 
 Gives information about the given IP address.
 
+
 #### Usage
 
-    !ipinfo <ip> - Displays information about the given IP address.
+	!ipinfo <ip>
+	-  Displays information about the given IP address.
+
+#### Example
+
+	!ipinfo 8.8.4.4
+
+<a name="InviteCommand"></a>
+### Invite Command
+
+Returns a link that can be used to invite the bot to other servers.
+
+
+#### Usage
+
+	!invite
+	-  Gives you an invite link that can be used to invite AvaIre to servers.
+
 
 <a name="LeaderboardCommand"></a>
-### Leaderboard
+### Leaderboard Command
 
 Displays the server's level leaderboard with the user's name, rank, level and XP. The response is paginated to show 10 users per page.
 
-The **[Levels & Experience](#level)** feature must be enabled to run this command.
+- [Rank Command](#RankCommand)
+- [Global Leaderboard Command](#GlobalLeaderboardCommand)
 
 #### Usage
 
-    !leaderboard [page]
+	!leaderboard
+	-  Displays the top 100 players on the XP leaderboard for the server.
 
-#### Aliases
+#### Example
 
-    !top
+	!leaderboard 2
 
 <a name="PingCommand"></a>
-### Ping
+### Ping Command
 
 Can be used to check if the bot is still alive.
 
+
 #### Usage
 
-    !ping - Returns the latency of the bot.
+	!ping
+	-  Returns the latency of the bot.
+
 
 <a name="RankCommand"></a>
-### Rank
+### Rank Command
 
-This command requires the Levels & Experience feature to be enabled for the server!
-Displays the user's rank, level, XP and how much XP they need to level up, as well as their total xp between all servers they're on.
+Gets your rank, level, xp for the current server and total xp for all servers that you're on, you can tag a user to see their level stats instead.
+This command requires the `Levels & Experience` feature to be enabled for the server!
 
-The **[Levels & Experience](#level)** feature must be enabled to run this command.
+- [Leaderboard Command](#LeaderboardCommand)
+- [Global Leaderboard Command](#GlobalLeaderboardCommand)
 
 #### Usage
 
-    !rank - Displays your rank, level, xp and other stuff
-    !rank @Senither - Displays Senither's rank, level, xp...
+	!rank
+	-  Displays your rank, level, xp and other stuff
+	!rank @Senither
+	-  Displays Senither's rank, level, xp...
 
-#### Aliases
+#### Example
 
-    !level
+	!rank @Senither
 
 <a name="RemindCommand"></a>
-### Remind Me
+### Remind Command
 
 Reminds you of something after a certain amount of time.
 
+
 #### Usage
 
-    !remindme me <time> <message> - Reminds you about the message after the time is up in a DM.
-    !remindme here <time> <message> - Reminds you about the message after the time is up in the channel the command was used in.
+	!remindme me <time> <message>
+	-  Reminds you about the message after the time is up in a DM.
+	!remindme here <time> <message>
+	-  Reminds you about the message after the time is up in the channel the command was used in.
 
-#### Aliases
+#### Example
 
-    !remind
+	!remindme me 25m Something
+	-  Reminds you about something after 25 minutes.
+	!remindme me 2h30m9s Stuff
+	-  Reminds you about stuff after 2 hours, 30 minutes, and 9 seconds.
+	!remindme here 30m Potatoe
+	-  Reminds you about Potatoe in 30 minutes in the current channel.
 
 <a name="ServerIdCommand"></a>
-### Server ID
+### Server ID Command
 
-Displays ID of the server the command was ran in.
+Shows the ID of the server the command was ran in.
 
-#### Usage
+- [Server Info Command](#ServerInfoCommand)
 
-    !serverid
 
-#### Aliases
-
-    !sid
 
 <a name="ServerInfoCommand"></a>
-### Server Info
+### Server Info Command
 
-Displays information about the server the command was ran in. This includes the server's ID, owner, text and voice channels, members, roles, region, avatar and when it was created.
+Shows information about the server the command was ran in.
 
-#### Usage
+- [Server ID Command](#ServerIdCommand)
 
-    !serverinfo
 
-#### Aliases
-
-    !sinfo
 
 <a name="ShardCommand"></a>
-### Shards
+### Shard Command
 
-Displays the status of all the shards for the bot, including how many servers, channels and users each shard is connected to.
+Displays the status of all the shards for the bot, including their server count, channel count, user count and latency.
 
-> If the bot instance is not started in a sharded state the [!stats](#StatsCommand) command will be used instead.
 
 #### Usage
 
-    !shards
+	!shards [page] Displays the shard information, with 12 shards per page.
 
-#### Aliases
+#### Example
 
-    !shard
+	!shards 2
+	-  Displays the 2nd page of shard information.
 
 <a name="SourceCommand"></a>
-### Source
+### Source Command
 
 Gives you the source code for the Bot, or the code for a given command.
 
+
 #### Usage
 
-    !source - Returns the full source code for the bot.
-    !source <command> - Returns the source code for the given command.
+	!source
+	-  Returns the full source code for the bot.
+	!source <command>
+	-  Returns the source code for the given command.
+
+#### Example
+
+	!source ping
 
 <a name="StatsCommand"></a>
-### Stats
+### Stats Command
 
-Displays information about Ava and some related stats. The following information will be returned.
+Displays information about Ava and some related stats.
 
- - Bot ID
- - Author of the bot
- - The current version of the bot
- - The last few changes to the latest version of Ava
- - Library the bot is written in
- - How many database queries have been run
- - How many messages have been received
- - How many servers Ava is playing music in right now
- - How many servers Ava is in
- - How many commands have been run
- - How much memory Ava is using
- - How many users Ava knows about (total, total online, unique and unique online)
- - How many channels Ava knows about (total, text and voice)
- - How long Ava has been online
 
 #### Usage
 
-    !stats - Shows some stats about the bot.
+	!stats
+	-  Shows some stats about the bot.
 
-#### Aliases
-
-    !about
 
 <a name="UptimeCommand"></a>
-### Uptime
+### Uptime Command
 
 Displays how long the bot has been online for.
 
+
 #### Usage
 
-    !uptime
+	!uptime
+	-  Displays how long the bot has been online for.
+
+
+<a name="UserAvatarCommand"></a>
+### User Avatar Command
+
+Get the profile picture of someone on the server by name, id, or mentions.
+
+
+#### Usage
+
+	!avatar <user | user id>
+	-  Gets the avatar of the given user.
+
+#### Example
+
+	!avatar @Senither
+	!avatar
 
 <a name="UserIdCommand"></a>
-### User ID
+### User ID Command
 
-Displays ID of the user who ran the command or the ID of the mentioned user.
+Shows your Discord account user ID, or the ID of the user tagged in the command.
+
+- [User Info Command](#UserInfoCommand)
 
 #### Usage
 
-    !userid [user]
+	!userid [user]
+	-  Gets the ID of the user who ran the command, or the mentioned user.
 
-#### Aliases
+#### Example
 
-    !uid
+	!userid @Senither
+	!userid alexis
+	!userid 88739639380172800
 
 <a name="UserInfoCommand"></a>
-### User Info
+### User Info Command
 
-Displays information about the user who ran the command or the mentioned user. This includes the users username, ID, roles, the date they joined the server, the date they created their account, and how many servers they're in (That Ava knows about).
+Shows information about the user that ran the command, or the mentioned user. This includes the users username, ID, roles, the date they joined the server, the date they created their account, and how many servers they're in (That Ava knows about).
+
+- [User ID Command](#UserIdCommand)
 
 #### Usage
 
-    !userinfo [user]
+	!userinfo [user]
+	-  Gets information about the user who ran the command, or the mentioned user
 
-#### Aliases
+#### Example
 
-    !uinfo
+	!userinfo @Senither
+	!userinfo alexis
+	!userinfo 88739639380172800
 
 <a name="VersionCommand"></a>
-### Version
+### Version Command
 
-Displays the current version of Ava you're running. If the version is outdated the new version will be shown as well as what type of changes have been made.
+Displays the current version of Ava that is running. If the version is outdated the new version will be shown as well as what type of changes have been made.
 
-#### Usage
 
-    !version
+
+#### Example
+
+	!version
+	-  Gets the current version of the bot, and displays any changes compared to the master branch if there is any.
 
 <a name="VoteCommand"></a>
-### Vote
+### Vote Command
 
 Enjoy using the bot? Consider voting for the bot to help it grow, it's free but means a lot to the team behind Ava <3
 
+
 #### Usage
 
-    !vote
+	!vote check
+	-  Checks if you have voted for Ava in the last 12 hours.
+	!vote
+	-  Displays the invite link to Ava, or tells you when your vote expires.
+
+#### Example
+
+	!vote check
+
