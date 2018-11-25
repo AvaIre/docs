@@ -10,15 +10,21 @@
 - [Configuration of Ava](#configuration)
 - [Running the bot](#running-the-bot)
 - [System Commands](#system-commands)
-    - [Application Restart](#commands-restart)
-    - [Application Shutdown](#commands-shutdown)
-    - [Application Update](#commands-update)
-    - [Global Blacklist](#commands-blacklist)
-    - [Set Guild Type](#commands-set-type)
-    - [Evaluate Code](#commands-eval)
-    - [Reload Configuration](#commands-reload)
-    - [Set Bot Status](#commands-status)
-    - [Lavalink](#commands-lavalink)
+    - [Blacklist Command](#BlacklistCommand)
+    - [Bot Statistics Command](#BotStatisticsCommand)
+    - [Debug Mode Command](#DebugModeCommand)
+    - [Eval Command](#EvalCommand)
+    - [Feedback Response Command](#FeedbackResponseCommand)
+    - [Force Leave Server Command](#ForceLeaveServerCommand)
+    - [JSON Command Map](#JSONCmdMapCommand)
+    - [Partner Command](#PartnerCommand)
+    - [Plugin Command](#PluginCommand)
+    - [Reload Configuration Command](#ReloadCommand)
+    - [Restart Command](#RestartCommand)
+    - [Set Guild Type Command](#SetGuildTypeCommand)
+    - [Set Status Command](#SetStatusCommand)
+    - [Shutdown Command](#ShutdownCommand)
+    - [Update Command](#UpdateCommand)
 
 <a name="prerequisites"></a>
 ## Prerequisites
@@ -152,123 +158,275 @@ Keep in mind, if you have further questions or need help, we're around over at o
 
 On the behalf of the AvaIre team, we hope you enjoy your bot!
 
+
 <a name="system-commands"></a>
 ## System Commands
 
 > System commands can only be seen and run by bot administrators, ie, people who have their user ID in the bot admins field in the config of the bot.
 
-All system commands uses a semicolon(;) as their prefix by default. 
+All system commands uses a semicolon(;) as their prefix by default.
 
-| Command           | Short Description      |
-| ----------------- |:---------------------- |
-| [;restart <when\>](#commands-restart)  | Restarts the application gracefully  |
-| [;shutdown <when\>](#commands-shutdown)  | Shuts down the application gracefully  |
-| [;update <when\>](#commands-update)  | Updates the bot to the latest version  |
-| [;blacklist <option\>](#commands-blacklist)  | Adds, Removes and Lists servers/users on the global blacklist |
-| [;set-type <type\>](#commands-set-type)  | Sets the Guild Type of the server the command was ran in |
-| [;eval <code\>](#commands-eval)  | Evaluate and executes raw code and returns the result  |
-| [;reload](#commands-reload)  | Reloads the main config and all plugin configs  |
-| [;status](#commands-status)  | Set the playing status of the bot   |
-| [;lavalink <options\>](#commands-lavalink)  | Add, remove, and manage Lavalink nodes   |
+| Command | Short Description |
+| ------- |:----------------- |
+| [;blacklist](#BlacklistCommand) | Add, Remove, and list users and servers on the blacklist. |
+| [;statistics](#BotStatisticsCommand) | Displays information about the current state of the bot, this command can be pretty heavy to run since a lot of calculations are being run to get some of the information. |
+| [;debug-mode](#DebugModeCommand) | Toggles debug mode on/off during runtime, this will enable passing the context between rest actions to give a better debug result, and to make debugging with Sentry more information. |
+| [;eval](#EvalCommand) | Evaluates and executes code. |
+| [;feedback](#FeedbackResponseCommand) | Responses to a feedback message with the given ID, the channel the original feedback message was sent in will be used for the feedback, along with the message +  the response and author information. |
+| [;force-leave](#ForceLeaveServerCommand) | Force leaves a server with the given ID. |
+| [;jsoncmdmap](#JSONCmdMapCommand) | Creates a JSON map containing detailed information about each command and stores it in a `commandMap.json` file. |
+| [;partner](#PartnerCommand) | Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead.  |
+| [;plugin](#PluginCommand) | Can be used to list installed plugins, as well as available plugins that are officially recognized by the AvaIre development team, you can also display more information about a specific plugin by name. |
+| [;reload](#ReloadCommand) | Reloads the main configuration, and all the configs for loaded plugins. |
+| [;restart](#RestartCommand) | Schedule a time the bot should be automatically-restarted, the bot will shutdown, then start back up again. |
+| [;set-type](#SetGuildTypeCommand) | Sets the Guild Type of the server the command was ran in, if no arguments was given the current Guild Type will be displayed instead. |
+| [;setstatus](#SetStatusCommand) | Sets the status of the bot instance for all servers the bot is on, if no status is set the bot status will go back to cycling status from the config. |
+| [;shutdown](#ShutdownCommand) | Schedules a time the bot should be shutdown gracefully. |
+| [;update](#UpdateCommand) | Schedule a time the bot should be automatically-updated, the bot will shutdown, update itself, and start back up again. |
 
-<a name="commands-restart"></a>
-### Application Restart
+<a name="BlacklistCommand"></a>
+### Blacklist Command
+
+Add, Remove, and list users and servers on the blacklist.
+
+
+#### Usage
+
+    ;blacklist list
+    -  Lists users and servers on the blacklist
+    ;blacklist remove <id>
+    -  Removes the entry with the given ID from the blacklist
+    ;blacklist add <type> <id> <reason>
+    -  Add the type with the given ID to the blacklist
+
+#### Example
+
+    ;blacklist add G 123
+    -  Blacklists the guild with an ID of 123
+    ;blacklist add U 321 Doing stuff
+    -  Blacklists the user with an ID of 321 for "Doing stuff"
+
+<a name="BotStatisticsCommand"></a>
+### Bot Statistics Command
+
+Displays information about the current state of the bot, this command can be pretty heavy to run since a lot of calculations are being run to get some of the information.
+
+
+#### Usage
+
+    ;statistics
+    -  Shows some stats about the bot.
+
+
+<a name="DebugModeCommand"></a>
+### Debug Mode Command
+
+Toggles debug mode on/off during runtime, this will enable passing the context between rest actions to give a better debug result, and to make debugging with Sentry more information.
+
+
+#### Usage
+
+    ;debug-mode <on|off>
+    -  Toggles debug mode on or off
+
+#### Example
+
+    ;debug-mode on
+    -  Enables debug mode.
+
+<a name="EvalCommand"></a>
+### Eval Command
+
+Evaluates and executes code.
+
+
+#### Usage
+
+    ;eval <code>
+    -  Evaluates and executes the given code.
+    ;eval <kill|
+    - k>` 
+    ;eval <timeout|
+    - t> <timeout lenght> <code>` 
+
+#### Example
+
+    ;eval context.makeInfo("Hello, World").queue();
+    ;eval
+    - t 10 return "Some Code"`
+
+<a name="FeedbackResponseCommand"></a>
+### Feedback Response Command
+
+Responses to a feedback message with the given ID, the channel the original feedback message was sent in will be used for the feedback, along with the message +  the response and author information.
+
+
+#### Usage
+
+    ;feedback <id> <message>
+    -  Responds to the given feedback ID with the message.
+
+#### Example
+
+    ;feedback 23 Thanks for the feedback <3
+
+<a name="ForceLeaveServerCommand"></a>
+### Force Leave Server Command
+
+Force leaves a server with the given ID.
+
+
+#### Usage
+
+    ;force-leave <id>
+    -  Leaves the server with the given ID if the bot is on the server.
+
+#### Example
+
+    ;force-leave 304414699645042690
+
+<a name="JSONCmdMapCommand"></a>
+### JSON Command Map
+
+Creates a JSON map containing detailed information about each command and stores it in a `commandMap.json` file.
+
+
+#### Usage
+
+    ;jsoncmdmap
+    -  Generates the command map and stores it in a file.
+
+
+<a name="PartnerCommand"></a>
+### Partner Command
+
+Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead. 
+
+
+#### Usage
+
+    ;partner <server ID>
+    -  Displays the current guild partnership status.
+    ;partner <server ID> <on|off>
+    -  Toggles partnership on/off for the given server.
+
+#### Example
+
+    ;partner 284083636368834561
+    -  Displays the servers partnerships status.
+    ;partner 284083636368834561 enable
+    -  Makes the server a partner with Ava.
+
+<a name="PluginCommand"></a>
+### Plugin Command
+
+Can be used to list installed plugins, as well as available plugins that are officially recognized by the AvaIre development team, you can also display more information about a specific plugin by name.
+
+
+#### Usage
+
+    ;plugin show <plugin>
+    -  Lists information about the plugin.
+    ;plugin list <installed|i> [page]
+    -  Lists installed plugins.
+    ;plugin list <available|a> [page]
+    -  Lists available plugins.
+
+
+<a name="ReloadCommand"></a>
+### Reload Configuration Command
+
+Reloads the main configuration, and all the configs for loaded plugins.
+
+
+
+
+<a name="RestartCommand"></a>
+### Restart Command
 
 Schedule a time the bot should be automatically-restarted, the bot will shutdown, then start back up again.
-This requires [Watchdog](https://github.com/avaire/watchdog) to work, without it the bot will just shutdown.
+This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or that the `--internal-restart` flag was used when starting the bot, without it the bot will just shutdown.
+
 
 #### Usage
 
-    ;restart now - Restarts the bot now
-    ;restart cancel - Cancels the restart process
-    ;restart <time> - Schedules a time the bot should be restarted
+    ;restart now
+    -  Restarts the bot now.
+    ;restart cancel
+    -  Cancels the restart process.
+    ;restart <time>
+    -  Schedules a time the bot should be restarted.
 
-<a name="commands-shutdown"></a>
-### Application Shutdown
 
-Schedules a time the bot should be shutdown gracefully.
-
-#### Usage
-
-    ;shutdown now - Shuts down the bot now.
-    ;shutdown cancel - Cancels the shutdown process.
-    ;shutdown <time> - Schedules a time the bot should be shutdown.
-
-<a name="commands-update"></a>
-### Application Update
-
-Schedule a time the bot should be automatically-updated, the bot will shutdown, update itself to the latest version from github, and start back up again.
-This requires [Watchdog](https://github.com/avaire/watchdog) to work, without it the bot will just shutdown.
-
-#### Usage
-
-    ;update now - Updates the bot now.
-    ;update cancel - Cancels the update process.
-    ;update <time> - Schedules a time the bot should be updated.
-
-<a name="commands-blacklist"></a>
-### Global Blacklist
-
-Add, Remove, and list users and servers on the blacklist. Users and servers on the blacklist will be ignored by Ava, regardless of their permissions, or roles on any server, 
-
-#### Usage
-
-    ;blacklist list - Lists users and servers on the blacklist.
-    ;blacklist remove <id> - Removes the entry from the blacklist.
-    ;blacklist add <type> <id> <reason> - Add the ID to the blacklist.
-
-<a name="commands-set-type"></a>
-### Set Guild Type
+<a name="SetGuildTypeCommand"></a>
+### Set Guild Type Command
 
 Sets the Guild Type of the server the command was ran in, if no arguments was given the current Guild Type will be displayed instead.
 
-> Ava has an internal ranking system for guilds/servers, different ranks can give servers different limits for commands like [playlists](/docs/{{version}}/commands#PlaylistCommand) and [aliases](/docs/{{version}}/commands#AliasCommand), 
 
 #### Usage
 
-    ;set-type - Displays the current guild type.
-    ;set-type list - List available guild types.
-    ;set-type <type id> - Changes the guild type to the given type.
+    ;set-type
+    -  Displays the current guild type.
+    ;set-type list
+    -  List available guild types.
+    ;set-type <type id>
+    -  Changes the guild type to the given type.
 
-<a name="commands-eval"></a>
-### Evaluate Code
+#### Example
 
-Runs the given piece of code as the bot.
+    ;set-type 2
+    -  Sets the guild type to VIP+
+    ;set-type list
+    -  Lists the available guild types.
 
-> This command is really dangerous to use if you don't know what you're doing! Use it at your own risk!
-
-#### Usage
-
-    ;eval <code> - Runs the given code as the bot.
-
-<a name="commands-reload"></a>
-### Reload Configuration
-
-Reloads the main `config.yml` configuration file, and all the configs for enabled plugins.
-
-#### Usage
-
-    ;reload - Reloads all the configs.
-
-<a name="commands-status"></a>
-### Set Bot Status
+<a name="SetStatusCommand"></a>
+### Set Status Command
 
 Sets the status of the bot instance for all servers the bot is on, if no status is set the bot status will go back to cycling status from the config.
 
-#### Usage
-
-    ;setstatus - Goes back to cycling status from the config.
-    ;setstatus <game> - Sets the bots playing status to the given game.
-    ;setstatus <twitch url> - The URL that the bot should be broadcasting.
-
-<a name="commands-lavalink"></a>
-### Lavalink
-
-This command can be used to list the status of Lavalink nodes, adding, and removing nodes on the fly during runtime.
 
 #### Usage
 
-    ;lavalink list - List all Lavalink nodes
-    ;lavalink show <node> - Shows in-depth information about the node
-    ;lavalink add <name> <url> <pass> - Adds the node to Lavalink
-    ;lavalink remove <name> - Removes the node from Lavalink
+    ;setstatus <game>
+    -  Sets the bots playing status to the given game.
+    ;setstatus <twitch url>
+    -  The URL that the bot should be broadcasting.
+
+#### Example
+
+    ;setstatus with some stuff
+
+<a name="ShutdownCommand"></a>
+### Shutdown Command
+
+Schedules a time the bot should be shutdown gracefully.
+
+
+#### Usage
+
+    ;shutdown now
+    -  Shuts down the bot now.
+    ;shutdown cancel
+    -  Cancels the shutdown process.
+    ;shutdown <time>
+    -  Schedules a time the bot should be shutdown.
+
+
+<a name="UpdateCommand"></a>
+### Update Command
+
+Schedule a time the bot should be automatically-updated, the bot will shutdown, update itself, and start back up again.
+This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or that the `--internal-restart` flag was used when starting the bot, without it the bot will just shutdown.
+
+
+#### Usage
+
+    ;update now
+    -  Updates the bot now.
+    ;update cancel
+    -  Cancels the update process.
+    ;update <time>
+    -  Schedules a time the bot should be updated.
+
+
