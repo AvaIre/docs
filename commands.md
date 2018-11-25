@@ -76,7 +76,7 @@ Adds a role to the self-assignable roles list, any role on the list can be claim
 #### Usage
 
 	!asar <role>
-	-  Adds the mentioned role to the self
+	-  Adds the mentioned role to the self-assignable roles list.
 
 #### Example
 
@@ -433,7 +433,7 @@ List all the self-assignable roles, 10 per-page.
 #### Usage
 
 	!lsar
-	-  List all the self
+	-  List all the self-assignable roles for the server.
 
 
 <a name="ModlogCommand"></a>
@@ -545,8 +545,7 @@ Displays the NSFW status of the current channel, additionally on/off can be pass
 
 	!nsfw
 	!nsfw on
-	!nsfw #nsfw
-	- stuff`
+	!nsfw #nsfw-stuff
 	!nsfw #general off
 
 <a name="PurgeCommand"></a>
@@ -601,7 +600,7 @@ Removes a role from the self-assignable roles list, any role on the list can be 
 #### Usage
 
 	!rsar <role>
-	-  Removes the mentioned role from the self
+	-  Removes the mentioned role from the self-assignable roles list.
 
 #### Example
 
@@ -629,8 +628,8 @@ Disables the slowmode or enables it with the given limit, users with the **Manag
 	-  Disables slowmode in the general channel.
 	!slowmode 5
 	-  Enables slowmode, allowing one message every five seconds.
-	!slowmode #slow
-	- chat 30` 
+	!slowmode #slow-chat 30
+	-  Enables slowmode in the slow chat channel, allowing one message every 30 seconds per user.
 
 <a name="SoftBanCommand"></a>
 ### Soft Ban Command
@@ -804,7 +803,7 @@ Adds a role to the self-assignable roles list, any role on the list can be claim
 #### Usage
 
 	!asar <role>
-	-  Adds the mentioned role to the self
+	-  Adds the mentioned role to the self-assignable roles list.
 
 #### Example
 
@@ -1161,7 +1160,7 @@ List all the self-assignable roles, 10 per-page.
 #### Usage
 
 	!lsar
-	-  List all the self
+	-  List all the self-assignable roles for the server.
 
 
 <a name="ModlogCommand"></a>
@@ -1273,8 +1272,7 @@ Displays the NSFW status of the current channel, additionally on/off can be pass
 
 	!nsfw
 	!nsfw on
-	!nsfw #nsfw
-	- stuff`
+	!nsfw #nsfw-stuff
 	!nsfw #general off
 
 <a name="PurgeCommand"></a>
@@ -1329,7 +1327,7 @@ Removes a role from the self-assignable roles list, any role on the list can be 
 #### Usage
 
 	!rsar <role>
-	-  Removes the mentioned role from the self
+	-  Removes the mentioned role from the self-assignable roles list.
 
 #### Example
 
@@ -1357,8 +1355,8 @@ Disables the slowmode or enables it with the given limit, users with the **Manag
 	-  Disables slowmode in the general channel.
 	!slowmode 5
 	-  Enables slowmode, allowing one message every five seconds.
-	!slowmode #slow
-	- chat 30` 
+	!slowmode #slow-chat 30
+	-  Enables slowmode in the slow chat channel, allowing one message every 30 seconds per user.
 
 <a name="SoftBanCommand"></a>
 ### Soft Ban Command
@@ -1905,14 +1903,12 @@ Removes a song or multiple songs from the music queue.
 #### Usage
 
 	!removesong <song id> Removes the song with the given ID from the queue.
-	!removesong <start song id>
-	-  <end song id>` Removes the songs with the given range of IDs, inclusive, from the queue
+	!removesong <start song id> - <end song id> Removes the songs with the given range of IDs, inclusive, from the queue
 
 #### Example
 
 	!removesong 3 Removes song 3 from the queue
-	!removesong 3
-	- 6` Removes songs 3
+	!removesong 3-6 Removes songs 3-6 from the queue
 
 <a name="RepeatMusicQueueCommand"></a>
 ### Repeat Music Command
@@ -2029,8 +2025,8 @@ Plays the provided song for you, if just the song title is given the bot will se
 
 	!soundcloud A cool song
 	-  Finds songs with the name "A cool song".
-	!soundcloud https://soundcloud.com/yellowclaw/yellow
-	- claw
+	!soundcloud https://soundcloud.com/yellowclaw/yellow-claw-flux-pavilion-catch-me-feat-naaz
+	-  Plays the song off a link
 
 <a name="StopCommand"></a>
 ### Stop Command
@@ -2179,8 +2175,7 @@ Calculates the given math equations and returns the result for you.
 
 #### Example
 
-	!calculate (
-	- 50 + sqrt(50 ^ 2 
+	!calculate (-50 + sqrt(50 ^ 2 - ((4 * 5) * (100 - 955)))) / (2 * 5) == 9
 
 <a name="ChannelIdCommand"></a>
 ### Channel ID Command
@@ -2348,9 +2343,9 @@ Reminds you of something after a certain amount of time.
 #### Usage
 
 	!remindme me <time> <message>
-	-  Reminds you about the message after the time is up in a DM.
+- Reminds you about the message after the time is up in a DM.
 	!remindme here <time> <message>
-	-  Reminds you about the message after the time is up in the channel the command was used in.
+- Reminds you about the message after the time is up in the channel the command was used in.
 
 #### Example
 

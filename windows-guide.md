@@ -244,16 +244,15 @@ Evaluates and executes code.
 
     ;eval <code>
     -  Evaluates and executes the given code.
-    ;eval <kill|
-    - k>` 
-    ;eval <timeout|
-    - t> <timeout lenght> <code>` 
+    ;eval <kill|-k>
+    -  Kills the last task if it is still running.
+    ;eval <timeout|-t> <timeout lenght> <code>
+    -  Evaluates and executes the given code with the given timeout.
 
 #### Example
 
     ;eval context.makeInfo("Hello, World").queue();
-    ;eval
-    - t 10 return "Some Code"`
+    ;eval -t 10 return "Some Code"
 
 <a name="FeedbackResponseCommand"></a>
 ### Feedback Response Command
