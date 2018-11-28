@@ -51,9 +51,11 @@ Displaying a given command's information can be done by using `help` followed by
 
 Adds a role to the leveling up table, roles on the table will be given to users once they level up and meet the requirements for the role.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [List Level Roles Command](#ListLevelRolesCommand)
-- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
 
 #### Usage
 
@@ -70,8 +72,10 @@ Adds a role to the leveling up table, roles on the table will be given to users 
 
 Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
 
-- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
-- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+ - [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
 
 #### Usage
 
@@ -87,6 +91,8 @@ Adds a role to the self-assignable roles list, any role on the list can be claim
 
 Toggles the AI(Artificial Intelligence) on/off for the current channel.
 
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
 
 #### Usage
 
@@ -99,7 +105,9 @@ Toggles the AI(Artificial Intelligence) on/off for the current channel.
 
 Creates and maps a custom alias for a pre-existing command. Provide no alias to remove an existing alias.
 
-- [Aliases Command](#ListAliasesCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Aliases Command](#ListAliasesCommand)
 
 #### Usage
 
@@ -116,6 +124,8 @@ Creates and maps a custom alias for a pre-existing command. Provide no alias to 
 ### Autorole Command
 
 Automatically assigns a specified role to every user who joins the server.
+
+**Special permissions required to run this command**<br>The bot needs **Manage Roles** permission to run this command.<br>The user needs **Administrator** permission to run this command.
 
 
 #### Usage
@@ -136,8 +146,10 @@ Automatically assigns a specified role to every user who joins the server.
 
 Bans the mentioned user from the server with the provided reason, all messages the user has sent in the last 7 days will also be deleted in the process, this action will be reported to any channel that has modloging enabled.
 
-- [Soft Ban Command](#SoftBanCommand)
-- [Unban Command](#UnbanCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Ban Members** permission to run this command.
+
+ - [Soft Ban Command](#SoftBanCommand)
+ - [Unban Command](#UnbanCommand)
 
 #### Usage
 
@@ -155,8 +167,9 @@ Bans the mentioned user from the server with the provided reason, all messages t
 
 Shows status of all command categories in the current or mentioned channel, both for globally and per-channel.
 
-- [Toggle Category Command](#ToggleCategoryCommand)
-- [Change Prefix Command](#ChangePrefixCommand)
+
+ - [Toggle Category Command](#ToggleCategoryCommand)
+ - [Change Prefix Command](#ChangePrefixCommand)
 
 #### Usage
 
@@ -172,8 +185,10 @@ Shows status of all command categories in the current or mentioned channel, both
 
 Sets the prefix that should be used for all commands in a given category, if no prefix is provided the category prefix will be reset back to the default instead, each category in AvaIre can have a different prefix, or you can choose to change them all at the same time.
 
-- [Categories Command](#CategoriesCommand)
-- [Toggle Category Command](#ToggleCategoryCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Categories Command](#CategoriesCommand)
+ - [Toggle Category Command](#ToggleCategoryCommand)
 
 #### Usage
 
@@ -196,9 +211,11 @@ Sets the prefix that should be used for all commands in a given category, if no 
 
 Toggles the goodbye messages on or off for the current channel.
 
-- [Goodbye Message Command](#GoodbyeMessageCommand)
-- [Welcome Command](#WelcomeCommand)
-- [Welcome Message Command](#WelcomeMessageCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Message Command](#GoodbyeMessageCommand)
+ - [Welcome Command](#WelcomeCommand)
+ - [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
@@ -213,9 +230,11 @@ Sets the message that should be sent when a user leaves the server, this command
 The goodbye message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
 https://avairebot.com/docs/placeholders
 
-- [Goodbye Command](#GoodbyeCommand)
-- [Welcome Command](#WelcomeCommand)
-- [Welcome Message Command](#WelcomeMessageCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Command](#GoodbyeCommand)
+ - [Welcome Command](#WelcomeCommand)
+ - [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
@@ -244,7 +263,8 @@ https://avairebot.com/docs/placeholders
 
 Gives you the role with the given name if it is in the self-assignable list of roles.
 
-- [I Am Not Command](#IAmNotCommand)
+
+ - [I Am Not Command](#IAmNotCommand)
 
 #### Usage
 
@@ -259,7 +279,8 @@ Gives you the role with the given name if it is in the self-assignable list of r
 
 Removes the role with the given name from you if it is in the self-assignable list of roles.
 
-- [I Am Command](#IAmCommand)
+
+ - [I Am Command](#IAmCommand)
 
 #### Usage
 
@@ -274,7 +295,9 @@ Removes the role with the given name from you if it is in the self-assignable li
 
 Kicks the mentioned user from the server with the provided reason, this action will be reported to any channel that has modloging enabled.
 
-- [Voice Kick Command](#VoiceKickCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Kick Members** permission to run this command.
+
+ - [Voice Kick Command](#VoiceKickCommand)
 
 #### Usage
 
@@ -289,6 +312,8 @@ Kicks the mentioned user from the server with the provided reason, this action w
 ### Language Command
 
 Show a list of available languages or set a language that should be used for the server.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
 
 
 #### Usage
@@ -311,10 +336,12 @@ Show a list of available languages or set a language that should be used for the
 Toggles the Leveling alerts system on or off for the current server or channel.
 This command requires the `Levels & Experience` feature to be enabled for the server!
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Level Modifier Command](#LevelModifierCommand)
-- [Toggle Level Command](#LevelCommand)
-- [Rank Command](#RankCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Toggle Level Command](#LevelCommand)
+ - [Rank Command](#RankCommand)
 
 #### Usage
 
@@ -333,10 +360,12 @@ This command requires the `Levels & Experience` feature to be enabled for the se
 
 Toggles the Leveling system on or off for the current server.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Level Modifier Command](#LevelModifierCommand)
-- [Level Alerts Command](#LevelAlertsCommand)
-- [Rank Command](#RankCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Rank Command](#RankCommand)
 
 #### Usage
 
@@ -349,12 +378,13 @@ Toggles the Leveling system on or off for the current server.
 
 Level Hierarchy determines if level roles give to users should be removed once they level up and get the next role, or if they should keep all of their roles, when the level hierarchy is enabled and a user levels up to get the next role, all other level roles they have will be removed, if they level up to a level without a level role, nothing will happen to them, the feature can be toggled on and off using this command.
 
-- [Add Level Role Command](#AddLevelRoleCommand)
-- [Remove Level Roles Command](#RemoveLevelRoleCommand)
-- [List Level Roles Command](#ListLevelRolesCommand)
-- [Level Modifier Command](#LevelModifierCommand)
-- [Level Alerts Command](#LevelAlertsCommand)
-- [Toggle Level Command](#LevelCommand)
+
+ - [Add Level Role Command](#AddLevelRoleCommand)
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Toggle Level Command](#LevelCommand)
 
 #### Usage
 
@@ -373,10 +403,12 @@ Level Hierarchy determines if level roles give to users should be removed once t
 
 The level modifier allows a server to set a custom level and experience modifier, allowing a server to fine tune the amount of XP required to level up by either making it harder or easier than default.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Level Alerts Command](#LevelAlertsCommand)
-- [Toggle Level Command](#LevelCommand)
-- [Rank Command](#RankCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Toggle Level Command](#LevelCommand)
+ - [Rank Command](#RankCommand)
 
 #### Usage
 
@@ -399,7 +431,9 @@ The level modifier allows a server to set a custom level and experience modifier
 
 Lists all the existing command aliases.
 
-- [Alias Command](#AliasCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Alias Command](#AliasCommand)
 
 #### Usage
 
@@ -412,9 +446,10 @@ Lists all the existing command aliases.
 
 List all the leveling roles and the level require to get them.
 
-- [Remove Level Roles Command](#RemoveLevelRoleCommand)
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Add Level Role Command](#AddLevelRoleCommand)
+
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Add Level Role Command](#AddLevelRoleCommand)
 
 #### Usage
 
@@ -427,8 +462,9 @@ List all the leveling roles and the level require to get them.
 
 List all the self-assignable roles, 10 per-page.
 
-- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
-- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
+
+ - [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+ - [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
 
 #### Usage
 
@@ -441,8 +477,10 @@ List all the self-assignable roles, 10 per-page.
 
 Displays the modlogging status for the server if no arguments is given, you can also mention a text channel to enable modlogging and set it to the mentioned channel.
 
-- [Modlog History Command](#ModlogHistoryCommand)
-- [Modlog Reason Command](#ModlogReasonCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Modlog History Command](#ModlogHistoryCommand)
+ - [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
@@ -467,8 +505,10 @@ Displays the modlogging status for the server if no arguments is given, you can 
 
 Displays the modlog history for the mentioned user, this will display all past warnings, bans, soft bans, kicks, and voice kicks.
 
-- [Modlog Command](#ModlogCommand)
-- [Modlog Reason Command](#ModlogReasonCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Messages** permission to run this command.
+
+ - [Modlog Command](#ModlogCommand)
+ - [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
@@ -488,13 +528,14 @@ Server admins can pardon any modlog cases, while everyone else can only pardon m
 
 **Note:** This command does not revert the action for the modlog case, so if the user was banned, they will not be unbanned using this command.
 
-- [Modlog History Command](#ModlogHistoryCommand)
-- [Warn Command](#WarnCommand)
-- [Soft Ban Command](#SoftBanCommand)
-- [Ban Command](#BanCommand)
-- [Unban Command](#UnbanCommand)
-- [Kick Command](#KickCommand)
-- [Voice Kick Command](#VoiceKickCommand)
+
+ - [Modlog History Command](#ModlogHistoryCommand)
+ - [Warn Command](#WarnCommand)
+ - [Soft Ban Command](#SoftBanCommand)
+ - [Ban Command](#BanCommand)
+ - [Unban Command](#UnbanCommand)
+ - [Kick Command](#KickCommand)
+ - [Voice Kick Command](#VoiceKickCommand)
 
 #### Usage
 
@@ -511,8 +552,9 @@ Server admins can pardon any modlog cases, while everyone else can only pardon m
 Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command.
 You can only set modlog reasons for old modlog cases if you were the moderator for the case.
 
-- [Modlog Command](#ModlogCommand)
-- [Modlog History Command](#ModlogHistoryCommand)
+
+ - [Modlog Command](#ModlogCommand)
+ - [Modlog History Command](#ModlogHistoryCommand)
 
 #### Usage
 
@@ -528,6 +570,8 @@ You can only set modlog reasons for old modlog cases if you were the moderator f
 ### NSFW Command
 
 Displays the NSFW status of the current channel, additionally on/off can be passed to the command to change the channels NSFW status.
+
+**Special permissions required to run this command**<br>The bot and the user needs the **Manage Channels** permission to run this command.
 
 
 #### Usage
@@ -553,6 +597,8 @@ Displays the NSFW status of the current channel, additionally on/off can be pass
 
 Deletes up to 100 chat messages in any channel, you can mention a user if you only want to delete messages by the mentioned user.
 
+**Special permissions required to run this command**<br>The user needs **Manage Messages** permission to run this command.<br>The bot needs **Manage Messages** and **Read History** permissions to run this command.
+
 
 #### Usage
 
@@ -573,9 +619,11 @@ Deletes up to 100 chat messages in any channel, you can mention a user if you on
 
 Remove a role from the leveling up role table.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [List Level Roles Command](#ListLevelRolesCommand)
-- [Add Level Role Command](#AddLevelRoleCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Add Level Role Command](#AddLevelRoleCommand)
 
 #### Usage
 
@@ -594,8 +642,10 @@ Remove a role from the leveling up role table.
 
 Removes a role from the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
 
-- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
-- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+ - [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
 
 #### Usage
 
@@ -611,7 +661,9 @@ Removes a role from the self-assignable roles list, any role on the list can be 
 
 Disables the slowmode or enables it with the given limit, users with the **Manage Messages**  or **Manage Channels** permissions are exempt from slowmode limits.
 
-- [Purge Command](#PurgeCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Manage Channels** permission to run this command.
+
+ - [Purge Command](#PurgeCommand)
 
 #### Usage
 
@@ -636,8 +688,10 @@ Disables the slowmode or enables it with the given limit, users with the **Manag
 
 Bans the mentioned user from the server with the provided reason without removing any of the messages they have sent, this action will be reported to any channel that has modloging enabled.
 
-- [Unban Command](#UnbanCommand)
-- [Ban Command](#BanCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Ban Members** permission to run this command.
+
+ - [Unban Command](#UnbanCommand)
+ - [Ban Command](#BanCommand)
 
 #### Usage
 
@@ -655,8 +709,10 @@ Bans the mentioned user from the server with the provided reason without removin
 
 This command allows you to toggle command categories on/off for the current channel or the whole server in one go, this is useful if you like some features in the bot but not others.
 
-- [Categories Command](#CategoriesCommand)
-- [Change Prefix Command](#ChangePrefixCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Categories Command](#CategoriesCommand)
+ - [Change Prefix Command](#ChangePrefixCommand)
 
 #### Usage
 
@@ -675,8 +731,10 @@ This command allows you to toggle command categories on/off for the current chan
 
 Unbans the user with the given ID from the server if they are banned, if a modlog channel is setup, the unban will be logged to the channel as well.
 
-- [Soft Ban Command](#SoftBanCommand)
-- [Ban Command](#BanCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Ban Members** permission to run this command.
+
+ - [Soft Ban Command](#SoftBanCommand)
+ - [Ban Command](#BanCommand)
 
 #### Usage
 
@@ -692,7 +750,9 @@ Unbans the user with the given ID from the server if they are banned, if a modlo
 
 Kicks the mentioned user from the voice channel they're currently connected to, this action will be reported to any channel that has modloging enabled.
 
-- [Kick Command](#KickCommand)
+**Special permissions required to run this command**<br>The user needs **Kick Members** permission to run this command.<br>The bot needs **Manage Channels** and **Move Members** permissions to run this command.
+
+ - [Kick Command](#KickCommand)
 
 #### Usage
 
@@ -708,8 +768,10 @@ Kicks the mentioned user from the voice channel they're currently connected to, 
 
 Warns a given user with a message, this action will be reported to any channel that has modloging enabled.
 
-- [Modlog History Command](#ModlogHistoryCommand)
-- [Modlog Reason Command](#ModlogReasonCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Messages** permission to run this command.
+
+ - [Modlog History Command](#ModlogHistoryCommand)
+ - [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
@@ -726,9 +788,11 @@ Warns a given user with a message, this action will be reported to any channel t
 
 Toggles the welcome messages on or off for the current channel.
 
-- [Goodbye Command](#GoodbyeCommand)
-- [Goodbye Message Command](#GoodbyeMessageCommand)
-- [Welcome Message Command](#WelcomeMessageCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Command](#GoodbyeCommand)
+ - [Goodbye Message Command](#GoodbyeMessageCommand)
+ - [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
@@ -743,9 +807,11 @@ Sets the message that should be sent when a user joins the server, this command 
 The welcome message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
 https://avairebot.com/docs/placeholders
 
-- [Goodbye Command](#GoodbyeCommand)
-- [Goodbye Message Command](#GoodbyeMessageCommand)
-- [Welcome Command](#WelcomeCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Command](#GoodbyeCommand)
+ - [Goodbye Message Command](#GoodbyeMessageCommand)
+ - [Welcome Command](#WelcomeCommand)
 
 #### Usage
 
@@ -778,9 +844,11 @@ https://avairebot.com/docs/placeholders
 
 Adds a role to the leveling up table, roles on the table will be given to users once they level up and meet the requirements for the role.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [List Level Roles Command](#ListLevelRolesCommand)
-- [Remove Level Roles Command](#RemoveLevelRoleCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
 
 #### Usage
 
@@ -797,8 +865,10 @@ Adds a role to the leveling up table, roles on the table will be given to users 
 
 Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
 
-- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
-- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+ - [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
 
 #### Usage
 
@@ -814,6 +884,8 @@ Adds a role to the self-assignable roles list, any role on the list can be claim
 
 Toggles the AI(Artificial Intelligence) on/off for the current channel.
 
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
 
 #### Usage
 
@@ -826,7 +898,9 @@ Toggles the AI(Artificial Intelligence) on/off for the current channel.
 
 Creates and maps a custom alias for a pre-existing command. Provide no alias to remove an existing alias.
 
-- [Aliases Command](#ListAliasesCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Aliases Command](#ListAliasesCommand)
 
 #### Usage
 
@@ -843,6 +917,8 @@ Creates and maps a custom alias for a pre-existing command. Provide no alias to 
 ### Autorole Command
 
 Automatically assigns a specified role to every user who joins the server.
+
+**Special permissions required to run this command**<br>The bot needs **Manage Roles** permission to run this command.<br>The user needs **Administrator** permission to run this command.
 
 
 #### Usage
@@ -863,8 +939,10 @@ Automatically assigns a specified role to every user who joins the server.
 
 Bans the mentioned user from the server with the provided reason, all messages the user has sent in the last 7 days will also be deleted in the process, this action will be reported to any channel that has modloging enabled.
 
-- [Soft Ban Command](#SoftBanCommand)
-- [Unban Command](#UnbanCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Ban Members** permission to run this command.
+
+ - [Soft Ban Command](#SoftBanCommand)
+ - [Unban Command](#UnbanCommand)
 
 #### Usage
 
@@ -882,8 +960,9 @@ Bans the mentioned user from the server with the provided reason, all messages t
 
 Shows status of all command categories in the current or mentioned channel, both for globally and per-channel.
 
-- [Toggle Category Command](#ToggleCategoryCommand)
-- [Change Prefix Command](#ChangePrefixCommand)
+
+ - [Toggle Category Command](#ToggleCategoryCommand)
+ - [Change Prefix Command](#ChangePrefixCommand)
 
 #### Usage
 
@@ -899,8 +978,10 @@ Shows status of all command categories in the current or mentioned channel, both
 
 Sets the prefix that should be used for all commands in a given category, if no prefix is provided the category prefix will be reset back to the default instead, each category in AvaIre can have a different prefix, or you can choose to change them all at the same time.
 
-- [Categories Command](#CategoriesCommand)
-- [Toggle Category Command](#ToggleCategoryCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Categories Command](#CategoriesCommand)
+ - [Toggle Category Command](#ToggleCategoryCommand)
 
 #### Usage
 
@@ -923,9 +1004,11 @@ Sets the prefix that should be used for all commands in a given category, if no 
 
 Toggles the goodbye messages on or off for the current channel.
 
-- [Goodbye Message Command](#GoodbyeMessageCommand)
-- [Welcome Command](#WelcomeCommand)
-- [Welcome Message Command](#WelcomeMessageCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Message Command](#GoodbyeMessageCommand)
+ - [Welcome Command](#WelcomeCommand)
+ - [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
@@ -940,9 +1023,11 @@ Sets the message that should be sent when a user leaves the server, this command
 The goodbye message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
 https://avairebot.com/docs/placeholders
 
-- [Goodbye Command](#GoodbyeCommand)
-- [Welcome Command](#WelcomeCommand)
-- [Welcome Message Command](#WelcomeMessageCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Command](#GoodbyeCommand)
+ - [Welcome Command](#WelcomeCommand)
+ - [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
@@ -971,7 +1056,8 @@ https://avairebot.com/docs/placeholders
 
 Gives you the role with the given name if it is in the self-assignable list of roles.
 
-- [I Am Not Command](#IAmNotCommand)
+
+ - [I Am Not Command](#IAmNotCommand)
 
 #### Usage
 
@@ -986,7 +1072,8 @@ Gives you the role with the given name if it is in the self-assignable list of r
 
 Removes the role with the given name from you if it is in the self-assignable list of roles.
 
-- [I Am Command](#IAmCommand)
+
+ - [I Am Command](#IAmCommand)
 
 #### Usage
 
@@ -1001,7 +1088,9 @@ Removes the role with the given name from you if it is in the self-assignable li
 
 Kicks the mentioned user from the server with the provided reason, this action will be reported to any channel that has modloging enabled.
 
-- [Voice Kick Command](#VoiceKickCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Kick Members** permission to run this command.
+
+ - [Voice Kick Command](#VoiceKickCommand)
 
 #### Usage
 
@@ -1016,6 +1105,8 @@ Kicks the mentioned user from the server with the provided reason, this action w
 ### Language Command
 
 Show a list of available languages or set a language that should be used for the server.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
 
 
 #### Usage
@@ -1038,10 +1129,12 @@ Show a list of available languages or set a language that should be used for the
 Toggles the Leveling alerts system on or off for the current server or channel.
 This command requires the `Levels & Experience` feature to be enabled for the server!
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Level Modifier Command](#LevelModifierCommand)
-- [Toggle Level Command](#LevelCommand)
-- [Rank Command](#RankCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Toggle Level Command](#LevelCommand)
+ - [Rank Command](#RankCommand)
 
 #### Usage
 
@@ -1060,10 +1153,12 @@ This command requires the `Levels & Experience` feature to be enabled for the se
 
 Toggles the Leveling system on or off for the current server.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Level Modifier Command](#LevelModifierCommand)
-- [Level Alerts Command](#LevelAlertsCommand)
-- [Rank Command](#RankCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Rank Command](#RankCommand)
 
 #### Usage
 
@@ -1076,12 +1171,13 @@ Toggles the Leveling system on or off for the current server.
 
 Level Hierarchy determines if level roles give to users should be removed once they level up and get the next role, or if they should keep all of their roles, when the level hierarchy is enabled and a user levels up to get the next role, all other level roles they have will be removed, if they level up to a level without a level role, nothing will happen to them, the feature can be toggled on and off using this command.
 
-- [Add Level Role Command](#AddLevelRoleCommand)
-- [Remove Level Roles Command](#RemoveLevelRoleCommand)
-- [List Level Roles Command](#ListLevelRolesCommand)
-- [Level Modifier Command](#LevelModifierCommand)
-- [Level Alerts Command](#LevelAlertsCommand)
-- [Toggle Level Command](#LevelCommand)
+
+ - [Add Level Role Command](#AddLevelRoleCommand)
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Toggle Level Command](#LevelCommand)
 
 #### Usage
 
@@ -1100,10 +1196,12 @@ Level Hierarchy determines if level roles give to users should be removed once t
 
 The level modifier allows a server to set a custom level and experience modifier, allowing a server to fine tune the amount of XP required to level up by either making it harder or easier than default.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Level Alerts Command](#LevelAlertsCommand)
-- [Toggle Level Command](#LevelCommand)
-- [Rank Command](#RankCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Toggle Level Command](#LevelCommand)
+ - [Rank Command](#RankCommand)
 
 #### Usage
 
@@ -1126,7 +1224,9 @@ The level modifier allows a server to set a custom level and experience modifier
 
 Lists all the existing command aliases.
 
-- [Alias Command](#AliasCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Alias Command](#AliasCommand)
 
 #### Usage
 
@@ -1139,9 +1239,10 @@ Lists all the existing command aliases.
 
 List all the leveling roles and the level require to get them.
 
-- [Remove Level Roles Command](#RemoveLevelRoleCommand)
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [Add Level Role Command](#AddLevelRoleCommand)
+
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Add Level Role Command](#AddLevelRoleCommand)
 
 #### Usage
 
@@ -1154,8 +1255,9 @@ List all the leveling roles and the level require to get them.
 
 List all the self-assignable roles, 10 per-page.
 
-- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
-- [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
+
+ - [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+ - [Remove Self Assignable Role Command](#RemoveSelfAssignableRoleCommand)
 
 #### Usage
 
@@ -1168,8 +1270,10 @@ List all the self-assignable roles, 10 per-page.
 
 Displays the modlogging status for the server if no arguments is given, you can also mention a text channel to enable modlogging and set it to the mentioned channel.
 
-- [Modlog History Command](#ModlogHistoryCommand)
-- [Modlog Reason Command](#ModlogReasonCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Modlog History Command](#ModlogHistoryCommand)
+ - [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
@@ -1194,8 +1298,10 @@ Displays the modlogging status for the server if no arguments is given, you can 
 
 Displays the modlog history for the mentioned user, this will display all past warnings, bans, soft bans, kicks, and voice kicks.
 
-- [Modlog Command](#ModlogCommand)
-- [Modlog Reason Command](#ModlogReasonCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Messages** permission to run this command.
+
+ - [Modlog Command](#ModlogCommand)
+ - [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
@@ -1215,13 +1321,14 @@ Server admins can pardon any modlog cases, while everyone else can only pardon m
 
 **Note:** This command does not revert the action for the modlog case, so if the user was banned, they will not be unbanned using this command.
 
-- [Modlog History Command](#ModlogHistoryCommand)
-- [Warn Command](#WarnCommand)
-- [Soft Ban Command](#SoftBanCommand)
-- [Ban Command](#BanCommand)
-- [Unban Command](#UnbanCommand)
-- [Kick Command](#KickCommand)
-- [Voice Kick Command](#VoiceKickCommand)
+
+ - [Modlog History Command](#ModlogHistoryCommand)
+ - [Warn Command](#WarnCommand)
+ - [Soft Ban Command](#SoftBanCommand)
+ - [Ban Command](#BanCommand)
+ - [Unban Command](#UnbanCommand)
+ - [Kick Command](#KickCommand)
+ - [Voice Kick Command](#VoiceKickCommand)
 
 #### Usage
 
@@ -1238,8 +1345,9 @@ Server admins can pardon any modlog cases, while everyone else can only pardon m
 Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command.
 You can only set modlog reasons for old modlog cases if you were the moderator for the case.
 
-- [Modlog Command](#ModlogCommand)
-- [Modlog History Command](#ModlogHistoryCommand)
+
+ - [Modlog Command](#ModlogCommand)
+ - [Modlog History Command](#ModlogHistoryCommand)
 
 #### Usage
 
@@ -1255,6 +1363,8 @@ You can only set modlog reasons for old modlog cases if you were the moderator f
 ### NSFW Command
 
 Displays the NSFW status of the current channel, additionally on/off can be passed to the command to change the channels NSFW status.
+
+**Special permissions required to run this command**<br>The bot and the user needs the **Manage Channels** permission to run this command.
 
 
 #### Usage
@@ -1280,6 +1390,8 @@ Displays the NSFW status of the current channel, additionally on/off can be pass
 
 Deletes up to 100 chat messages in any channel, you can mention a user if you only want to delete messages by the mentioned user.
 
+**Special permissions required to run this command**<br>The user needs **Manage Messages** permission to run this command.<br>The bot needs **Manage Messages** and **Read History** permissions to run this command.
+
 
 #### Usage
 
@@ -1300,9 +1412,11 @@ Deletes up to 100 chat messages in any channel, you can mention a user if you on
 
 Remove a role from the leveling up role table.
 
-- [Level Hierarchy Command](#LevelHierarchyCommand)
-- [List Level Roles Command](#ListLevelRolesCommand)
-- [Add Level Role Command](#AddLevelRoleCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Add Level Role Command](#AddLevelRoleCommand)
 
 #### Usage
 
@@ -1321,8 +1435,10 @@ Remove a role from the leveling up role table.
 
 Removes a role from the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`.
 
-- [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
-- [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Add Self Assignable Role Command](#AddSelfAssignableRoleCommand)
+ - [List Self Assignable Roles Command](#ListSelfAssignableRolesCommand)
 
 #### Usage
 
@@ -1338,7 +1454,9 @@ Removes a role from the self-assignable roles list, any role on the list can be 
 
 Disables the slowmode or enables it with the given limit, users with the **Manage Messages**  or **Manage Channels** permissions are exempt from slowmode limits.
 
-- [Purge Command](#PurgeCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Manage Channels** permission to run this command.
+
+ - [Purge Command](#PurgeCommand)
 
 #### Usage
 
@@ -1363,8 +1481,10 @@ Disables the slowmode or enables it with the given limit, users with the **Manag
 
 Bans the mentioned user from the server with the provided reason without removing any of the messages they have sent, this action will be reported to any channel that has modloging enabled.
 
-- [Unban Command](#UnbanCommand)
-- [Ban Command](#BanCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Ban Members** permission to run this command.
+
+ - [Unban Command](#UnbanCommand)
+ - [Ban Command](#BanCommand)
 
 #### Usage
 
@@ -1382,8 +1502,10 @@ Bans the mentioned user from the server with the provided reason without removin
 
 This command allows you to toggle command categories on/off for the current channel or the whole server in one go, this is useful if you like some features in the bot but not others.
 
-- [Categories Command](#CategoriesCommand)
-- [Change Prefix Command](#ChangePrefixCommand)
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Categories Command](#CategoriesCommand)
+ - [Change Prefix Command](#ChangePrefixCommand)
 
 #### Usage
 
@@ -1402,8 +1524,10 @@ This command allows you to toggle command categories on/off for the current chan
 
 Unbans the user with the given ID from the server if they are banned, if a modlog channel is setup, the unban will be logged to the channel as well.
 
-- [Soft Ban Command](#SoftBanCommand)
-- [Ban Command](#BanCommand)
+**Special permissions required to run this command**<br>The bot and the user needs the **Ban Members** permission to run this command.
+
+ - [Soft Ban Command](#SoftBanCommand)
+ - [Ban Command](#BanCommand)
 
 #### Usage
 
@@ -1419,7 +1543,9 @@ Unbans the user with the given ID from the server if they are banned, if a modlo
 
 Kicks the mentioned user from the voice channel they're currently connected to, this action will be reported to any channel that has modloging enabled.
 
-- [Kick Command](#KickCommand)
+**Special permissions required to run this command**<br>The user needs **Kick Members** permission to run this command.<br>The bot needs **Manage Channels** and **Move Members** permissions to run this command.
+
+ - [Kick Command](#KickCommand)
 
 #### Usage
 
@@ -1435,8 +1561,10 @@ Kicks the mentioned user from the voice channel they're currently connected to, 
 
 Warns a given user with a message, this action will be reported to any channel that has modloging enabled.
 
-- [Modlog History Command](#ModlogHistoryCommand)
-- [Modlog Reason Command](#ModlogReasonCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Messages** permission to run this command.
+
+ - [Modlog History Command](#ModlogHistoryCommand)
+ - [Modlog Reason Command](#ModlogReasonCommand)
 
 #### Usage
 
@@ -1453,9 +1581,11 @@ Warns a given user with a message, this action will be reported to any channel t
 
 Toggles the welcome messages on or off for the current channel.
 
-- [Goodbye Command](#GoodbyeCommand)
-- [Goodbye Message Command](#GoodbyeMessageCommand)
-- [Welcome Message Command](#WelcomeMessageCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Command](#GoodbyeCommand)
+ - [Goodbye Message Command](#GoodbyeMessageCommand)
+ - [Welcome Message Command](#WelcomeMessageCommand)
 
 #### Usage
 
@@ -1470,9 +1600,11 @@ Sets the message that should be sent when a user joins the server, this command 
 The welcome message has support for [placeholders](https://avairebot.com/docs/placeholders), allowing for customizing the message a bit more for each user.
 https://avairebot.com/docs/placeholders
 
-- [Goodbye Command](#GoodbyeCommand)
-- [Goodbye Message Command](#GoodbyeMessageCommand)
-- [Welcome Command](#WelcomeCommand)
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Goodbye Command](#GoodbyeCommand)
+ - [Goodbye Message Command](#GoodbyeMessageCommand)
+ - [Welcome Command](#WelcomeCommand)
 
 #### Usage
 
@@ -1506,6 +1638,7 @@ https://avairebot.com/docs/placeholders
 I will get a random 100% true, real facts about Chuck Norris for you using the "Internet Chuck Norris Database".
 
 
+
 #### Usage
 
 	!chucknorris [name]
@@ -1521,6 +1654,7 @@ I will get a random 100% true, real facts about Chuck Norris for you using the "
 Flips a coin heads or tails.
 
 
+
 #### Usage
 
 	!coinflip
@@ -1531,6 +1665,7 @@ Flips a coin heads or tails.
 ### Dice Command
 
 Rolls a dice or multiple dice with the given number of sides.
+
 
 
 #### Usage
@@ -1548,6 +1683,7 @@ Rolls a dice or multiple dice with the given number of sides.
 Ask 8Ball a question and get a random response back.
 
 
+
 #### Usage
 
 	!8ball <question>
@@ -1560,6 +1696,7 @@ Ask 8Ball a question and get a random response back.
 ### Flip Text Command
 
 Flips the given message upside down.
+
 
 
 #### Usage
@@ -1577,6 +1714,7 @@ Flips the given message upside down.
 ( ͡° ͜ʖ ͡°)
 
 
+
 #### Usage
 
 	!lenny
@@ -1590,6 +1728,7 @@ Flips the given message upside down.
 ### Meme Command
 
 Generates memes with your given text, you can tag users to use their avatar as a meme, or just give the meme name you wanna use.
+
 
 
 #### Usage
@@ -1611,7 +1750,8 @@ Generates memes with your given text, you can tag users to use their avatar as a
 
 I will scour the internet to find a random cat picture for you.
 
-- [Random Dog Command](#RandomDogCommand)
+
+ - [Random Dog Command](#RandomDogCommand)
 
 #### Usage
 
@@ -1624,7 +1764,8 @@ I will scour the internet to find a random cat picture for you.
 
 I will scour the internet to find a random dog picture for you.
 
-- [Random Cat Command](#RandomCatCommand)
+
+ - [Random Cat Command](#RandomCatCommand)
 
 #### Usage
 
@@ -1636,6 +1777,7 @@ I will scour the internet to find a random dog picture for you.
 ### Repeat Command
 
 I will repeat anything you say.
+
 
 
 #### Usage
@@ -1653,6 +1795,7 @@ I will repeat anything you say.
 Reverses the message given.
 
 
+
 #### Usage
 
 	!reverse <message>
@@ -1668,6 +1811,7 @@ Reverses the message given.
 Pay your respects
 
 
+
 #### Usage
 
 	!rip
@@ -1678,6 +1822,7 @@ Pay your respects
 ### Roll Command
 
 Roll a random number between 1 and 100, or within the given parameters.
+
 
 
 #### Usage
@@ -1695,6 +1840,8 @@ Roll a random number between 1 and 100, or within the given parameters.
 
 I will say whatever you tell me to.
 
+**Special permissions required to run this command**<br>The bot and the user needs the **Manage Messages** permission to run this command.
+
 
 #### Usage
 
@@ -1710,6 +1857,7 @@ I will say whatever you tell me to.
 
 Create your own Undertale text boxes with any character and text you want, you can also specify a image through a URL that should be used as the avatar instead.!
 Generator owned by [Demirramon](https://demirramon.com/). Undertale owned by Toby Fox. All rights reserved.
+
 
 
 #### Usage
@@ -1736,6 +1884,7 @@ Generator owned by [Demirramon](https://demirramon.com/). Undertale owned by Tob
 Clears the music queue of all pending songs
 
 
+
 #### Usage
 
 	!clearqueue
@@ -1746,6 +1895,8 @@ Clears the music queue of all pending songs
 ### DJ Level Command
 
 Change the DJ level requirement for the server, this changes what music commands people can use with or without the `DJ` Discord role.
+
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
 
 
 #### Usage
@@ -1770,6 +1921,7 @@ Change the DJ level requirement for the server, this changes what music commands
 Moves the bot to your current voice channel.
 
 
+
 #### Usage
 
 	!movehere
@@ -1780,6 +1932,8 @@ Moves the bot to your current voice channel.
 ### Music Channel Command
 
 The music channel command can be used to define a text and voice channel that music should be linked to, if a text channel is set through the command, music commands will only work in the given channel, if a voice channel is set Ava will auto join the voice channel on the first music request.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
 
 
 #### Usage
@@ -1803,6 +1957,8 @@ The music channel command can be used to define a text and voice channel that mu
 
 Toggles music messages on and off, when music messages are off, the "Now Playing" messages will no longer be sent, and messages that before would stay, will now be automatically be deleted after awhile. 
 
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
 
 #### Usage
 
@@ -1821,7 +1977,8 @@ Toggles music messages on and off, when music messages are off, the "Now Playing
 
 Pauses the music currently playing
 
-- [Resume Music Command](#ResumeCommand)
+
+ - [Resume Music Command](#ResumeCommand)
 
 #### Usage
 
@@ -1834,7 +1991,8 @@ Pauses the music currently playing
 
 Plays the provided song for you, if just the song title is given the bot will search YouTube for your song and give you some suggestions, you can also use YouTube, SoundCloud, TwitchTV, Bandcamp, and Vimeo link, or raw sound file, mp3, flac, wav, webm, mp4, ogg, aac, m3u and pls formats.
 
-- [SoundCloud Command](#SoundcloudCommand)
+
+ - [SoundCloud Command](#SoundcloudCommand)
 
 #### Usage
 
@@ -1852,6 +2010,7 @@ Plays the provided song for you, if just the song title is given the bot will se
 ### Playlist Command
 
 Music playlist command, allows music DJs to create, delete, and load playlists to the music queue, as well as adding and removing songs from any of the playlists.
+
 
 
 #### Usage
@@ -1900,6 +2059,7 @@ Music playlist command, allows music DJs to create, delete, and load playlists t
 Removes a song or multiple songs from the music queue.
 
 
+
 #### Usage
 
 	!removesong <song id> Removes the song with the given ID from the queue.
@@ -1916,6 +2076,7 @@ Removes a song or multiple songs from the music queue.
 Repeats all the songs in the music queue.
 
 
+
 #### Usage
 
 	!repeatsongs
@@ -1927,7 +2088,8 @@ Repeats all the songs in the music queue.
 
 Resumes the music in the queue, starting the music back up if it was paused
 
-- [Pause Music Command](#PauseCommand)
+
+ - [Pause Music Command](#PauseCommand)
 
 #### Usage
 
@@ -1939,6 +2101,7 @@ Resumes the music in the queue, starting the music back up if it was paused
 ### Seek Command
 
 Jumps to the given time code in the track that is currently playing.
+
 
 
 #### Usage
@@ -1956,6 +2119,7 @@ Jumps to the given time code in the track that is currently playing.
 
 Sets the default volume that the music should play at when Ava first joins a voice channel.
 **Note:** This does not change the volume of music already playing, to change that, use the `b!volume` command instead.
+
 
 
 #### Usage
@@ -1976,6 +2140,7 @@ Sets the default volume that the music should play at when Ava first joins a voi
 Shuffles the music queue, mixing the songs up in random order.
 
 
+
 #### Usage
 
 	!shuffle
@@ -1987,7 +2152,8 @@ Shuffles the music queue, mixing the songs up in random order.
 
 Skips to the next song in the music queue.
 
-- [Vote Skip Command](#VoteSkipCommand)
+
+ - [Vote Skip Command](#VoteSkipCommand)
 
 #### Usage
 
@@ -1999,6 +2165,7 @@ Skips to the next song in the music queue.
 ### Music Song Command
 
 Returns the song that is playing right now and some attached information. This includes who requested it, how much of the song is left and the volume the song is playing at plus the rest of the songs currently in queue.
+
 
 
 #### Usage
@@ -2014,7 +2181,8 @@ Returns the song that is playing right now and some attached information. This i
 
 Plays the provided song for you, if just the song title is given the bot will search SoundCloud for your song and give you some suggestions, you can also use YouTube, SoundCloud, TwitchTV, Bandcamp, and Vimeo link, or raw sound file, mp3, flac, wav, webm, mp4, ogg, aac, m3u and pls formats.
 
-- [Play Music Command](#PlayCommand)
+
+ - [Play Music Command](#PlayCommand)
 
 #### Usage
 
@@ -2034,6 +2202,7 @@ Plays the provided song for you, if just the song title is given the bot will se
 Stops the song currently playing, clears the music queue and disconnects from the voice channel the music was playing in.
 
 
+
 #### Usage
 
 	!stop
@@ -2050,6 +2219,8 @@ Music will sometimes stop working when Discord forgets to notify bots about voic
  Still having issues even after all that?
 You can join the [support server](https://discord.gg/gt2FWER) to get help from the AvaIre support team directly.
 
+**Special permissions required to run this command**<br>The bot needs **Manage Server** permission to run this command.
+
 
 #### Usage
 
@@ -2061,6 +2232,7 @@ You can join the [support server](https://discord.gg/gt2FWER) to get help from t
 ### Music Volume Command
 
 Changes the volume of the music, by default the music will be playing at 100% volume.
+
 
 
 #### Usage
@@ -2079,7 +2251,8 @@ Changes the volume of the music, by default the music will be playing at 100% vo
 
 Use this command to vote on the song currently playing to be skipped, if the vote wins with a majority vote the song will be skipped.
 
-- [Skip Music Command](#SkipCommand)
+
+ - [Skip Music Command](#SkipCommand)
 
 #### Usage
 
@@ -2097,6 +2270,7 @@ Use this command to vote on the song currently playing to be skipped, if the vot
 Searches [DuckDuckGo.com](https://duckduckgo.com/) with the given query and returns the first six results, if the command is used in a channel with NSFW disabled, all NSFW search results will be removed from the results.
 
 
+
 #### Usage
 
 	!duckduckgo <query>
@@ -2110,6 +2284,7 @@ Searches [DuckDuckGo.com](https://duckduckgo.com/) with the given query and retu
 ### Gfycat Command
 
 Returns a random gif for you from gfycat.com with the given query.
+
 
 
 #### Usage
@@ -2127,6 +2302,7 @@ Returns a random gif for you from gfycat.com with the given query.
 Get the definition of a word or sentence from [urbandictionary.com](https://www.urbandictionary.com/).
 
 
+
 #### Usage
 
 	!urbandictionary <word or sentence>
@@ -2140,6 +2316,7 @@ Get the definition of a word or sentence from [urbandictionary.com](https://www.
 ### XKCD Command
 
 Gets the latest XKCD comic, or the comic with the given id.
+
 
 
 #### Usage
@@ -2168,6 +2345,7 @@ Gets the latest XKCD comic, or the comic with the given id.
 Calculates the given math equations and returns the result for you.
 
 
+
 #### Usage
 
 	!calculate <equation>
@@ -2182,7 +2360,8 @@ Calculates the given math equations and returns the result for you.
 
 Shows the ID of the channel the command was ran in, or the channel tagged in the command.
 
-- [Channel Info Command](#ChannelInfoCommand)
+
+ - [Channel Info Command](#ChannelInfoCommand)
 
 #### Usage
 
@@ -2199,7 +2378,8 @@ Shows the ID of the channel the command was ran in, or the channel tagged in the
 
 Shows information about the channel the command was run in, or the mentioned channel.
 
-- [Channel ID Command](#ChannelIdCommand)
+
+ - [Channel ID Command](#ChannelIdCommand)
 
 #### Usage
 
@@ -2217,6 +2397,7 @@ Shows information about the channel the command was run in, or the mentioned cha
 Expands the url to the full form, resolving all the redirects and showing what urls the link goes through if it redirects anywhere.
 
 
+
 #### Usage
 
 	!expand <url>
@@ -2230,6 +2411,7 @@ Expands the url to the full form, resolving all the redirects and showing what u
 ### Feedback Command
 
 Send feedback about Ava back to the developers and the staff team, any message passed to the command will be sent in the [#feedback](https://discord.gg/gt2FWER) channel on the [AvaIre Central](https://discord.gg/gt2FWER) server.
+
 
 
 #### Usage
@@ -2246,8 +2428,9 @@ Send feedback about Ava back to the developers and the staff team, any message p
 
 Shows the top 100 users globally, combining their rank, level, and xp between all servers the users are on.
 
-- [Rank Command](#RankCommand)
-- [Leaderboard Command](#LeaderboardCommand)
+
+ - [Rank Command](#RankCommand)
+ - [Leaderboard Command](#LeaderboardCommand)
 
 #### Usage
 
@@ -2262,6 +2445,7 @@ Shows the top 100 users globally, combining their rank, level, and xp between al
 ### IP Info Command
 
 Gives information about the given IP address.
+
 
 
 #### Usage
@@ -2279,6 +2463,7 @@ Gives information about the given IP address.
 Returns a link that can be used to invite the bot to other servers.
 
 
+
 #### Usage
 
 	!invite
@@ -2290,8 +2475,9 @@ Returns a link that can be used to invite the bot to other servers.
 
 Displays the server's level leaderboard with the user's name, rank, level and XP. The response is paginated to show 10 users per page.
 
-- [Rank Command](#RankCommand)
-- [Global Leaderboard Command](#GlobalLeaderboardCommand)
+
+ - [Rank Command](#RankCommand)
+ - [Global Leaderboard Command](#GlobalLeaderboardCommand)
 
 #### Usage
 
@@ -2308,6 +2494,7 @@ Displays the server's level leaderboard with the user's name, rank, level and XP
 Can be used to check if the bot is still alive.
 
 
+
 #### Usage
 
 	!ping
@@ -2320,8 +2507,9 @@ Can be used to check if the bot is still alive.
 Gets your rank, level, xp for the current server and total xp for all servers that you're on, you can tag a user to see their level stats instead.
 This command requires the `Levels & Experience` feature to be enabled for the server!
 
-- [Leaderboard Command](#LeaderboardCommand)
-- [Global Leaderboard Command](#GlobalLeaderboardCommand)
+
+ - [Leaderboard Command](#LeaderboardCommand)
+ - [Global Leaderboard Command](#GlobalLeaderboardCommand)
 
 #### Usage
 
@@ -2338,6 +2526,7 @@ This command requires the `Levels & Experience` feature to be enabled for the se
 ### Remind Command
 
 Reminds you of something after a certain amount of time.
+
 
 
 #### Usage
@@ -2361,7 +2550,8 @@ Reminds you of something after a certain amount of time.
 
 Shows the ID of the server the command was ran in.
 
-- [Server Info Command](#ServerInfoCommand)
+
+ - [Server Info Command](#ServerInfoCommand)
 
 
 
@@ -2370,7 +2560,8 @@ Shows the ID of the server the command was ran in.
 
 Shows information about the server the command was ran in.
 
-- [Server ID Command](#ServerIdCommand)
+
+ - [Server ID Command](#ServerIdCommand)
 
 
 
@@ -2378,6 +2569,7 @@ Shows information about the server the command was ran in.
 ### Shard Command
 
 Displays the status of all the shards for the bot, including their server count, channel count, user count and latency.
+
 
 
 #### Usage
@@ -2393,6 +2585,7 @@ Displays the status of all the shards for the bot, including their server count,
 ### Source Command
 
 Gives you the source code for the Bot, or the code for a given command.
+
 
 
 #### Usage
@@ -2412,6 +2605,7 @@ Gives you the source code for the Bot, or the code for a given command.
 Displays information about Ava and some related stats.
 
 
+
 #### Usage
 
 	!stats
@@ -2424,6 +2618,7 @@ Displays information about Ava and some related stats.
 Displays how long the bot has been online for.
 
 
+
 #### Usage
 
 	!uptime
@@ -2434,6 +2629,7 @@ Displays how long the bot has been online for.
 ### User Avatar Command
 
 Get the profile picture of someone on the server by name, id, or mentions.
+
 
 
 #### Usage
@@ -2451,7 +2647,8 @@ Get the profile picture of someone on the server by name, id, or mentions.
 
 Shows your Discord account user ID, or the ID of the user tagged in the command.
 
-- [User Info Command](#UserInfoCommand)
+
+ - [User Info Command](#UserInfoCommand)
 
 #### Usage
 
@@ -2469,7 +2666,8 @@ Shows your Discord account user ID, or the ID of the user tagged in the command.
 
 Shows information about the user that ran the command, or the mentioned user. This includes the users username, ID, roles, the date they joined the server, the date they created their account, and how many servers they're in (That Ava knows about).
 
-- [User ID Command](#UserIdCommand)
+
+ - [User ID Command](#UserIdCommand)
 
 #### Usage
 
@@ -2489,6 +2687,7 @@ Displays the current version of Ava that is running. If the version is outdated 
 
 
 
+
 #### Example
 
 	!version
@@ -2498,6 +2697,7 @@ Displays the current version of Ava that is running. If the version is outdated 
 ### Vote Command
 
 Enjoy using the bot? Consider voting for the bot to help it grow, it's free but means a lot to the team behind Ava <3
+
 
 
 #### Usage
