@@ -1,6 +1,6 @@
 # Command List
 
-Below you'll find a list of all **142** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
+Below you'll find a list of all **145** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
 
 > {tip} All commands can be used by mentioning Ava first, followed by the command you want to run, for example `@AvaIre ping` will run the ping command, or `@AvaIre poke @Senither` will run the poke command for Senither.
 
@@ -31,6 +31,7 @@ Below you'll find a list of all **142** commands that Ava has, along with a shor
 | Command | Short Description |
 | ------- |:----------------- |
 | [!alr](/docs/{{version}}/commands#AddLevelRoleCommand) | Adds a role to the leveling up table, roles on the table will be given to users once they level up and meet the requirements for the role. |
+| [!arr](/docs/{{version}}/commands#AddReactionRoleCommand) | Adds a reaction emote to the last message sent in the channel, and attaches a role to the emote, users can then reaction to the message using the emote to get the role linked with the emote. |
 | [!asar](/docs/{{version}}/commands#AddSelfAssignableRoleCommand) | Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`. |
 | [!ai](/docs/{{version}}/commands#AiCommand) | Toggles the AI(Artificial Intelligence) on/off for the current channel. |
 | [!alias](/docs/{{version}}/commands#AliasCommand) | Creates and maps a custom alias for a pre-existing command. Provide no alias to remove an existing alias. |
@@ -50,14 +51,16 @@ Below you'll find a list of all **142** commands that Ava has, along with a shor
 | [!levelmodifier](/docs/{{version}}/commands#LevelModifierCommand) | The level modifier allows a server to set a custom level and experience modifier, allowing a server to fine tune the amount of XP required to level up by either making it harder or easier than default. |
 | [!aliases](/docs/{{version}}/commands#ListAliasesCommand) | Lists all the existing command aliases. |
 | [!llr](/docs/{{version}}/commands#ListLevelRolesCommand) | List all the leveling roles and the level require to get them. |
+| [!lrr](/docs/{{version}}/commands#ListReactionRoleCommand) | List reaction messages with a snippet of the message, along with what roles and emotes are linked to the message. |
 | [!lsar](/docs/{{version}}/commands#ListSelfAssignableRolesCommand) | List all the self-assignable roles, 10 per-page. |
 | [!modlog](/docs/{{version}}/commands#ModlogCommand) | Displays the modlogging status for the server if no arguments is given, you can also mention a text channel to enable modlogging and set it to the mentioned channel. |
 | [!modloghistory](/docs/{{version}}/commands#ModlogHistoryCommand) | Displays the modlog history for the mentioned user, this will display all past warnings, bans, soft bans, kicks, and voice kicks. |
 | [!pardon](/docs/{{version}}/commands#ModlogPardonCommand) | Pardons the given modlog case ID, removing it from the users modlog history log and locking the message so it can't be edited. |
-| [!reason](/docs/{{version}}/commands#ModlogReasonCommand) | Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command. |
+| [!reason](/docs/{{version}}/commands#ModlogReasonCommand) | Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `!modlog` command. |
 | [!nsfw](/docs/{{version}}/commands#NSFWCommand) | Displays the NSFW status of the current channel, additionally on/off can be passed to the command to change the channels NSFW status. |
 | [!purge](/docs/{{version}}/commands#PurgeCommand) | Deletes up to 100 chat messages in any channel, you can mention a user if you only want to delete messages by the mentioned user. |
 | [!rlr](/docs/{{version}}/commands#RemoveLevelRoleCommand) | Remove a role from the leveling up role table. |
+| [!rrr](/docs/{{version}}/commands#RemoveReactionRoleCommand) | Removes a reaction message and all of its reaction roles, or removes just a single reaction role from a reaction message. |
 | [!rsar](/docs/{{version}}/commands#RemoveSelfAssignableRoleCommand) | Removes a role from the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`. |
 | [!slowmode](/docs/{{version}}/commands#SlowmodeCommand) | Disables the slowmode or enables it with the given limit, users with the **Manage Messages**  or **Manage Channels** permissions are exempt from slowmode limits. |
 | [!softban](/docs/{{version}}/commands#SoftBanCommand) | Bans the mentioned user from the server with the provided reason without removing any of the messages they have sent, this action will be reported to any channel that has modloging enabled. |

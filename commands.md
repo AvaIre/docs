@@ -67,6 +67,27 @@ Adds a role to the leveling up table, roles on the table will be given to users 
 	!alr 5 Regular
 	-  Adds the Regular role to the level up table, users who are level 5 and up will get the role when they level up.
 
+<a name="AddReactionRoleCommand"></a>
+### Add Reaction Role Command
+
+Adds a reaction emote to the last message sent in the channel, and attaches a role to the emote, users can then reaction to the message using the emote to get the role linked with the emote.
+**Note:** reaction emotes has to belong to the server the message is created on, you can't use global emotes or emotes from other servers.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [List Reaction Role Command](#ListReactionRoleCommand)
+ - [Remove Reaction Role Command](#RemoveReactionRoleCommand)
+
+#### Usage
+
+	!arr <emote> <role name>
+	-  Creates a reaction role with the given emote and role name.
+
+#### Example
+
+	!arr :avaPotato Potato
+	-  Gives users the Potato role when the reaction with the :avaPotato: reaction.
+
 <a name="AddSelfAssignableRoleCommand"></a>
 ### Add Self Assignable Role Command
 
@@ -457,6 +478,22 @@ List all the leveling roles and the level require to get them.
 	-  Lists all the roles you can get for leveling up.
 
 
+<a name="ListReactionRoleCommand"></a>
+### List Reaction Role Command
+
+List reaction messages with a snippet of the message, along with what roles and emotes are linked to the message.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Add Reaction Role Command](#AddReactionRoleCommand)
+ - [Remove Reaction Role Command](#RemoveReactionRoleCommand)
+
+#### Usage
+
+	!lrr [page]
+	-  Lists all the reaction role messages on the server.
+
+
 <a name="ListSelfAssignableRolesCommand"></a>
 ### List Self Assignable Roles Command
 
@@ -549,7 +586,7 @@ Server admins can pardon any modlog cases, while everyone else can only pardon m
 <a name="ModlogReasonCommand"></a>
 ### Modlog Reason Command
 
-Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command.
+Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `!modlog` command.
 You can only set modlog reasons for old modlog cases if you were the moderator for the case.
 
 
@@ -636,6 +673,30 @@ Remove a role from the leveling up role table.
 
 	!rlr Member
 	!rlr 10
+
+<a name="RemoveReactionRoleCommand"></a>
+### Remove Reaction Role Command
+
+Removes a reaction message and all of its reaction roles, or removes just a single reaction role from a reaction message.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Add Reaction Role Command](#AddReactionRoleCommand)
+ - [List Reaction Role Command](#ListReactionRoleCommand)
+
+#### Usage
+
+	!rrr <reaction message id>
+	-  Deletes the reaction message with the given ID, along with all reaction roles attached to the message.
+	!rrr <reaction message id> <emote>
+	-  Deletes the reaction role attached to the given emote from the given reaction message ID.
+
+#### Example
+
+	!rrr 3
+	-  Removes the reaction message with an ID of 3.
+	!rrr 2 :avaPotato:
+	-  Removes the :avaPotato: emote from the reaction message with an ID of 2.
 
 <a name="RemoveSelfAssignableRoleCommand"></a>
 ### Remove Self Assignable Role Command
@@ -860,6 +921,27 @@ Adds a role to the leveling up table, roles on the table will be given to users 
 	!alr 5 Regular
 	-  Adds the Regular role to the level up table, users who are level 5 and up will get the role when they level up.
 
+<a name="AddReactionRoleCommand"></a>
+### Add Reaction Role Command
+
+Adds a reaction emote to the last message sent in the channel, and attaches a role to the emote, users can then reaction to the message using the emote to get the role linked with the emote.
+**Note:** reaction emotes has to belong to the server the message is created on, you can't use global emotes or emotes from other servers.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [List Reaction Role Command](#ListReactionRoleCommand)
+ - [Remove Reaction Role Command](#RemoveReactionRoleCommand)
+
+#### Usage
+
+	!arr <emote> <role name>
+	-  Creates a reaction role with the given emote and role name.
+
+#### Example
+
+	!arr :avaPotato Potato
+	-  Gives users the Potato role when the reaction with the :avaPotato: reaction.
+
 <a name="AddSelfAssignableRoleCommand"></a>
 ### Add Self Assignable Role Command
 
@@ -1250,6 +1332,22 @@ List all the leveling roles and the level require to get them.
 	-  Lists all the roles you can get for leveling up.
 
 
+<a name="ListReactionRoleCommand"></a>
+### List Reaction Role Command
+
+List reaction messages with a snippet of the message, along with what roles and emotes are linked to the message.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Add Reaction Role Command](#AddReactionRoleCommand)
+ - [Remove Reaction Role Command](#RemoveReactionRoleCommand)
+
+#### Usage
+
+	!lrr [page]
+	-  Lists all the reaction role messages on the server.
+
+
 <a name="ListSelfAssignableRolesCommand"></a>
 ### List Self Assignable Roles Command
 
@@ -1342,7 +1440,7 @@ Server admins can pardon any modlog cases, while everyone else can only pardon m
 <a name="ModlogReasonCommand"></a>
 ### Modlog Reason Command
 
-Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `b!modlog` command.
+Sets the reason for an old modlog case, this command requires the server has a modlog channel set using the `!modlog` command.
 You can only set modlog reasons for old modlog cases if you were the moderator for the case.
 
 
@@ -1429,6 +1527,30 @@ Remove a role from the leveling up role table.
 
 	!rlr Member
 	!rlr 10
+
+<a name="RemoveReactionRoleCommand"></a>
+### Remove Reaction Role Command
+
+Removes a reaction message and all of its reaction roles, or removes just a single reaction role from a reaction message.
+
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+
+ - [Add Reaction Role Command](#AddReactionRoleCommand)
+ - [List Reaction Role Command](#ListReactionRoleCommand)
+
+#### Usage
+
+	!rrr <reaction message id>
+	-  Deletes the reaction message with the given ID, along with all reaction roles attached to the message.
+	!rrr <reaction message id> <emote>
+	-  Deletes the reaction role attached to the given emote from the given reaction message ID.
+
+#### Example
+
+	!rrr 3
+	-  Removes the reaction message with an ID of 3.
+	!rrr 2 :avaPotato:
+	-  Removes the :avaPotato: emote from the reaction message with an ID of 2.
 
 <a name="RemoveSelfAssignableRoleCommand"></a>
 ### Remove Self Assignable Role Command
@@ -2118,7 +2240,7 @@ Jumps to the given time code in the track that is currently playing.
 ### Set Default Volume Command
 
 Sets the default volume that the music should play at when Ava first joins a voice channel.
-**Note:** This does not change the volume of music already playing, to change that, use the `b!volume` command instead.
+**Note:** This does not change the volume of music already playing, to change that, use the `!volume` command instead.
 
 
 
@@ -2214,7 +2336,7 @@ Stops the song currently playing, clears the music queue and disconnects from th
 
 Music will sometimes stop working when Discord forgets to notify bots about voice state changes, this commands tries to make fixing that a bit easier to do by forcing a voice update state for the bot through changing the server region, the command will pick a server region at random, swap the servers region to that, and then 2½ seconds later swap right back, this should fix music 99% of the time.
 
- If you're still experiencing voice issues you can try making the bot leave the voice channel by using a command like `b!stop`, and then running this command again.
+ If you're still experiencing voice issues you can try making the bot leave the voice channel by using a command like `!stop`, and then running this command again.
 
  Still having issues even after all that?
 You can join the [support server](https://discord.gg/gt2FWER) to get help from the AvaIre support team directly.
