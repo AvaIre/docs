@@ -1,6 +1,6 @@
 # Command List
 
-Below you'll find a list of all **145** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
+Below you'll find a list of all **146** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
 
 > {tip} All commands can be used by mentioning Ava first, followed by the command you want to run, for example `@AvaIre ping` will run the ping command, or `@AvaIre poke @Senither` will run the poke command for Senither.
 
@@ -39,6 +39,7 @@ Below you'll find a list of all **145** commands that Ava has, along with a shor
 | [!ban](/docs/{{version}}/commands#BanCommand) | Bans the mentioned user from the server with the provided reason, all messages the user has sent in the last 7 days will also be deleted in the process, this action will be reported to any channel that has modloging enabled. |
 | [!categories](/docs/{{version}}/commands#CategoriesCommand) | Shows status of all command categories in the current or mentioned channel, both for globally and per-channel. |
 | [!changeprefix](/docs/{{version}}/commands#ChangePrefixCommand) | Sets the prefix that should be used for all commands in a given category, if no prefix is provided the category prefix will be reset back to the default instead, each category in AvaIre can have a different prefix, or you can choose to change them all at the same time. |
+| [!channellevel](/docs/{{version}}/commands#ChannelLevelCommand) | Toggles XP rewards on or off for the mentioned channel, if no arguments is given the channels that currently has their channel rewards disabled will be displayed instead, the command can be used to prevent rewarding users experience in certain channels like #spam channels. |
 | [!goodbye](/docs/{{version}}/commands#GoodbyeCommand) | Toggles the goodbye messages on or off for the current channel. |
 | [!goodbyemessage](/docs/{{version}}/commands#GoodbyeMessageCommand) | Sets the message that should be sent when a user leaves the server, this command can only be used if the goodbye module is enabled for the current channel. |
 | [!iam](/docs/{{version}}/commands#IAmCommand) | Gives you the role with the given name if it is in the self-assignable list of roles. |
@@ -175,7 +176,6 @@ Below you'll find a list of all **145** commands that Ava has, along with a shor
 | [!remindme](/docs/{{version}}/commands#RemindCommand) | Reminds you of something after a certain amount of time. |
 | [!serverid](/docs/{{version}}/commands#ServerIdCommand) | Shows the ID of the server the command was ran in. |
 | [!serverinfo](/docs/{{version}}/commands#ServerInfoCommand) | Shows information about the server the command was ran in. |
-| [!shards](/docs/{{version}}/commands#ShardCommand) | Displays the status of all the shards for the bot, including their server count, channel count, user count and latency. |
 | [!source](/docs/{{version}}/commands#SourceCommand) | Gives you the source code for the Bot, or the code for a given command. |
 | [!stats](/docs/{{version}}/commands#StatsCommand) | Displays information about Ava and some related stats. |
 | [!uptime](/docs/{{version}}/commands#UptimeCommand) | Displays how long the bot has been online for. |

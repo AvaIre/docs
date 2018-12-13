@@ -227,6 +227,36 @@ Sets the prefix that should be used for all commands in a given category, if no 
 	!changeprefix all a!
 	-  Sets the prefix for all the categories to `a!`.
 
+<a name="ChannelLevelCommand"></a>
+### Channel Level Command
+
+Toggles XP rewards on or off for the mentioned channel, if no arguments is given the channels that currently has their channel rewards disabled will be displayed instead, the command can be used to prevent rewarding users experience in certain channels like #spam channels.
+**Note** this command requires that the leveling system is enabled for the server.
+
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Toggle Level Command](#LevelCommand)
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Rank Command](#RankCommand)
+
+#### Usage
+
+	!channellevel <channel> [status]
+	-  Toggles the level feature on/off.
+	!channellevel
+	-  Lists channels with their XP status disabled.
+
+#### Example
+
+	!channellevel #spam off
+	-  Disables XP gains in the #spam channel.
+	!channellevel #sandbox
+	-  Toggles the XP gains on/off for the #sandbox channel.
+	!channellevel
+	-  Lists all the channels that currently has their XP status disabled.
+
 <a name="GoodbyeCommand"></a>
 ### Goodbye Command
 
@@ -361,6 +391,7 @@ This command requires the `Levels & Experience` feature to be enabled for the se
 
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Modifier Command](#LevelModifierCommand)
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
  - [Rank Command](#RankCommand)
 
@@ -383,6 +414,7 @@ Toggles the Leveling system on or off for the current server.
 
 **Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
 
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Modifier Command](#LevelModifierCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
@@ -405,6 +437,7 @@ Level Hierarchy determines if level roles give to users should be removed once t
  - [List Level Roles Command](#ListLevelRolesCommand)
  - [Level Modifier Command](#LevelModifierCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
 
 #### Usage
@@ -428,6 +461,7 @@ The level modifier allows a server to set a custom level and experience modifier
 
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
  - [Rank Command](#RankCommand)
 
@@ -1081,6 +1115,36 @@ Sets the prefix that should be used for all commands in a given category, if no 
 	!changeprefix all a!
 	-  Sets the prefix for all the categories to `a!`.
 
+<a name="ChannelLevelCommand"></a>
+### Channel Level Command
+
+Toggles XP rewards on or off for the mentioned channel, if no arguments is given the channels that currently has their channel rewards disabled will be displayed instead, the command can be used to prevent rewarding users experience in certain channels like #spam channels.
+**Note** this command requires that the leveling system is enabled for the server.
+
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Toggle Level Command](#LevelCommand)
+ - [Level Hierarchy Command](#LevelHierarchyCommand)
+ - [Level Modifier Command](#LevelModifierCommand)
+ - [Level Alerts Command](#LevelAlertsCommand)
+ - [Rank Command](#RankCommand)
+
+#### Usage
+
+	!channellevel <channel> [status]
+	-  Toggles the level feature on/off.
+	!channellevel
+	-  Lists channels with their XP status disabled.
+
+#### Example
+
+	!channellevel #spam off
+	-  Disables XP gains in the #spam channel.
+	!channellevel #sandbox
+	-  Toggles the XP gains on/off for the #sandbox channel.
+	!channellevel
+	-  Lists all the channels that currently has their XP status disabled.
+
 <a name="GoodbyeCommand"></a>
 ### Goodbye Command
 
@@ -1215,6 +1279,7 @@ This command requires the `Levels & Experience` feature to be enabled for the se
 
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Modifier Command](#LevelModifierCommand)
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
  - [Rank Command](#RankCommand)
 
@@ -1237,6 +1302,7 @@ Toggles the Leveling system on or off for the current server.
 
 **Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
 
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Modifier Command](#LevelModifierCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
@@ -1259,6 +1325,7 @@ Level Hierarchy determines if level roles give to users should be removed once t
  - [List Level Roles Command](#ListLevelRolesCommand)
  - [Level Modifier Command](#LevelModifierCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
 
 #### Usage
@@ -1282,6 +1349,7 @@ The level modifier allows a server to set a custom level and experience modifier
 
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
+ - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
  - [Rank Command](#RankCommand)
 
@@ -2686,22 +2754,6 @@ Shows information about the server the command was ran in.
  - [Server ID Command](#ServerIdCommand)
 
 
-
-<a name="ShardCommand"></a>
-### Shard Command
-
-Displays the status of all the shards for the bot, including their server count, channel count, user count and latency.
-
-
-
-#### Usage
-
-	!shards [page] Displays the shard information, with 12 shards per page.
-
-#### Example
-
-	!shards 2
-	-  Displays the 2nd page of shard information.
 
 <a name="SourceCommand"></a>
 ### Source Command
