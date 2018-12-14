@@ -4,7 +4,8 @@
   - [Prerequisites](#hosting-from-source-prerequisites)
     - [Software](#hosting-from-source-software)
   - [AvaIre](#hosting-from-source-avaire)
-    - [Deploy method](#hosting-from-source-avaire-deploy)
+    - [Updating with Heroku](#hosting-from-source-avaire-deploy)
+    - [Updating with Backstroke](#hosting-from-source-avaire-deploy-backstroke)
       - [Small note](#hosting-from-source-avaire-deploy-note)
   - [Watchdog](#hosting-from-source-watchdog)
     - [Deploy method](#hosting-from-source-watchdog-deploy)
@@ -42,11 +43,9 @@ After your done filling in the environment variables, you can click on deploy. A
 
 Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
-<a name="hosting-from-source-avaire-deploy"></a>
-#### Deploy method
-> {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku.
+To keep AvaIre up-to-date, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**. Once it has been forked, go to your repo's settings and turn on the issues feature. This is to notify you of any merge conflicts if you're using Heroku Scheduler to update. 
 
-To keep AvaIre up-to-date, after following the above method, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**. Once it has been forked, copy part of the link after “https://github.com/” (e.g “chaNcharge/avaire”) and paste it to the GITHUB_REPO environment variable in your Heroku app settings.
+When that's done, copy part of the link after “https://github.com/” (e.g “chaNcharge/avaire”) and paste it to the GITHUB_REPO environment variable in your Heroku app settings.
 
 Now go back to Heroku and click on **deploy** followed by clicking on **Connect to GitHub**, and login if necessary. Click on **Search** and connect the repo that you just forked.
 
@@ -54,7 +53,23 @@ Make sure the right branch is chosen (master in this case). You can click on **E
 
 To make sure everything is still working, click on **Deploy Branch**, to start deploying from your own fork.
 
-Once deployment is successful, you need to create a [personal access token](https://github.com/settings/tokens) with public_repo permissions so Heroku can automatically update your repo. Once you create your personal access token, copy it to the GITHUB_SECRET_TOKEN variable in your Heroku app settings. Then, install the Heroku Scheduler add-on to your Heroku app. You can do this with “heroku addons:create scheduler:standard” or with web interface on [heroku](https://elements.heroku.com/addons/scheduler).
+<a name="hosting-from-source-avaire-deploy"></a>
+#### Updating with Heroku
+> {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku. You will also need a credit card to use Heroku Scheduler to auto update AvaIre.
+
+Once deployment is successful, you need to create a [personal access token](https://github.com/settings/tokens) with public_repo permissions so Heroku can automatically update your repo. Once you create your personal access token, copy it to the GITHUB_SECRET_TOKEN variable in your Heroku app settings.
+
+Install the Heroku Scheduler add-on to your Heroku app. You can do this with “heroku addons:create scheduler:standard” or with web interface on [heroku](https://elements.heroku.com/addons/scheduler).
+
+Once you've installed Heroku Scheduler, go to the add-on's settings by clicking on its link.
+
+Add a new job, and set the command to `./update.sh`. You can change the other settings to your preference.
+
+<a name="hosting-from-source-avaire-deploy-backstroke"></a>
+#### Updating with Backstroke
+> {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku. This option is recommended if you want to manually review changes before updating.
+
+Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and login with GitHub.
 
 Click on **Create Link** and give your link a nice name.
 
@@ -67,7 +82,7 @@ If you would like to update to the latest version, you only have to merge the pu
 
 <a name="hosting-from-source-avaire-deploy-note"></a>
 #### Small note
-If you changed some files in your fork, it's possible that you will have a merge conflict. You have to manually fix this yourself by following the tips/FAQ GitHub gives you on that pull and merging it manually through the command line or GitHub desktop app.
+If you changed some files in your fork, it's possible that you will have a merge conflict. If you are using Heroku Scheduler to update, an issue will be automatically created under your name in your repo's issue tracker. You have to manually fix this yourself by following the tips/FAQ GitHub gives you and merge it manually through the command line or GitHub desktop app.
 
 <a name="hosting-from-source-watchdog"></a>
 ### Watchdog
