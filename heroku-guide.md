@@ -43,9 +43,9 @@ After your done filling in the environment variables, you can click on deploy. A
 
 Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
-To keep AvaIre up-to-date, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**. Once it has been forked, go to your repo's settings and turn on the issues feature. This is to notify you of any merge conflicts if you're using Heroku Scheduler to update. 
+By default, Heroku starts both the web and worker dynos. This is not necessary and will use up your hours very quickly. Choose which dyno you want to use and turn off the dyno you don't want to use. The web dyno has the AvaIre API enabled, but puts itself to sleep after 30 minutes; The worker dyno stays on forever, but does not work with the AvaIre API.
 
-When that's done, copy part of the link after “https://github.com/” (e.g “chaNcharge/avaire”) and paste it to the GITHUB_REPO environment variable in your Heroku app settings.
+To keep AvaIre up-to-date, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**. Once it has been forked, go to your repo's settings and turn on the issues feature. This is to notify you of any merge conflicts if you're using Heroku Scheduler to update. 
 
 Now go back to Heroku and click on **deploy** followed by clicking on **Connect to GitHub**, and login if necessary. Click on **Search** and connect the repo that you just forked.
 
@@ -58,6 +58,8 @@ To make sure everything is still working, click on **Deploy Branch**, to start d
 > {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku. You will also need a credit card to use Heroku Scheduler to auto update AvaIre.
 
 Once deployment is successful, you need to create a [personal access token](https://github.com/settings/tokens) with public_repo permissions so Heroku can automatically update your repo. Once you create your personal access token, copy it to the GITHUB_SECRET_TOKEN variable in your Heroku app settings.
+
+When that's done, copy part of the link to your main repo after `https://github.com/` (e.g `chaNcharge/avaire`) and paste it to the GITHUB_REPO environment variable in your Heroku app settings.
 
 Install the Heroku Scheduler add-on to your Heroku app. You can do this with “heroku addons:create scheduler:standard” or with web interface on [heroku](https://elements.heroku.com/addons/scheduler).
 
@@ -230,3 +232,5 @@ To tail the logs trough the terminal you can type in:
  * You can run into problems if you didn't install all the requirements, double check your configs or check if skipped a command.
 
 There are also a few known issues when hosting through Heroku, you can find the list in [this issue](https://github.com/avaire/avaire/issues/56).
+
+If you want to use the API for AvaIre, disable the worker dyno and enable the web dyno. Keep in mind that web dynos do not stay up forever and set themselves to sleep after 30 minutes of inactivity. You can use [Kaffeine](http://kaffeine.herokuapp.com/) to get around this.
