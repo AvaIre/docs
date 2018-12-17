@@ -55,15 +55,13 @@ To make sure everything is still working, click on **Deploy Branch**, to start d
 
 <a name="hosting-from-source-avaire-deploy"></a>
 #### Updating with Heroku
-> {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku. You will also need a credit card to use Heroku Scheduler to auto update AvaIre.
+> {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku.
 
 Once deployment is successful, you need to create a [personal access token](https://github.com/settings/tokens) with public_repo permissions so Heroku can automatically update your repo. Once you create your personal access token, copy it to the GITHUB_SECRET_TOKEN variable in your Heroku app settings.
 
 When that's done, copy part of the link to your main repo after `https://github.com/` (e.g `chaNcharge/avaire`) and paste it to the GITHUB_REPO environment variable in your Heroku app settings.
 
-Install the Heroku Scheduler add-on to your Heroku app. You can do this with “heroku addons:create scheduler:standard” or with web interface on [heroku](https://elements.heroku.com/addons/scheduler).
-
-Once you've installed Heroku Scheduler, go to the add-on's settings by clicking on its link.
+Then, go to Heroku Scheduler add-on settings by clicking on its link.
 
 Add a new job, and set the command to `./update.sh`. You can change the other settings to your preference.
 
