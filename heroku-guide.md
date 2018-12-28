@@ -39,7 +39,7 @@ However, updating is slightly more complicated, as you need to make sure to get 
 
 Navigate to [AvaIre's repo](https://github.com/avaire/avaire) and click on the **deploy to Heroku** button.
 
-After your done filling in the environment variables, you can click on deploy. After your AvaIre is deployed on Heroku, click on Manage App.
+After you're done filling in the environment variables, you can click on deploy. After your AvaIre is deployed on Heroku, click on Manage App.
 
 Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
