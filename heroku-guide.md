@@ -231,4 +231,4 @@ To tail the logs trough the terminal you can type in:
 
 There are also a few known issues when hosting through Heroku, you can find the list in [this issue](https://github.com/avaire/avaire/issues/56).
 
-If you want to use the API for AvaIre, disable the worker dyno and enable the web dyno. Keep in mind that web dynos do not stay up forever and set themselves to sleep after 30 minutes of inactivity. You can use [Kaffeine](http://kaffeine.herokuapp.com/) to get around this.
+If you want to use the API for AvaIre, disable the worker dyno and enable the web dyno. Keep in mind that web dynos do not stay up forever and set themselves to sleep after 30 minutes of inactivity. You can use [Kaffeine](http://kaffeine.herokuapp.com/) or [Uptime Robot](https://uptimerobot.com/) to get around this.
