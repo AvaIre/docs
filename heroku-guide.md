@@ -43,8 +43,6 @@ After you're done filling in the environment variables, you can click on deploy.
 
 Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
-By default, Heroku starts both the web and worker dynos. This is not necessary and will use up your hours very quickly. Choose which dyno you want to use and turn off the dyno you don't want to use. The web dyno has the AvaIre API enabled, but puts itself to sleep after 30 minutes; The worker dyno stays on forever, but does not work with the AvaIre API.
-
 To keep AvaIre up-to-date, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**. Once it has been forked, go to your repo's settings and turn on the issues feature. This is to notify you of any merge conflicts if you're using Heroku Scheduler to update. 
 
 Now go back to Heroku and click on **deploy** followed by clicking on **Connect to GitHub**, and login if necessary. Click on **Search** and connect the repo that you just forked.
