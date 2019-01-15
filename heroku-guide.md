@@ -5,7 +5,7 @@
     - [Software](#hosting-from-source-software)
   - [AvaIre](#hosting-from-source-avaire)
     - [Updating with Heroku](#hosting-from-source-avaire-deploy)
-    - [Updating with Backstroke](#hosting-from-source-avaire-deploy-backstroke)
+    - [Updating with Pull App](#hosting-from-source-avaire-deploy-pull)
       - [Small note](#hosting-from-source-avaire-deploy-note)
   - [Watchdog](#hosting-from-source-watchdog)
     - [Deploy method](#hosting-from-source-watchdog-deploy)
@@ -43,8 +43,6 @@ After you're done filling in the environment variables, you can click on deploy.
 
 Now you've successfully configured AvaIre on Heroku. You can see her logs by clicking on: **More** on the top right, followed by clicking on **View logs**. If you want to turn off AvaIre, click on **Resources**, followed by clicking on the pen, clicking on the toggle, and clicking on **confirm**.
 
-By default, Heroku starts both the web and worker dynos. This is not necessary and will use up your hours very quickly. Choose which dyno you want to use and turn off the dyno you don't want to use. The web dyno has the AvaIre API enabled, but puts itself to sleep after 30 minutes; The worker dyno stays on forever, but does not work with the AvaIre API.
-
 To keep AvaIre up-to-date, go to [AvaIre's main repo](https://github.com/avaire/avaire) and click on **Fork**. Once it has been forked, go to your repo's settings and turn on the issues feature. This is to notify you of any merge conflicts if you're using Heroku Scheduler to update. 
 
 Now go back to Heroku and click on **deploy** followed by clicking on **Connect to GitHub**, and login if necessary. Click on **Search** and connect the repo that you just forked.
@@ -65,20 +63,17 @@ Then, go to Heroku Scheduler add-on settings by clicking on its link.
 
 Add a new job, and set the command to `./update.sh`. You can change the other settings to your preference.
 
-<a name="hosting-from-source-avaire-deploy-backstroke"></a>
-#### Updating with Backstroke
+<a name="hosting-from-source-avaire-deploy-pull"></a>
+#### Updating with Pull App
 > {tip} This part assumes you have a GitHub account, as well as a _working_ AvaIre hosted on Heroku. This option is recommended if you want to manually review changes before updating.
 
-Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and login with GitHub.
+Once deployment is successful, install the [Pull App](https://github.com/apps/pull) and login with GitHub.
 
-Click on **Create Link** and give your link a nice name.
+You can choose to install on all repositories or only selected repositories. It's recommended you install on select repositories to keep things organized; In this case, check **Only select repositories** and select your fork. 
 
-For the Upstream fill in: `avaire/avaire`, and choose the master branch.
+When you've selected your repository to install in, click **Install**.
 
-Choose One fork, and fill in your username with the forked repo. For example: Macley-Kun/avaire, with the branch master.
-
-Click on Save. You can click on Resync to manually start synching the upstream repo, with your fork. Any commits that are merged into the upstream, will come as a pull request from backstrokebot to your fork.
-If you would like to update to the latest version, you only have to merge the pull request by going to your fork from time to time, click on **Merge pull request**, followed by clicking on **Confirm merge**, in less then a minute, Heroku will pick up the changes and re-deploy.
+Your fork should automatically update and merge with your repository. You can edit the `pull.yml` config in the `.github` directory to your preference. For example, if you don't want Pull to auto merge updates and you want to manually review them, you can change the `autoMerge` option from `true` to `false`.
 
 <a name="hosting-from-source-avaire-deploy-note"></a>
 #### Small note
@@ -110,16 +105,13 @@ Make sure the right branch is chosen (master in this case). You can click on **E
 
 To make sure everything is still working, click on **Deploy Branch**, to start deploying from your own fork.
 
-Once deployment is successful, go to [backstroke.co](https://backstroke.co/) and login with GitHub.
+Once deployment is successful, install the [Pull App](https://github.com/apps/pull) and login with GitHub.
 
-Click on **Create Link** and give your link a nice name.
+You can choose to install on all repositories or only selected repositories. It's recommended you install on select repositories to keep things organized; In this case, check **Only select repositories** and select your fork. 
 
-For the Upstream fill in: `avaire/watchdog`, and choose the master branch.
+When you've selected your repository to install in, click **Install**.
 
-Choose One fork, and fill in your username with the forked repo. For example: Macley-Kun/watchdog, with the branch master.
-
-Click on Save. You can click on Resync to manually start synching the upstream repo, with your fork. Any commits that are merged into the upstream, will come as a pull request from backstrokebot to your fork.
-If you would like to update to the latest version, you only have to merge the pull request by going to your fork from time to time, click on **Merge pull request**, followed by clicking on **Confirm merge**, in less then a minute, Heroku will pick up the changes and re-deploy.
+Your fork should automatically update and merge with your repository. You can edit the `pull.yml` config in the `.github` directory to your preference. For example, if you don't want Pull to auto merge updates and you want to manually review them, you can change the `autoMerge` option from `true` to `false`.
 
 <a name="hosting-from-source-watchdog-deploy-note"></a>
 #### Small note
