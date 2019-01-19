@@ -73,7 +73,7 @@ Adds a role to the leveling up table, roles on the table will be given to users 
 Adds a reaction emote to the last message sent in the channel, and attaches a role to the emote, users can then reaction to the message using the emote to get the role linked with the emote.
 **Note:** reaction emotes has to belong to the server the message is created on, you can't use global emotes or emotes from other servers.
 
-**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.<br>The bot needs **Manage Roles** permission to run this command.
 
  - [List Reaction Role Command](#ListReactionRoleCommand)
  - [Remove Reaction Role Command](#RemoveReactionRoleCommand)
@@ -85,7 +85,7 @@ Adds a reaction emote to the last message sent in the channel, and attaches a ro
 
 #### Example
 
-	!arr :avaPotato Potato
+	!arr :avaPotato: Potato
 	-  Gives users the Potato role when the reaction with the :avaPotato: reaction.
 
 <a name="AddSelfAssignableRoleCommand"></a>
@@ -961,7 +961,7 @@ Adds a role to the leveling up table, roles on the table will be given to users 
 Adds a reaction emote to the last message sent in the channel, and attaches a role to the emote, users can then reaction to the message using the emote to get the role linked with the emote.
 **Note:** reaction emotes has to belong to the server the message is created on, you can't use global emotes or emotes from other servers.
 
-**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
+**Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.<br>The bot needs **Manage Roles** permission to run this command.
 
  - [List Reaction Role Command](#ListReactionRoleCommand)
  - [Remove Reaction Role Command](#RemoveReactionRoleCommand)
@@ -973,7 +973,7 @@ Adds a reaction emote to the last message sent in the channel, and attaches a ro
 
 #### Example
 
-	!arr :avaPotato Potato
+	!arr :avaPotato: Potato
 	-  Gives users the Potato role when the reaction with the :avaPotato: reaction.
 
 <a name="AddSelfAssignableRoleCommand"></a>
