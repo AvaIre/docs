@@ -21,6 +21,7 @@
     - [Plugin Command](#PluginCommand)
     - [Reload Configuration Command](#ReloadCommand)
     - [Restart Command](#RestartCommand)
+    - [SQL Command](#SQLCommand)
     - [Set Guild Type Command](#SetGuildTypeCommand)
     - [Set Status Command](#SetStatusCommand)
     - [Shutdown Command](#ShutdownCommand)
@@ -158,7 +159,6 @@ Keep in mind, if you have further questions or need help, we're around over at o
 
 On the behalf of the AvaIre team, we hope you enjoy your bot!
 
-
 <a name="system-commands"></a>
 ## System Commands
 
@@ -176,9 +176,10 @@ All system commands uses a semicolon(;) as their prefix by default.
 | [;force-leave](#ForceLeaveServerCommand) | Force leaves a server with the given ID. |
 | [;jsoncmdmap](#JSONCmdMapCommand) | Creates a JSON map containing detailed information about each command and stores it in a `commandMap.json` file. |
 | [;partner](#PartnerCommand) | Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead.  |
-| [;plugin](#PluginCommand) | Can be used to list installed plugins, as well as available plugins that are officially recognized by the AvaIre development team, you can also display more information about a specific plugin by name. |
+| [;plugins](#PluginCommand) | Can be used to list installed plugins, as well as available plugins that are officially recognized by the AvaIre development team, you can also display more information about a specific plugin by name. |
 | [;reload](#ReloadCommand) | Reloads the main configuration, and all the configs for loaded plugins. |
 | [;restart](#RestartCommand) | Schedule a time the bot should be automatically-restarted, the bot will shutdown, then start back up again. |
+| [;sql](#SQLCommand) | Runs the given SQL query and returns the result. |
 | [;set-type](#SetGuildTypeCommand) | Sets the Guild Type of the server the command was ran in, if no arguments was given the current Guild Type will be displayed instead. |
 | [;setstatus](#SetStatusCommand) | Sets the status of the bot instance for all servers the bot is on, if no status is set the bot status will go back to cycling status from the config. |
 | [;shutdown](#ShutdownCommand) | Schedules a time the bot should be shutdown gracefully. |
@@ -188,6 +189,7 @@ All system commands uses a semicolon(;) as their prefix by default.
 ### Blacklist Command
 
 Add, Remove, and list users and servers on the blacklist.
+
 
 
 #### Usage
@@ -212,6 +214,7 @@ Add, Remove, and list users and servers on the blacklist.
 Displays information about the current state of the bot, this command can be pretty heavy to run since a lot of calculations are being run to get some of the information.
 
 
+
 #### Usage
 
     ;statistics
@@ -222,6 +225,7 @@ Displays information about the current state of the bot, this command can be pre
 ### Debug Mode Command
 
 Toggles debug mode on/off during runtime, this will enable passing the context between rest actions to give a better debug result, and to make debugging with Sentry more information.
+
 
 
 #### Usage
@@ -238,6 +242,7 @@ Toggles debug mode on/off during runtime, this will enable passing the context b
 ### Eval Command
 
 Evaluates and executes code.
+
 
 
 #### Usage
@@ -260,6 +265,7 @@ Evaluates and executes code.
 Responses to a feedback message with the given ID, the channel the original feedback message was sent in will be used for the feedback, along with the message +  the response and author information.
 
 
+
 #### Usage
 
     ;feedback <id> <message>
@@ -273,6 +279,7 @@ Responses to a feedback message with the given ID, the channel the original feed
 ### Force Leave Server Command
 
 Force leaves a server with the given ID.
+
 
 
 #### Usage
@@ -290,6 +297,7 @@ Force leaves a server with the given ID.
 Creates a JSON map containing detailed information about each command and stores it in a `commandMap.json` file.
 
 
+
 #### Usage
 
     ;jsoncmdmap
@@ -300,6 +308,7 @@ Creates a JSON map containing detailed information about each command and stores
 ### Partner Command
 
 Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead. 
+
 
 
 #### Usage
@@ -322,13 +331,14 @@ Allows a bot admin to change the partnership a server has with the bot, servers 
 Can be used to list installed plugins, as well as available plugins that are officially recognized by the AvaIre development team, you can also display more information about a specific plugin by name.
 
 
+
 #### Usage
 
-    ;plugin show <plugin>
+    ;plugins show <plugin>
     -  Lists information about the plugin.
-    ;plugin list <installed|i> [page]
+    ;plugins list <installed|i> [page]
     -  Lists installed plugins.
-    ;plugin list <available|a> [page]
+    ;plugins list <available|a> [page]
     -  Lists available plugins.
 
 
@@ -340,11 +350,13 @@ Reloads the main configuration, and all the configs for loaded plugins.
 
 
 
+
 <a name="RestartCommand"></a>
 ### Restart Command
 
 Schedule a time the bot should be automatically-restarted, the bot will shutdown, then start back up again.
 This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or that the `--internal-restart` flag was used when starting the bot, without it the bot will just shutdown.
+
 
 
 #### Usage
@@ -357,10 +369,27 @@ This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or 
     -  Schedules a time the bot should be restarted.
 
 
+<a name="SQLCommand"></a>
+### SQL Command
+
+Runs the given SQL query and returns the result.
+
+
+
+#### Usage
+
+    ;sql <query>
+    -  Runs the given query and returns the result.
+
+#### Example
+
+    ;sql SELECT name FROM guilds LIMIT 5
+
 <a name="SetGuildTypeCommand"></a>
 ### Set Guild Type Command
 
 Sets the Guild Type of the server the command was ran in, if no arguments was given the current Guild Type will be displayed instead.
+
 
 
 #### Usage
@@ -385,6 +414,7 @@ Sets the Guild Type of the server the command was ran in, if no arguments was gi
 Sets the status of the bot instance for all servers the bot is on, if no status is set the bot status will go back to cycling status from the config.
 
 
+
 #### Usage
 
     ;setstatus <game>
@@ -400,6 +430,7 @@ Sets the status of the bot instance for all servers the bot is on, if no status 
 ### Shutdown Command
 
 Schedules a time the bot should be shutdown gracefully.
+
 
 
 #### Usage
@@ -419,6 +450,7 @@ Schedule a time the bot should be automatically-updated, the bot will shutdown, 
 This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or that the `--internal-restart` flag was used when starting the bot, without it the bot will just shutdown.
 
 
+
 #### Usage
 
     ;update now
@@ -427,5 +459,3 @@ This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or 
     -  Cancels the update process.
     ;update <time>
     -  Schedules a time the bot should be updated.
-
-
