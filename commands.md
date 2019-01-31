@@ -2691,6 +2691,38 @@ Can be used to check if the bot is still alive.
 	-  Returns the latency of the bot.
 
 
+<a name="RankBackgroundCommand"></a>
+### Rank Background Command
+
+Rank backgrounds are used for the `!rank` command, when a user has a rank
+background selected, their rank and experience will be displayed using a generated
+image instead, the background image can be changed at any time.
+You can buy backgrounds using [vote points](https://discordbots.org/bot/avaire), use `!vote` for more info.
+
+
+ - [Rank Command](#RankCommand)
+
+#### Usage
+
+	!backgrounds list
+	-  Lists all the backgrounds available.
+	!backgrounds test <name>
+	-  Displays an example of how the background will look like if you buy it.
+	!backgrounds buy <name>
+	-  Buys the background with vote points.
+	!backgrounds use <name>
+	-  Selects the background so it is used in the future for rank commands.
+	!backgrounds off
+	-  Disables the rank background, returns to using embedded rank messages.
+
+#### Example
+
+	!backgrounds list
+	!backgrounds test discord dark theme
+	!backgrounds buy discord dark theme
+	!backgrounds use discord dark theme
+	!backgrounds off
+
 <a name="RankCommand"></a>
 ### Rank Command
 
@@ -2700,6 +2732,7 @@ This command requires the `Levels & Experience` feature to be enabled for the se
 
  - [Leaderboard Command](#LeaderboardCommand)
  - [Global Leaderboard Command](#GlobalLeaderboardCommand)
+ - [Rank Background Command](#RankBackgroundCommand)
 
 #### Usage
 

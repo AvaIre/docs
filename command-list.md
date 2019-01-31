@@ -1,6 +1,6 @@
 # Command List
 
-Below you'll find a list of all **147** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
+Below you'll find a list of all **148** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
 
 > {tip} All commands can be used by mentioning Ava first, followed by the command you want to run, for example `@AvaIre ping` will run the ping command, or `@AvaIre poke @Senither` will run the poke command for Senither.
 
@@ -172,6 +172,7 @@ Below you'll find a list of all **147** commands that Ava has, along with a shor
 | [!invite](/docs/{{version}}/commands#InviteCommand) | Returns a link that can be used to invite the bot to other servers. |
 | [!leaderboard](/docs/{{version}}/commands#LeaderboardCommand) | Displays the server's level leaderboard with the user's name, rank, level and XP. The response is paginated to show 10 users per page. |
 | [!ping](/docs/{{version}}/commands#PingCommand) | Can be used to check if the bot is still alive. |
+| [!backgrounds](/docs/{{version}}/commands#RankBackgroundCommand) | Rank backgrounds are used for the `!rank` command, when a user has a rank |
 | [!rank](/docs/{{version}}/commands#RankCommand) | Gets your rank, level, xp for the current server and total xp for all servers that you're on, you can tag a user to see their level stats instead. |
 | [!remindme](/docs/{{version}}/commands#RemindCommand) | Reminds you of something after a certain amount of time. |
 | [!serverid](/docs/{{version}}/commands#ServerIdCommand) | Shows the ID of the server the command was ran in. |
