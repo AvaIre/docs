@@ -1,6 +1,6 @@
 # Command List
 
-Below you'll find a list of all **148** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
+Below you'll find a list of all **149** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
 
 > {tip} All commands can be used by mentioning Ava first, followed by the command you want to run, for example `@AvaIre ping` will run the ping command, or `@AvaIre poke @Senither` will run the poke command for Senither.
 
@@ -90,7 +90,7 @@ Below you'll find a list of all **148** commands that Ava has, along with a shor
 | [!reverse](/docs/{{version}}/commands#ReverseCommand) | Reverses the message given. |
 | [!rip](/docs/{{version}}/commands#RipCommand) | Pay your respects |
 | [!roll](/docs/{{version}}/commands#RollCommand) | Roll a random number between 1 and 100, or within the given parameters. |
-| [!say](/docs/{{version}}/commands#SayCommand) | I will say whatever you tell me to. |
+| [!say](/docs/{{version}}/commands#SayCommand) | The bot will repeat anything you tell it to, if a channel is mentioned, the message will be sent in that channel instead. |
 | [!undertale](/docs/{{version}}/commands#UndertaleTextBoxCommand) | Create your own Undertale text boxes with any character and text you want, you can also specify a image through a URL that should be used as the avatar instead.! |
 
 <a name="interaction"></a>
@@ -134,7 +134,7 @@ Below you'll find a list of all **148** commands that Ava has, along with a shor
 | [!play](/docs/{{version}}/commands#PlayCommand) | Plays the provided song for you, if just the song title is given the bot will search YouTube for your song and give you some suggestions, you can also use YouTube, SoundCloud, TwitchTV, Bandcamp, and Vimeo link, or raw sound file, mp3, flac, wav, webm, mp4, ogg, aac, m3u and pls formats. |
 | [!playlist](/docs/{{version}}/commands#PlaylistCommand) | Music playlist command, allows music DJs to create, delete, and load playlists to the music queue, as well as adding and removing songs from any of the playlists. |
 | [!removesong](/docs/{{version}}/commands#RemoveSongFromQueueCommand) | Removes a song or multiple songs from the music queue. |
-| [!repeatsongs](/docs/{{version}}/commands#RepeatMusicQueueCommand) | Repeats all the songs in the music queue. |
+| [!repeatsongs](/docs/{{version}}/commands#RepeatMusicQueueCommand) | Repeats all the songs in the music queue or repeats the current song. |
 | [!resume](/docs/{{version}}/commands#ResumeCommand) | Resumes the music in the queue, starting the music back up if it was paused |
 | [!seek](/docs/{{version}}/commands#SeekCommand) | Jumps to the given time code in the track that is currently playing. |
 | [!default-volume](/docs/{{version}}/commands#SetDefaultVolumeCommand) | Sets the default volume that the music should play at when Ava first joins a voice channel. |

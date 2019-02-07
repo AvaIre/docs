@@ -2028,7 +2028,7 @@ Roll a random number between 1 and 100, or within the given parameters.
 <a name="SayCommand"></a>
 ### Say Command
 
-I will say whatever you tell me to.
+The bot will repeat anything you tell it to, if a channel is mentioned, the message will be sent in that channel instead.
 
 **Special permissions required to run this command**<br>The bot and the user needs the **Manage Messages** permission to run this command.
 
@@ -2036,11 +2036,16 @@ I will say whatever you tell me to.
 #### Usage
 
 	!say <message>
-	-  Makes the bot say the given message
+	-  Makes the bot say the given message in the current channel.
+	!say <channel> <message>
+	-  Makes the bot say the given message in the channel.
 
 #### Example
 
 	!say I am a BOT
+	-  Makes the bot send the "I am a bot" message.
+	!say #general Hi there!
+	-  Makes the bot send the message in #general.
 
 <a name="UndertaleTextBoxCommand"></a>
 ### Undertale TextBox Command
@@ -2263,15 +2268,25 @@ Removes a song or multiple songs from the music queue.
 <a name="RepeatMusicQueueCommand"></a>
 ### Repeat Music Command
 
-Repeats all the songs in the music queue.
+Repeats all the songs in the music queue or repeats the current song.
 
 
 
 #### Usage
 
-	!repeatsongs
-	-  Toggles queue looping on or off.
+	!repeatsongs <repeat-state>
+	-  Toggles between repeating all, one, or off.
 
+#### Example
+
+	!repeatsongs
+	-  Displays current repeat mode
+	!repeatsongs off
+	-  Turns off repeat
+	!repeatsongs one
+	-  Loops the currently playing song
+	!repeatsongs all
+	-  Loops the entire queue
 
 <a name="ResumeCommand"></a>
 ### Resume Music Command
