@@ -26,6 +26,7 @@
     - [Set Status Command](#SetStatusCommand)
     - [Shutdown Command](#ShutdownCommand)
     - [Update Command](#UpdateCommand)
+    - [Vote Points Command](#VotePointsCommand)
 
 <a name="prerequisites"></a>
 ## Prerequisites
@@ -184,6 +185,7 @@ All system commands uses a semicolon(;) as their prefix by default.
 | [;setstatus](#SetStatusCommand) | Sets the status of the bot instance for all servers the bot is on, if no status is set the bot status will go back to cycling status from the config. |
 | [;shutdown](#ShutdownCommand) | Schedules a time the bot should be shutdown gracefully. |
 | [;update](#UpdateCommand) | Schedule a time the bot should be automatically-updated, the bot will shutdown, update itself, and start back up again. |
+| [;vote-point](#VotePointsCommand) | Allows a bot administrator to give or take vote points form a user by their ID, or by mentioning them. |
 
 <a name="BlacklistCommand"></a>
 ### Blacklist Command
@@ -459,3 +461,26 @@ This requires [avaire/watchdog](https://github.com/avaire/watchdog) to work, or 
     -  Cancels the update process.
     ;update <time>
     -  Schedules a time the bot should be updated.
+
+
+<a name="VotePointsCommand"></a>
+### Vote Points Command
+
+Allows a bot administrator to give or take vote points form a user by their ID, or by mentioning them.
+
+
+
+#### Usage
+
+    ;vote-point give <user ID> <amount>
+    -  Gives the user the given amount of vote points.
+    ;vote-point take <user ID> <amount>
+    -  Takes the given amount of vote points from the user.
+
+#### Example
+
+    ;vote-point give @Senither 50
+    -  Give Senither 50 vote points.
+    ;vote-point take @Senither 99
+    -  Take 99 vote points from Senither.
+
