@@ -1,6 +1,6 @@
 # Command List
 
-Below you'll find a list of all **149** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
+Below you'll find a list of all **150** commands that Ava has, along with a short description of what each command does. If you'd like to know more about the command, like what permissions or roles are required to run the command, different aliases or anything similar you can click on the command links and you'll be taken to a more descriptive version of the command, or use the help command for the given command in a Discord server.
 
 > {tip} All commands can be used by mentioning Ava first, followed by the command you want to run, for example `@AvaIre ping` will run the ping command, or `@AvaIre poke @Senither` will run the poke command for Senither.
 
@@ -33,6 +33,7 @@ Below you'll find a list of all **149** commands that Ava has, along with a shor
 | [!alr](/docs/{{version}}/commands#AddLevelRoleCommand) | Adds a role to the leveling up table, roles on the table will be given to users once they level up and meet the requirements for the role. |
 | [!arr](/docs/{{version}}/commands#AddReactionRoleCommand) | Adds a reaction emote to the last message sent in the channel, and attaches a role to the emote, users can then reaction to the message using the emote to get the role linked with the emote. |
 | [!asar](/docs/{{version}}/commands#AddSelfAssignableRoleCommand) | Adds a role to the self-assignable roles list, any role on the list can be claimed by users when they use `:prefixiam <role>`. |
+| [!experience](/docs/{{version}}/commands#AdministrateExperienceCommand) | This command can be used to give, take, or reset a users XP, on a per-server basis. |
 | [!ai](/docs/{{version}}/commands#AiCommand) | Toggles the AI(Artificial Intelligence) on/off for the current channel. |
 | [!alias](/docs/{{version}}/commands#AliasCommand) | Creates and maps a custom alias for a pre-existing command. Provide no alias to remove an existing alias. |
 | [!autorole](/docs/{{version}}/commands#AutoAssignRoleCommand) | Automatically assigns a specified role to every user who joins the server. |

@@ -107,6 +107,38 @@ Adds a role to the self-assignable roles list, any role on the list can be claim
 
 	!asar DJ
 
+<a name="AdministrateExperienceCommand"></a>
+### Administrate Experience Command
+
+This command can be used to give, take, or reset a users XP, on a per-server basis.
+**Note:** This does not affect the global leaderboard.
+
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Toggle Level Command](#LevelCommand)
+ - [Rank Command](#RankCommand)
+ - [Add Level Role Command](#AddLevelRoleCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
+
+#### Usage
+
+	!experience reset <user>
+	-  Resets the users XP.
+	!experience add <user> <amount>
+	-  Adds the given amount of XP to the user.
+	!experience take <user> <amount>
+	-  Takes the given amount of XP from the user.
+	!experience server-reset
+	-  Resets the XP for everyone on the entire server in one go.
+
+#### Example
+
+	!experience reset @Senither
+	!experience add @Senither 9999
+	!experience take @Senither 1337
+	!experience server-reset
+
 <a name="AiCommand"></a>
 ### AI Command
 
@@ -419,6 +451,7 @@ Toggles the Leveling system on or off for the current server.
  - [Level Modifier Command](#LevelModifierCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
  - [Rank Command](#RankCommand)
+ - [Administrate Experience Command](#AdministrateExperienceCommand)
 
 #### Usage
 
@@ -439,6 +472,7 @@ Level Hierarchy determines if level roles give to users should be removed once t
  - [Level Alerts Command](#LevelAlertsCommand)
  - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
+ - [Administrate Experience Command](#AdministrateExperienceCommand)
 
 #### Usage
 
@@ -459,6 +493,7 @@ The level modifier allows a server to set a custom level and experience modifier
 
 **Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
 
+ - [Administrate Experience Command](#AdministrateExperienceCommand)
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
  - [Channel Level Command](#ChannelLevelCommand)
@@ -995,6 +1030,38 @@ Adds a role to the self-assignable roles list, any role on the list can be claim
 
 	!asar DJ
 
+<a name="AdministrateExperienceCommand"></a>
+### Administrate Experience Command
+
+This command can be used to give, take, or reset a users XP, on a per-server basis.
+**Note:** This does not affect the global leaderboard.
+
+**Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
+
+ - [Toggle Level Command](#LevelCommand)
+ - [Rank Command](#RankCommand)
+ - [Add Level Role Command](#AddLevelRoleCommand)
+ - [List Level Roles Command](#ListLevelRolesCommand)
+ - [Remove Level Roles Command](#RemoveLevelRoleCommand)
+
+#### Usage
+
+	!experience reset <user>
+	-  Resets the users XP.
+	!experience add <user> <amount>
+	-  Adds the given amount of XP to the user.
+	!experience take <user> <amount>
+	-  Takes the given amount of XP from the user.
+	!experience server-reset
+	-  Resets the XP for everyone on the entire server in one go.
+
+#### Example
+
+	!experience reset @Senither
+	!experience add @Senither 9999
+	!experience take @Senither 1337
+	!experience server-reset
+
 <a name="AiCommand"></a>
 ### AI Command
 
@@ -1307,6 +1374,7 @@ Toggles the Leveling system on or off for the current server.
  - [Level Modifier Command](#LevelModifierCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
  - [Rank Command](#RankCommand)
+ - [Administrate Experience Command](#AdministrateExperienceCommand)
 
 #### Usage
 
@@ -1327,6 +1395,7 @@ Level Hierarchy determines if level roles give to users should be removed once t
  - [Level Alerts Command](#LevelAlertsCommand)
  - [Channel Level Command](#ChannelLevelCommand)
  - [Toggle Level Command](#LevelCommand)
+ - [Administrate Experience Command](#AdministrateExperienceCommand)
 
 #### Usage
 
@@ -1347,6 +1416,7 @@ The level modifier allows a server to set a custom level and experience modifier
 
 **Special permissions required to run this command**<br>The user needs **Manage Server** permission to run this command.
 
+ - [Administrate Experience Command](#AdministrateExperienceCommand)
  - [Level Hierarchy Command](#LevelHierarchyCommand)
  - [Level Alerts Command](#LevelAlertsCommand)
  - [Channel Level Command](#ChannelLevelCommand)
