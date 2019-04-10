@@ -61,7 +61,7 @@ Start by logging into your server via your SSH client, we will be using [SDKMAN!
 <a name="install-java"></a>
 ### Installing Java
 
-We'll be using Java 10+ to run Ava, if you don't already have Java installed, you can install it easily using [SDKMAN!](https://sdkman.io/), first check what versions of Java is available.
+We'll be using Java 10 to run Ava, if you don't already have Java installed, you can install it easily using [SDKMAN!](https://sdkman.io/), first check what versions of Java is available.
 
     sdk list java
 
@@ -78,7 +78,7 @@ apt autoremove
 <a name="install-gradle"></a>
 ### Installing Gradle
 
-We'll be using Gradle 4.7+ to build and compile Ava, if you don't already have Gradle installed, you can install it easily using [SDKMAN!](https://sdkman.io/), first check what versions of Java is available.
+We'll be using Gradle 4.7 to build and compile Ava, if you don't already have Gradle installed, you can install it easily using [SDKMAN!](https://sdkman.io/), first check what versions of Java is available.
 
     sdk list gradle
 
@@ -117,20 +117,20 @@ Then, go through the basic setup process using:
 Now, log into your MySQL database as root by typing:  
 (It will ask you for your password what you've entered when you installed MySQL on your server.)
 
-    mysql -p
+    sudo mysql -p
 
 It is time to actually create the database you will be using for your bot. To do this, first choose a good name for it, and type:
 
-    create database <dbname>;
+    create database dbname;
 
 Now, create a username and a password for your new database. The password should be very secure. Type the following:
 
-    grant all privileges on <dbname>.* to '<username>'@'localhost' identified by "<password>";
+    grant all privileges on dbname.* to 'username'@'localhost' identified by "password";
 
 Where you replace:  
-  `<dbname>` with the name of the database you just created,  
-  `<username>` with the username you chose  
-  `<password>` with the password you chose for your user
+  __dbname__ with the name of the database you just created,  
+  __username__ with the username you chose  
+  __password__ with the password you chose for your user
 
 Then, type:
 
@@ -354,7 +354,7 @@ Creates a JSON map containing detailed information about each command and stores
 <a name="PartnerCommand"></a>
 ### Partner Command
 
-Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead. 
+Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead.
 
 
 
@@ -528,4 +528,3 @@ Allows a bot administrator to give or take vote points form a user by their ID, 
     -  Give Senither 50 vote points.
     ;vote-point take @Senither 99
     -  Take 99 vote points from Senither.
-
