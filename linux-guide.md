@@ -112,7 +112,7 @@ First we need to download MySQL, doing the following:
 
 Then, go through the basic setup process using:
 
-    mysql_secure_installation
+    sudo mysql_secure_installation
 
 Now, log into your MySQL database as root by typing:  
 (It will ask you for your password what you've entered when you installed MySQL on your server.)
