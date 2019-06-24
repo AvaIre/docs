@@ -600,7 +600,7 @@ Displays the modlogging status for the server if no arguments is given, you can 
 #### Example
 
 	!modlog
-	-  
+	-
 	!modlog #modlog
 	-  Enables modlogging and sets it to the modlog channel.
 	!modlog disable
@@ -1523,7 +1523,7 @@ Displays the modlogging status for the server if no arguments is given, you can 
 #### Example
 
 	!modlog
-	-  
+	-
 	!modlog #modlog
 	-  Enables modlogging and sets it to the modlog channel.
 	!modlog disable
@@ -2220,7 +2220,7 @@ The music channel command can be used to define a text and voice channel that mu
 <a name="MusicMessagesCommand"></a>
 ### Music Messages Command
 
-Toggles music messages on and off, when music messages are off, the "Now Playing" messages will no longer be sent, and messages that before would stay, will now be automatically be deleted after awhile. 
+Toggles music messages on and off, when music messages are off, the "Now Playing" messages will no longer be sent, and messages that before would stay, will now be automatically be deleted after awhile.
 
 **Special permissions required to run this command**<br>The user needs **Administrator** permission to run this command.
 
@@ -2492,7 +2492,7 @@ Music will sometimes stop working when Discord forgets to notify bots about voic
  If you're still experiencing voice issues you can try making the bot leave the voice channel by using a command like `!stop`, and then running this command again.
 
  Still having issues even after all that?
-You can join the [support server](https://discord.gg/gt2FWER) to get help from the AvaIre support team directly.
+You can join the [support server](https://avairebot.com/support) to get help from the AvaIre support team directly.
 
 **Special permissions required to run this command**<br>The bot needs **Manage Server** permission to run this command.
 
@@ -2685,7 +2685,7 @@ Expands the url to the full form, resolving all the redirects and showing what u
 <a name="FeedbackCommand"></a>
 ### Feedback Command
 
-Send feedback about Ava back to the developers and the staff team, any message passed to the command will be sent in the [#feedback](https://discord.gg/gt2FWER) channel on the [AvaIre Central](https://discord.gg/gt2FWER) server.
+Send feedback about Ava back to the developers and the staff team, any message passed to the command will be sent in the [#feedback](https://avairebot.com/support) channel on the [AvaIre Central](https://avairebot.com/support) server.
 
 
 

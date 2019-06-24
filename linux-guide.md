@@ -114,7 +114,7 @@ Then, go through the basic setup process using:
 
     sudo mysql_secure_installation
 
-Now, log into your MySQL database as root by typing:  
+Now, log into your MySQL database as root by typing:
 (It will ask you for your password what you've entered when you installed MySQL on your server.)
 
     sudo mysql -p
@@ -127,9 +127,9 @@ Now, create a username and a password for your new database. The password should
 
     grant all privileges on dbname.* to 'username'@'localhost' identified by "password";
 
-Where you replace:  
-  __dbname__ with the name of the database you just created,  
-  __username__ with the username you chose  
+Where you replace:
+  __dbname__ with the name of the database you just created,
+  __username__ with the username you chose
   __password__ with the password you chose for your user
 
 Then, type:
@@ -201,7 +201,7 @@ Go to the URL in a web browser, select your server and hit `Authorize`, your bot
 You can test simple functionality by running the ping command in a text channel that the bot can see. If it answers "Pong!", then congratulations, you have successfully set up AvaIre!
 
 And that's it! You are now ready to start using your very own AvaIre instance!
-Keep in mind, if you have further questions or need help, we're around over at our official server, [AvaIre Central](https://discord.gg/gt2FWER)!
+Keep in mind, if you have further questions or need help, we're around over at our official server, [AvaIre Central](https://avairebot.com/support)!
 
 On the behalf of the AvaIre team, we hope you enjoy your bot!
 

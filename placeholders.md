@@ -22,7 +22,7 @@ String placeholders are variables you can use in option-based commmands like the
 
 All placeholders starts and ends with a percentage sign (%), and wraps the variable name, in combination with each other it would look like `%username%` if you wanted to get the users username.
 
-In all of the following examples the **[AvaIre Central](https://discord.gg/gt2FWER)** server will be used as the server example, and the user that will be used is **JohnDoe**#**2854**.
+In all of the following examples the **[AvaIre Central](https://avairebot.com/support)** server will be used as the server example, and the user that will be used is **JohnDoe**#**2854**.
 
 <a name="user-placeholders"></a>
 ## User Placeholders

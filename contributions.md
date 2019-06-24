@@ -23,7 +23,7 @@ Remember, bug reports are created in the hope that others with the same problem 
 
 **Major** new features should always be sent to the master branch, which contains the upcoming AvaIre release.
 
-If you are unsure if your feature qualifies as a major or minor, please ask Alexis Tan (Senither) in the [AvaIre Central](https://discord.gg/gt2FWER) Discord server.
+If you are unsure if your feature qualifies as a major or minor, please ask Alexis Tan (Senither) in the [AvaIre Central](https://avairebot.com/support) Discord server.
 
 <a name="coding-style"></a>
 ## Coding Style

@@ -113,7 +113,7 @@ If the build finishes with no errors you should be good to go! You can find the 
 Next we'll need to configure Ava so the bot can connect and communicate with users, to generate the `config.yml` file we'll just need to run Ava once, we can do this by running:
 
     java -jar AvaIre.jar
-    
+
 You can now open the new `config.yml` file in  Notepad++ or any other code editor. **Do not edit it with Windows Notepad, that will be a mess.**
 
 Next we'll need to setup a database the Ava can use, Ava requires a database to store things like custom playlists, aliases, channel and server data, and a lot of other things, Ava currently only has support for MySQL databases, with SQLite and other types coming in the future.
@@ -156,7 +156,7 @@ You can test simple functionality by running the ping command in a text channel 
 
 Remember to keep the command window open, otherwise the bot will stop running! When you want to stop it, just close the command window.
 And that's it! You are now ready to start using your very own AvaIre instance!
-Keep in mind, if you have further questions or need help, we're around over at our official server, [AvaIre Central](https://discord.gg/gt2FWER)!
+Keep in mind, if you have further questions or need help, we're around over at our official server, [AvaIre Central](https://avairebot.com/support)!
 
 On the behalf of the AvaIre team, we hope you enjoy your bot!
 
@@ -309,7 +309,7 @@ Creates a JSON map containing detailed information about each command and stores
 <a name="PartnerCommand"></a>
 ### Partner Command
 
-Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead. 
+Allows a bot admin to change the partnership a server has with the bot, servers who are partnered with the bot has less restrictions and more command slots(Like aliases, self-assignable roles, level roles, playlists, etc), if only the server ID is given the current partnership status will be displayed for the server with the given ID instead.
 
 
 

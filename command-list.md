@@ -167,7 +167,7 @@ Below you'll find a list of all **150** commands that Ava has, along with a shor
 | [!channelid](/docs/{{version}}/commands#ChannelIdCommand) | Shows the ID of the channel the command was ran in, or the channel tagged in the command. |
 | [!channelinfo](/docs/{{version}}/commands#ChannelInfoCommand) | Shows information about the channel the command was run in, or the mentioned channel. |
 | [!expand](/docs/{{version}}/commands#ExpandUrlCommand) | Expands the url to the full form, resolving all the redirects and showing what urls the link goes through if it redirects anywhere. |
-| [!feedback](/docs/{{version}}/commands#FeedbackCommand) | Send feedback about Ava back to the developers and the staff team, any message passed to the command will be sent in the [#feedback](https://discord.gg/gt2FWER) channel on the [AvaIre Central](https://discord.gg/gt2FWER) server. |
+| [!feedback](/docs/{{version}}/commands#FeedbackCommand) | Send feedback about Ava back to the developers and the staff team, any message passed to the command will be sent in the [#feedback](https://avairebot.com/support) channel on the [AvaIre Central](https://avairebot.com/support) server. |
 | [!gleaderboard](/docs/{{version}}/commands#GlobalLeaderboardCommand) | Shows the top 100 users globally, combining their rank, level, and xp between all servers the users are on. |
 | [!ipinfo](/docs/{{version}}/commands#IPInfoCommand) | Gives information about the given IP address. |
 | [!invite](/docs/{{version}}/commands#InviteCommand) | Returns a link that can be used to invite the bot to other servers. |
